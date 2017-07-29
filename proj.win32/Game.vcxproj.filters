@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{48b9e4a2-48d9-4a09-9272-dd023dc80afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Application">
+      <UniqueIdentifier>{d0ab60ce-bb49-4781-9804-bf548dd5c2b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Common">
+      <UniqueIdentifier>{fae36c0b-4d5b-4dba-992c-d6403718bfd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Model">
+      <UniqueIdentifier>{6bf171ed-2a4e-4be4-90dd-1c35fdb10473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scene">
+      <UniqueIdentifier>{0f2d71a8-ee27-478e-a574-49f7af2ac0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI">
+      <UniqueIdentifier>{ff05186c-2871-4f2f-b56a-329e62b24fef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI\UIView">
+      <UniqueIdentifier>{dea84566-f9df-4f2d-8faa-78c34345a11c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\State">
+      <UniqueIdentifier>{2a78e591-85d7-4cd1-b199-611eb4a01e5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Login">
+      <UniqueIdentifier>{bf9e0dd7-d830-40bc-bfa4-587598ce0d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Connector">
+      <UniqueIdentifier>{89a6a022-1dce-4d6c-8c6d-96b954467a6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Server">
+      <UniqueIdentifier>{7a8f5771-e925-4713-839e-980a5ba73821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Message">
+      <UniqueIdentifier>{c6e9cb96-065c-43a2-aac1-d82cedb35b92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Event">
+      <UniqueIdentifier>{c543d8ee-b210-4e82-9673-4b38c119ce28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Hall">
+      <UniqueIdentifier>{3c540188-f109-4463-aa5d-0c0c31466f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Procedure">
+      <UniqueIdentifier>{58769af7-f90f-40cd-8708-f16d5221e14b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI\Componet">
+      <UniqueIdentifier>{4e1328b9-ed95-4de4-90a8-623366141cfc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Application\AppDelegate.cpp">
+      <Filter>Classes\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Common\GValue.cpp">
+      <Filter>Classes\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Common\ObjectFactory.cpp">
+      <Filter>Classes\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\State\State.cpp">
+      <Filter>Classes\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\UIManager.cpp">
+      <Filter>Classes\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\UIView\UIView.cpp">
+      <Filter>Classes\UI\UIView</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\UIView\UIViewDelegate.cpp">
+      <Filter>Classes\UI\UIView</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\IScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\SceneDelegate.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Login\LoginScene.cpp">
+      <Filter>Classes\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Login\LoginState.cpp">
+      <Filter>Classes\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\UIFactory.cpp">
+      <Filter>Classes\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Login\LoginView.cpp">
+      <Filter>Classes\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Connector\Connector.cpp">
+      <Filter>Classes\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Connector\LoginConnector.cpp">
+      <Filter>Classes\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Server\LocalServer.cpp">
+      <Filter>Classes\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Message\Message.cpp">
+      <Filter>Classes\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Procedure\GameProcedure.cpp">
+      <Filter>Classes\Procedure</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallScene.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\Componet\Tips.cpp">
+      <Filter>Classes\UI\Componet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallBottomState.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallActivityState.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallMainSate.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallMainView.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallBottomView.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallActivityView.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Common\CurrentInfo.cpp">
+      <Filter>Classes\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallUserInfoState.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallUserInfoView.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Application\AppDelegate.h">
+      <Filter>Classes\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\Any.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\common.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\commontools.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\GValue.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\IFactory.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\ObjectFactory.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\Ref.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\Sigleton.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\tClass.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\State\State.h">
+      <Filter>Classes\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIManager.h">
+      <Filter>Classes\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIView\UIView.h">
+      <Filter>Classes\UI\UIView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIView\UIViewDelegate.h">
+      <Filter>Classes\UI\UIView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\IScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\SceneDelegate.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Login\LoginScene.h">
+      <Filter>Classes\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Login\LoginState.h">
+      <Filter>Classes\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIFactory.h">
+      <Filter>Classes\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\State\StateConfig.h">
+      <Filter>Classes\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Login\LoginView.h">
+      <Filter>Classes\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Connector\Connector.h">
+      <Filter>Classes\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Connector\LoginConnector.h">
+      <Filter>Classes\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Server\LocalServer.h">
+      <Filter>Classes\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Message\Message.h">
+      <Filter>Classes\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Server\ServerDelegate.h">
+      <Filter>Classes\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Event\UIEvent.h">
+      <Filter>Classes\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Procedure\GameProcedure.h">
+      <Filter>Classes\Procedure</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallScene.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\Componet\Tips.h">
+      <Filter>Classes\UI\Componet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallBottomState.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallActivityState.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallMainSate.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallMainView.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallBottomView.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallActivityView.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\CurrentInfo.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallUserInfoState.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallUserInfoView.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

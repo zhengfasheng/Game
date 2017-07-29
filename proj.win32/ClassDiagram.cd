@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppDelegate" Collapsed="true">
+    <Position X="26.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAACAAQAAAEAAAAAAAAAAAAk=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Application\AppDelegate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GValue" Collapsed="true">
+    <Position X="24.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAKAAEAAAAEAAAAIAIAYAKIYcAEAAAIAIgCAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\GValue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IFactory" Collapsed="true">
+    <Position X="26.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABAAEAAACA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\IFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sigleton&lt;T&gt;" Collapsed="true">
+    <Position X="28" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAQAAAAQ=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Sigleton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CurrentInfo" Collapsed="true">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAKAgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\CurrentInfo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IScene" Collapsed="true">
+    <Position X="6.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAIAABQAACAAAAQAAQQBAAAAAAAAIAABAAAACAAgA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Scene\IScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneDelegate" Collapsed="true">
+    <Position X="1.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAACAAAAAUAAAAAIACAAAgAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Scene\SceneDelegate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAkEAAIICIAQAAACAAAAAAAB1AIAAAIADIIAgBAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\UI\UIManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIFactory" Collapsed="true">
+    <Position X="24.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAEAAAABAAAAAAIABQAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\UI\UIFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIView" Collapsed="true">
+    <Position X="13.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEABAoAAACCAKgIAEAAAACAAAAAEAAKAAACAhAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\UI\UIView\UIView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIViewDelegate" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAgAACIABAAAAAAAAAAAAAAAgAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\UI\UIView\UIViewDelegate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tips" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAIABAAAAAAAAAAAAAAAgAAIAAABAgIAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\UI\Componet\Tips.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="State" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAgAAAIABAAgAAUCAAAQAQAAhAAUAAABCBJABAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\State\State.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginScene" Collapsed="true">
+    <Position X="7.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Login\LoginScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginState" Collapsed="true">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAQAAAAAAAAQAAAAAAAAAAABACAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Login\LoginState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginView" Collapsed="true">
+    <Position X="19.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAIAQEIAAAAABABAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Login\LoginView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Connector" Collapsed="true">
+    <Position X="10.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEBAEAAAAAAIAAAQAQAQAAACAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Connector\Connector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoginConnector" Collapsed="true">
+    <Position X="10.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIBAQAAAAAAIAAEAAEAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Connector\LoginConnector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LocalServer" Collapsed="true">
+    <Position X="10.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIAAAAAEAAIAQgAAAAgAAAAAAEAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Server\LocalServer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServerDelegate" Collapsed="true">
+    <Position X="10.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAIAAAAAEAAAAAAAAAAgAAAAAAEAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Server\ServerDelegate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Message" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAIAMAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplyLogin" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAGAMAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResponseLogin" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAQBAAAAAAAAAAAAAAAAQEAIAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplyChipsChang" Collapsed="true">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAEAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResponseChipsChange" Collapsed="true">
+    <Position X="3" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallScene" Collapsed="true">
+    <Position X="5.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallBottomState">
+    <Position X="3.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAQAAAAYAAAAAAAAABAAAAAAAAAAAQ=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallBottomState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallActivityState" Collapsed="true">
+    <Position X="8.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallActivityState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallMainSate" Collapsed="true">
+    <Position X="11" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAIAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallMainSate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallMainView" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAABAAAAIAAAAABAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallMainView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallBottomView" Collapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAQwAAAAAAQAAAAAAEAAAQAIAAAAAFAAQAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallBottomView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallActivityView" Collapsed="true">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAABAAAAAIAAAAABAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallActivityView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallUserInfoState" Collapsed="true">
+    <Position X="2" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAIAAAgQ=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallUserInfoState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HallUserInfoView" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAAAAAAQAAAAAAQAAAAAAEAAAQAIAAAAABgQSAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Hall\HallUserInfoView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameProcedure" Collapsed="true">
+    <Position X="2.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAACIAQAAAAAAAAAAAIUCAAAAIACAAAgAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Procedure\GameProcedure.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="boost::any" Collapsed="true">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACACAAAAAAAAAAAAAAAAACQAABAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="tClass" Collapsed="true">
+    <Position X="24.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\tClass.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::disable_if_c&lt;B, T&gt;" Collapsed="true">
+    <Position X="10.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::disable_if_c&lt;true, T&gt;" Collapsed="true">
+    <Position X="26.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::disable_if&lt;Cond, T&gt;" Collapsed="true">
+    <Position X="10.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::decay&lt;T&gt;" Collapsed="true">
+    <Position X="24.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::detail::remove_bounds&lt;T&gt;" Collapsed="true">
+    <Position X="28" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::detail::decay_imp&lt;T, Array, Function&gt;" Collapsed="true">
+    <Position X="26.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::detail::decay_imp&lt;T, true, false&gt;" Collapsed="true">
+    <Position X="28" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="boost::detail::decay_imp&lt;T, false, true&gt;" Collapsed="true">
+    <Position X="24.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="SceneType" Collapsed="true">
+    <Position X="26.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAMAAAAAAAABAAIAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Scene\IScene.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="StateID" Collapsed="true">
+    <Position X="24.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEBAAAAAAEBgAAAAAAAAAAAQgAAAQAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\State\StateConfig.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SceneZOder">
+    <Position X="28" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\State\StateConfig.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MessageType" Collapsed="true">
+    <Position X="24.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
