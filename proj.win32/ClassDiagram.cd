@@ -17,8 +17,8 @@
   <Class Name="IFactory" Collapsed="true">
     <Position X="26.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAABAAEAAACA=</HashCode>
-      <FileName>F:\workspace\Github\Game\Classes\Common\IFactory.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>F:\workspace\Github\Game\Classes\Common\CreateFactory.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sigleton&lt;T&gt;" Collapsed="true">
@@ -32,7 +32,7 @@
     <Position X="28" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAKAgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>F:\workspace\Github\Game\Classes\Common\CurrentInfo.h</FileName>
+      <FileName>F:\workspace\Github\Game\Classes\Model\CurrentInfo.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IScene" Collapsed="true">
@@ -64,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UIView" Collapsed="true">
-    <Position X="13.5" Y="3.25" Width="1.5" />
+    <Position X="13" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CEABAoAAACCAKgIAEAAAACAAAAAEAAKAAACAhAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\UI\UIView\UIView.h</FileName>
@@ -73,12 +73,12 @@
   <Class Name="UIViewDelegate" Collapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAgAACIABAAAAAAAAAAAAAAAgAAAAAAAAAIAAAAA=</HashCode>
+      <HashCode>AEAAAgAACIABAAAAAEAAAAAAAAAgAAAAAAAAAIAABAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\UI\UIView\UIViewDelegate.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tips" Collapsed="true">
-    <Position X="6.5" Y="4.75" Width="1.5" />
+    <Position X="10" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAIABAAAAAAAAAAAAAAAgAAIAAABAgIAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\UI\Componet\Tips.h</FileName>
@@ -87,7 +87,7 @@
   <Class Name="State" Collapsed="true">
     <Position X="6.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEEAAgAAAIABAAgAAUCAAAQAQAAhAAUAAABCBJABAAA=</HashCode>
+      <HashCode>AEEAAgAAAIABAAgAAQCAAAQAQAAhAAUAAABCBJABAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\State\State.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,7 +101,7 @@
   <Class Name="LoginState" Collapsed="true">
     <Position X="6.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAQAAAAAAAAQAAAAAAAAAAABACAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAQAAAAAAAAQAAAAAAAAAAABAAEAAAAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Login\LoginState.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -182,10 +182,10 @@
       <FileName>F:\workspace\Github\Game\Classes\Hall\HallScene.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="HallBottomState">
+  <Class Name="HallBottomState" Collapsed="true">
     <Position X="3.75" Y="3.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAQAAAAYAAAAAAAAABAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAYAAAAAAAAABAAEAAAAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Hall\HallBottomState.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -227,7 +227,7 @@
   <Class Name="HallUserInfoState" Collapsed="true">
     <Position X="2" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAIAAAgQ=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAABAEEAAAIAAAgA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Hall\HallUserInfoState.h</FileName>
     </TypeIdentifier>
   </Class>
