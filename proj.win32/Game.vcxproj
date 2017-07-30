@@ -145,9 +145,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\Application\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\Common\CurrentInfo.cpp" />
     <ClCompile Include="..\Classes\Common\GValue.cpp" />
-    <ClCompile Include="..\Classes\Common\ObjectFactory.cpp" />
     <ClCompile Include="..\Classes\Connector\Connector.cpp" />
     <ClCompile Include="..\Classes\Connector\LoginConnector.cpp" />
     <ClCompile Include="..\Classes\Hall\HallActivityState.cpp" />
@@ -163,6 +161,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Login\LoginState.cpp" />
     <ClCompile Include="..\Classes\Login\LoginView.cpp" />
     <ClCompile Include="..\Classes\Message\Message.cpp" />
+    <ClCompile Include="..\Classes\Model\CurrentInfo.cpp" />
     <ClCompile Include="..\Classes\Procedure\GameProcedure.cpp" />
     <ClCompile Include="..\Classes\Scene\IScene.cpp" />
     <ClCompile Include="..\Classes\Scene\SceneDelegate.cpp" />
@@ -180,13 +179,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Common\Any.h" />
     <ClInclude Include="..\Classes\Common\common.h" />
     <ClInclude Include="..\Classes\Common\commontools.h" />
-    <ClInclude Include="..\Classes\Common\CurrentInfo.h" />
     <ClInclude Include="..\Classes\Common\GValue.h" />
-    <ClInclude Include="..\Classes\Common\IFactory.h" />
-    <ClInclude Include="..\Classes\Common\ObjectFactory.h" />
-    <ClInclude Include="..\Classes\Common\Ref.h" />
     <ClInclude Include="..\Classes\Common\Sigleton.h" />
-    <ClInclude Include="..\Classes\Common\tClass.h" />
     <ClInclude Include="..\Classes\Connector\Connector.h" />
     <ClInclude Include="..\Classes\Connector\LoginConnector.h" />
     <ClInclude Include="..\Classes\Event\UIEvent.h" />
@@ -203,6 +197,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Login\LoginState.h" />
     <ClInclude Include="..\Classes\Login\LoginView.h" />
     <ClInclude Include="..\Classes\Message\Message.h" />
+    <ClInclude Include="..\Classes\Model\CurrentInfo.h" />
     <ClInclude Include="..\Classes\Procedure\GameProcedure.h" />
     <ClInclude Include="..\Classes\Scene\IScene.h" />
     <ClInclude Include="..\Classes\Scene\SceneDelegate.h" />

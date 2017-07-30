@@ -67,8 +67,74 @@ void HallUserInfoView::onClose(Ref* pSender)
 	this->Hide();
 }
 
+
 void HallUserInfoView::onChange(Ref* pSender)
 {
 	LoginConnector::getInstance()->sendApplyChipsChange();
 }
+
+
+
+
+//
+//class BaseUser;
+//
+//class Proxy
+//{
+//public:
+//	Proxy(BaseUser* bu)
+//	{
+//		m_isLive = true;
+//		t = bu;
+//	}
+//
+//	BaseUser* ptr()
+//	{
+//		if (m_isLive)
+//		{
+//			return t;
+//		}
+//		return 0;
+//	}
+//
+//	void release()
+//	{
+//		m_isLive = false;
+//	}
+//
+//private:
+//	bool m_isLive = false;
+//	BaseUser* t = 0;
+//};
+//
+//class BaseUser
+//{
+//public:
+//	BaseUser()
+//	{
+//	};
+//	virtual ~BaseUser()
+//	{
+//		m_proxy->release();
+//	}
+//
+//	std::shared_ptr<Proxy> CreateProxy()
+//	{
+//		if (0 == m_proxy)
+//		{
+//			m_proxy = std::make_shared<Proxy>(this);
+//		}
+//		return m_proxy;
+//	}
+//private:
+//	std::shared_ptr<Proxy> m_proxy = 0;
+//
+//}
+
+
+
+
+
+
+
 

@@ -66,9 +66,6 @@
     <ClCompile Include="..\Classes\Common\GValue.cpp">
       <Filter>Classes\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Common\ObjectFactory.cpp">
-      <Filter>Classes\Common</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\State\State.cpp">
       <Filter>Classes\State</Filter>
     </ClCompile>
@@ -138,14 +135,14 @@
     <ClCompile Include="..\Classes\Hall\HallActivityView.cpp">
       <Filter>Classes\Hall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Common\CurrentInfo.cpp">
-      <Filter>Classes\Common</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Hall\HallUserInfoState.cpp">
       <Filter>Classes\Hall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Hall\HallUserInfoView.cpp">
       <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\CurrentInfo.cpp">
+      <Filter>Classes\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,19 +164,7 @@
     <ClInclude Include="..\Classes\Common\GValue.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Common\IFactory.h">
-      <Filter>Classes\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Common\ObjectFactory.h">
-      <Filter>Classes\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Common\Ref.h">
-      <Filter>Classes\Common</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Common\Sigleton.h">
-      <Filter>Classes\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Common\tClass.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\State\State.h">
@@ -260,14 +245,14 @@
     <ClInclude Include="..\Classes\Hall\HallActivityView.h">
       <Filter>Classes\Hall</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Common\CurrentInfo.h">
-      <Filter>Classes\Common</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Hall\HallUserInfoState.h">
       <Filter>Classes\Hall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Hall\HallUserInfoView.h">
       <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\CurrentInfo.h">
+      <Filter>Classes\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
