@@ -91,6 +91,7 @@ virtual bool OnEvent(const std::string& szEventName, const GValue& param1, const
 	return true;\
 }
 
+//尽量使用宏，以备之后函数参数的扩展
 #define DECLARE_HANDLER( _FUNCTION_NAME_ ) \
 void _FUNCTION_NAME_(const GValue& p1, const GValue& p2, const GValue& p3, const GValue& p4)
 

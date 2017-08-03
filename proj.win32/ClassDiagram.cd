@@ -8,28 +8,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GValue" Collapsed="true">
-    <Position X="24.5" Y="1.5" Width="1.5" />
+    <Position X="18" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAKAAEAAAAEAAAAIAIAYAKIYcAEAAAIAIgCAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Common\GValue.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="IFactory" Collapsed="true">
-    <Position X="26.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>F:\workspace\Github\Game\Classes\Common\CreateFactory.h</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Sigleton&lt;T&gt;" Collapsed="true">
-    <Position X="28" Y="1.5" Width="1.5" />
+    <Position X="19.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAQAAAAQ=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Common\Sigleton.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CurrentInfo" Collapsed="true">
-    <Position X="28" Y="0.5" Width="1.5" />
+    <Position X="16.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAKAgAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Model\CurrentInfo.h</FileName>
@@ -57,7 +50,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="UIFactory" Collapsed="true">
-    <Position X="24.5" Y="2.5" Width="1.5" />
+    <Position X="16.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAEAAAABAAAAAAIABQAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\UI\UIFactory.h</FileName>
@@ -252,13 +245,6 @@
       <FileName>F:\workspace\Github\Game\Classes\Common\Any.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Struct Name="tClass" Collapsed="true">
-    <Position X="24.5" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>F:\workspace\Github\Game\Classes\Common\tClass.h</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Struct Name="boost::disable_if_c&lt;B, T&gt;" Collapsed="true">
     <Position X="10.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
@@ -316,28 +302,28 @@
     </TypeIdentifier>
   </Struct>
   <Enum Name="SceneType" Collapsed="true">
-    <Position X="26.25" Y="7" Width="1.5" />
+    <Position X="18" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAMAAAAAAAABAAIAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Scene\IScene.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="StateID" Collapsed="true">
-    <Position X="24.5" Y="7.75" Width="1.5" />
+    <Position X="16.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEBAAAAAAEBgAAAAAAAAAAAQgAAAQAAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\State\StateConfig.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="SceneZOder">
-    <Position X="28" Y="7" Width="1.5" />
+    <Position X="19.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\State\StateConfig.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="MessageType" Collapsed="true">
-    <Position X="24.5" Y="7" Width="1.5" />
+    <Position X="28" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>F:\workspace\Github\Game\Classes\Message\Message.h</FileName>
