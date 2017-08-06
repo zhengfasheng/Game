@@ -35,7 +35,7 @@ void GameProcedure::GameStart()
 
 	FileUtils::getInstance()->addSearchPath("res");
 	auto scene = LoginScene::create(this);
-
+	//int i;sfkj;
 	// run
 	director->runWithScene(scene);
 }
