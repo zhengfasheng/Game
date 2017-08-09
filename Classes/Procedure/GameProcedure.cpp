@@ -2,6 +2,7 @@
 #include "LoginScene.h"
 #include "UIManager.h"
 #include "Hall\HallScene.h"
+#include "ConnectorManager.h"
 
 USING_NS_CC;
 
@@ -32,6 +33,8 @@ void GameProcedure::GameStart()
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	director->setAnimationInterval(1.0f / 60.f);
+
+	ConnectorManager::getInstance()->init();
 
 	FileUtils::getInstance()->addSearchPath("res");
 	auto scene = LoginScene::create(this);

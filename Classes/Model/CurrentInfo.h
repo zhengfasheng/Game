@@ -24,7 +24,12 @@
  ******************************************************************************/
 #pragma once
 #include "common.h"
-#include "CCPlatformMacros.h"
+#include "UserInfo.h"
+
+#define SYNTHESIZE_PASS_BY_REF(varType, varName, funName)\
+protected: varType varName;\
+public: virtual varType& get##funName(void) { return varName; }\
+public: virtual void set##funName(const varType& var){ varName = var; }
 
 class CurrentInfo
 {
@@ -33,8 +38,5 @@ public:
 	IMPLEMENT_SINGLETON(CurrentInfo);
 	~CurrentInfo();
 	
-
-	CC_SYNTHESIZE(std::string, m_szName, Name);
-	CC_SYNTHESIZE(std::string, m_szAccount, Account);
-	CC_SYNTHESIZE(int, m_nChips, Chips);
+	SYNTHESIZE_PASS_BY_REF(UserInfo, m_userInfo, UserInfo);
 };

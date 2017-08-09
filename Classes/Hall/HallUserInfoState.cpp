@@ -28,12 +28,12 @@ IMPLEMENT_HANDLER(HallUserInfoState,onUserChipsChange)
 
 void HallUserInfoState::WillShow()
 {
-	onUserChipsChange(true, CurrentInfo::getInstance()->getChips(), 0, 0);
+	onUserChipsChange(true, CurrentInfo::getInstance()->getUserInfo().getChips(), 0, 0);
 	auto pView = (HallUserInfoView*)getView();
 	if (pView)
 	{
-		pView->setAccount(CurrentInfo::getInstance()->getAccount());
-		pView->setUserName(CurrentInfo::getInstance()->getName());
+		pView->setAccount(CurrentInfo::getInstance()->getUserInfo().getAccount());
+		pView->setUserName(CurrentInfo::getInstance()->getUserInfo().getName());
 	}
 	State::WillShow();
 }

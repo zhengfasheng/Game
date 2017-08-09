@@ -34,12 +34,6 @@
     <Filter Include="Classes\Login">
       <UniqueIdentifier>{bf9e0dd7-d830-40bc-bfa4-587598ce0d57}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Connector">
-      <UniqueIdentifier>{89a6a022-1dce-4d6c-8c6d-96b954467a6a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Server">
-      <UniqueIdentifier>{7a8f5771-e925-4713-839e-980a5ba73821}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Message">
       <UniqueIdentifier>{c6e9cb96-065c-43a2-aac1-d82cedb35b92}</UniqueIdentifier>
     </Filter>
@@ -54,6 +48,18 @@
     </Filter>
     <Filter Include="Classes\UI\Componet">
       <UniqueIdentifier>{4e1328b9-ed95-4de4-90a8-623366141cfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\LocalServer">
+      <UniqueIdentifier>{7a8f5771-e925-4713-839e-980a5ba73821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ClientServer">
+      <UniqueIdentifier>{653d449c-8957-4b20-9835-70b48fda6640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ClientServer\Connector">
+      <UniqueIdentifier>{873ec758-5b0f-4765-9949-e85ff1662114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ClientServer\Parser">
+      <UniqueIdentifier>{58f7e4bc-f708-4739-94f0-78153e5194ff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,15 +102,6 @@
     <ClCompile Include="..\Classes\Login\LoginView.cpp">
       <Filter>Classes\Login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Connector\Connector.cpp">
-      <Filter>Classes\Connector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Connector\LoginConnector.cpp">
-      <Filter>Classes\Connector</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Server\LocalServer.cpp">
-      <Filter>Classes\Server</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Message\Message.cpp">
       <Filter>Classes\Message</Filter>
     </ClCompile>
@@ -142,6 +139,24 @@
       <Filter>Classes\Hall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Model\CurrentInfo.cpp">
+      <Filter>Classes\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp">
+      <Filter>Classes\LocalServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ClientServer\Connector\Connector.cpp">
+      <Filter>Classes\ClientServer\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ClientServer\Connector\ConnectorManager.cpp">
+      <Filter>Classes\ClientServer\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ClientServer\Connector\LoginConnector.cpp">
+      <Filter>Classes\ClientServer\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ClientServer\Parser\IParser.cpp">
+      <Filter>Classes\ClientServer\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\UserInfo.cpp">
       <Filter>Classes\Model</Filter>
     </ClCompile>
   </ItemGroup>
@@ -200,20 +215,8 @@
     <ClInclude Include="..\Classes\Login\LoginView.h">
       <Filter>Classes\Login</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Connector\Connector.h">
-      <Filter>Classes\Connector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Connector\LoginConnector.h">
-      <Filter>Classes\Connector</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Server\LocalServer.h">
-      <Filter>Classes\Server</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Message\Message.h">
       <Filter>Classes\Message</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Server\ServerDelegate.h">
-      <Filter>Classes\Server</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Event\UIEvent.h">
       <Filter>Classes\Event</Filter>
@@ -252,6 +255,27 @@
       <Filter>Classes\Hall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Model\CurrentInfo.h">
+      <Filter>Classes\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LocalServer\LocalServer.h">
+      <Filter>Classes\LocalServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LocalServer\ServerDelegate.h">
+      <Filter>Classes\LocalServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ClientServer\Connector\Connector.h">
+      <Filter>Classes\ClientServer\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ClientServer\Connector\ConnectorManager.h">
+      <Filter>Classes\ClientServer\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ClientServer\Connector\LoginConnector.h">
+      <Filter>Classes\ClientServer\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ClientServer\Parser\IParser.h">
+      <Filter>Classes\ClientServer\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\UserInfo.h">
       <Filter>Classes\Model</Filter>
     </ClInclude>
   </ItemGroup>

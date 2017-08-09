@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/State;../Classes/UI;../Classes/UI/UIView;../Classes/Scene;../Classes/Login;../Classes/Connector;../Classes/Server;../Classes/Message;../Classes/Event;../Classes/Procedure;../Classes/UI/Componet</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/State;../Classes/UI;../Classes/UI/UIView;../Classes/Scene;../Classes/Login;../Classes/Message;../Classes/Event;../Classes/Procedure;../Classes/UI/Componet;../Classes/LocalServer;../Classes/ClientServer/Connector;../Classes/ClientServer/Parser</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -145,9 +145,11 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\Application\AppDelegate.cpp" />
+    <ClCompile Include="..\Classes\ClientServer\Connector\Connector.cpp" />
+    <ClCompile Include="..\Classes\ClientServer\Connector\ConnectorManager.cpp" />
+    <ClCompile Include="..\Classes\ClientServer\Connector\LoginConnector.cpp" />
+    <ClCompile Include="..\Classes\ClientServer\Parser\IParser.cpp" />
     <ClCompile Include="..\Classes\Common\GValue.cpp" />
-    <ClCompile Include="..\Classes\Connector\Connector.cpp" />
-    <ClCompile Include="..\Classes\Connector\LoginConnector.cpp" />
     <ClCompile Include="..\Classes\Hall\HallActivityState.cpp" />
     <ClCompile Include="..\Classes\Hall\HallActivityView.cpp" />
     <ClCompile Include="..\Classes\Hall\HallBottomState.cpp" />
@@ -157,15 +159,16 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Hall\HallScene.cpp" />
     <ClCompile Include="..\Classes\Hall\HallUserInfoState.cpp" />
     <ClCompile Include="..\Classes\Hall\HallUserInfoView.cpp" />
+    <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp" />
     <ClCompile Include="..\Classes\Login\LoginScene.cpp" />
     <ClCompile Include="..\Classes\Login\LoginState.cpp" />
     <ClCompile Include="..\Classes\Login\LoginView.cpp" />
     <ClCompile Include="..\Classes\Message\Message.cpp" />
     <ClCompile Include="..\Classes\Model\CurrentInfo.cpp" />
+    <ClCompile Include="..\Classes\Model\UserInfo.cpp" />
     <ClCompile Include="..\Classes\Procedure\GameProcedure.cpp" />
     <ClCompile Include="..\Classes\Scene\IScene.cpp" />
     <ClCompile Include="..\Classes\Scene\SceneDelegate.cpp" />
-    <ClCompile Include="..\Classes\Server\LocalServer.cpp" />
     <ClCompile Include="..\Classes\State\State.cpp" />
     <ClCompile Include="..\Classes\UI\Componet\Tips.cpp" />
     <ClCompile Include="..\Classes\UI\UIFactory.cpp" />
@@ -176,13 +179,15 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\Application\AppDelegate.h" />
+    <ClInclude Include="..\Classes\ClientServer\Connector\Connector.h" />
+    <ClInclude Include="..\Classes\ClientServer\Connector\ConnectorManager.h" />
+    <ClInclude Include="..\Classes\ClientServer\Connector\LoginConnector.h" />
+    <ClInclude Include="..\Classes\ClientServer\Parser\IParser.h" />
     <ClInclude Include="..\Classes\Common\Any.h" />
     <ClInclude Include="..\Classes\Common\common.h" />
     <ClInclude Include="..\Classes\Common\commontools.h" />
     <ClInclude Include="..\Classes\Common\GValue.h" />
     <ClInclude Include="..\Classes\Common\Sigleton.h" />
-    <ClInclude Include="..\Classes\Connector\Connector.h" />
-    <ClInclude Include="..\Classes\Connector\LoginConnector.h" />
     <ClInclude Include="..\Classes\Event\UIEvent.h" />
     <ClInclude Include="..\Classes\Hall\HallActivityState.h" />
     <ClInclude Include="..\Classes\Hall\HallActivityView.h" />
@@ -193,16 +198,17 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Hall\HallScene.h" />
     <ClInclude Include="..\Classes\Hall\HallUserInfoState.h" />
     <ClInclude Include="..\Classes\Hall\HallUserInfoView.h" />
+    <ClInclude Include="..\Classes\LocalServer\LocalServer.h" />
+    <ClInclude Include="..\Classes\LocalServer\ServerDelegate.h" />
     <ClInclude Include="..\Classes\Login\LoginScene.h" />
     <ClInclude Include="..\Classes\Login\LoginState.h" />
     <ClInclude Include="..\Classes\Login\LoginView.h" />
     <ClInclude Include="..\Classes\Message\Message.h" />
     <ClInclude Include="..\Classes\Model\CurrentInfo.h" />
+    <ClInclude Include="..\Classes\Model\UserInfo.h" />
     <ClInclude Include="..\Classes\Procedure\GameProcedure.h" />
     <ClInclude Include="..\Classes\Scene\IScene.h" />
     <ClInclude Include="..\Classes\Scene\SceneDelegate.h" />
-    <ClInclude Include="..\Classes\Server\ServerDelegate.h" />
-    <ClInclude Include="..\Classes\Server\LocalServer.h" />
     <ClInclude Include="..\Classes\State\State.h" />
     <ClInclude Include="..\Classes\State\StateConfig.h" />
     <ClInclude Include="..\Classes\UI\Componet\Tips.h" />
