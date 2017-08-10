@@ -1,6 +1,6 @@
 #include "HallUserInfoView.h"
 #include "cocostudio\ActionTimeline\CSLoader.h"
-#include "LoginConnector.h"
+#include "LoginHelper.h"
 
 HallUserInfoView::HallUserInfoView()
 {
@@ -12,7 +12,7 @@ HallUserInfoView::~HallUserInfoView()
 
 }
 
-bool HallUserInfoView::init(UIViewDelegate* pDelegate)
+bool HallUserInfoView::init(DialogDelegate* pDelegate)
 {
 	bool bRet = false;
 	do
@@ -70,7 +70,7 @@ void HallUserInfoView::onClose(Ref* pSender)
 
 void HallUserInfoView::onChange(Ref* pSender)
 {
-	LoginConnector::getInstance()->sendApplyChipsChange();
+	LoginHelper::getInstance()->sendApplyChipsChange();
 }
 
 

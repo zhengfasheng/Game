@@ -31,7 +31,7 @@ class HallActivityView : public UIView
 	HallActivityView();
 public:
 	~HallActivityView();
-	virtual bool init(UIViewDelegate* pDelegate) override;
+	virtual bool init(DialogDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallActivityView);
 };

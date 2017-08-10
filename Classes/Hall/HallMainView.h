@@ -30,7 +30,7 @@ class HallMainView : public UIView
 	HallMainView();
 public:
 	~HallMainView();
-	virtual bool init(UIViewDelegate* pDelegate) override;
+	virtual bool init(DialogDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallMainView);
 

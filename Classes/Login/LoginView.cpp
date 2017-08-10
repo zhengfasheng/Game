@@ -17,7 +17,7 @@ LoginView::~LoginView()
 	m_pPassword = nullptr;
 }
 
-bool LoginView::init(UIViewDelegate* pDelegate)
+bool LoginView::init(DialogDelegate* pDelegate)
 {
 	bool bRet = false;
 	do 
@@ -70,9 +70,9 @@ bool LoginView::init(UIViewDelegate* pDelegate)
 
 void LoginView::onLogin(Ref* pSender)
 {
-	if ( m_pDelegate )
+	if ( m_pProtocol )
 	{
-		m_pDelegate->SendEvent(UIEvent::EVENT_APPLY_LOGIN,m_pAccount->getText(),m_pPassword->getText());
+		m_pProtocol->SendEvent(UIEvent::EVENT_APPLY_LOGIN,m_pAccount->getText(),m_pPassword->getText());
 	}
 }
 

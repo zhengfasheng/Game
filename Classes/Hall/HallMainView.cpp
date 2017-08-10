@@ -11,7 +11,7 @@ HallMainView::~HallMainView()
 
 }
 
-bool HallMainView::init(UIViewDelegate* pDelegate)
+bool HallMainView::init(DialogDelegate* pDelegate)
 {
 	bool bRet = false;
 	do

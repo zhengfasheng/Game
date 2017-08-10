@@ -25,15 +25,15 @@
 #pragma once
 
 class Message;
-class Connector;
+class DataHelper;
 class ServerDelegate
 {
 public: 
 	ServerDelegate(){}
 	virtual ~ServerDelegate(){}
-	virtual void onReceiveClientServerRequest(Message* pMsg , Connector* pConnector) = 0;
-	virtual void sendServerResponse(Message* pMsg, Connector* pConnector) = 0;
+	virtual void onReceiveClientServerRequest(Message* pMsg , DataHelper* pConnector) = 0;
+	virtual void sendServerResponse(Message* pMsg, DataHelper* pConnector) = 0;
 
-	virtual void onReceiveClientHttpRequest(Message* pMsg, Connector* pConnector) = 0;
-	virtual void sendHttpResponse(Message* pMsg, Connector* pConnector) = 0;
+	virtual void onReceiveClientHttpRequest(Message* pMsg, DataHelper* pConnector) = 0;
+	virtual void sendHttpResponse(Message* pMsg, DataHelper* pConnector) = 0;
 };

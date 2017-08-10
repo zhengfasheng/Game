@@ -33,7 +33,7 @@ class HallBottomView : public UIView
 	HallBottomView();
 public:
 	~HallBottomView();
-	virtual bool init(UIViewDelegate* pDelegate) override;
+	virtual bool init(DialogDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallBottomView);
 

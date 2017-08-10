@@ -1,6 +1,6 @@
 #include "HallBottomView.h"
 #include "cocostudio\ActionTimeline\CSLoader.h"
-#include "GameProcedure.h"
+#include "SceneManager.h"
 #include "UIManager.h"
 
 
@@ -17,7 +17,7 @@ HallBottomView::~HallBottomView()
 
 }
 
-bool HallBottomView::init(UIViewDelegate* pDelegate)
+bool HallBottomView::init(DialogDelegate* pDelegate)
 {
 	bool bRet = false;
 	do
@@ -45,12 +45,12 @@ bool HallBottomView::init(UIViewDelegate* pDelegate)
 
 void HallBottomView::onGoback(Ref* pSender)
 {
-	GameProcedure::getInstance()->GoToLogin();
+	SceneManager::getInstance()->GoToScene(SceneType::Login);
 }
 
 void HallBottomView::onInfo(Ref* pSender)
 {
-	UIManager::getInstance()->ShowState(StateID::HallUserInfo);
+	UIManager::getInstance()->ShowDialog(DialogID::HallUserInfo);
 }
 
 void HallBottomView::setAccount(const std::string& szAccount)

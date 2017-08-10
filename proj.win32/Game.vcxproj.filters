@@ -28,9 +28,6 @@
     <Filter Include="Classes\UI\UIView">
       <UniqueIdentifier>{dea84566-f9df-4f2d-8faa-78c34345a11c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\State">
-      <UniqueIdentifier>{2a78e591-85d7-4cd1-b199-611eb4a01e5e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Login">
       <UniqueIdentifier>{bf9e0dd7-d830-40bc-bfa4-587598ce0d57}</UniqueIdentifier>
     </Filter>
@@ -43,23 +40,23 @@
     <Filter Include="Classes\Hall">
       <UniqueIdentifier>{3c540188-f109-4463-aa5d-0c0c31466f9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Procedure">
-      <UniqueIdentifier>{58769af7-f90f-40cd-8708-f16d5221e14b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\UI\Componet">
       <UniqueIdentifier>{4e1328b9-ed95-4de4-90a8-623366141cfc}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\LocalServer">
       <UniqueIdentifier>{7a8f5771-e925-4713-839e-980a5ba73821}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\ClientServer">
-      <UniqueIdentifier>{653d449c-8957-4b20-9835-70b48fda6640}</UniqueIdentifier>
+    <Filter Include="Classes\UI\Dialogs">
+      <UniqueIdentifier>{d71fd969-68c6-4cf8-b7d5-aebcbc273fbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\ClientServer\Connector">
-      <UniqueIdentifier>{873ec758-5b0f-4765-9949-e85ff1662114}</UniqueIdentifier>
+    <Filter Include="Classes\Model\Data">
+      <UniqueIdentifier>{766380f4-d746-426f-b3d3-d7bcdf91ade1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\ClientServer\Parser">
-      <UniqueIdentifier>{58f7e4bc-f708-4739-94f0-78153e5194ff}</UniqueIdentifier>
+    <Filter Include="Classes\Model\Parser">
+      <UniqueIdentifier>{d09a3395-9b55-4e39-bcd8-2ab7f8bb7d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Model\DataHelper">
+      <UniqueIdentifier>{0530bcb6-1886-4b88-ba6a-3e392c14efbe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,16 +69,10 @@
     <ClCompile Include="..\Classes\Common\GValue.cpp">
       <Filter>Classes\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\State\State.cpp">
-      <Filter>Classes\State</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UI\UIManager.cpp">
       <Filter>Classes\UI</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\UI\UIView\UIView.cpp">
-      <Filter>Classes\UI\UIView</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UI\UIView\UIViewDelegate.cpp">
       <Filter>Classes\UI\UIView</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scene\IScene.cpp">
@@ -93,9 +84,6 @@
     <ClCompile Include="..\Classes\Login\LoginScene.cpp">
       <Filter>Classes\Login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Login\LoginState.cpp">
-      <Filter>Classes\Login</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UI\UIFactory.cpp">
       <Filter>Classes\UI</Filter>
     </ClCompile>
@@ -105,23 +93,11 @@
     <ClCompile Include="..\Classes\Message\Message.cpp">
       <Filter>Classes\Message</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Procedure\GameProcedure.cpp">
-      <Filter>Classes\Procedure</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Hall\HallScene.cpp">
       <Filter>Classes\Hall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\UI\Componet\Tips.cpp">
       <Filter>Classes\UI\Componet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallBottomState.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallActivityState.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallMainSate.cpp">
-      <Filter>Classes\Hall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Hall\HallMainView.cpp">
       <Filter>Classes\Hall</Filter>
@@ -132,32 +108,53 @@
     <ClCompile Include="..\Classes\Hall\HallActivityView.cpp">
       <Filter>Classes\Hall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallUserInfoState.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Hall\HallUserInfoView.cpp">
       <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Model\CurrentInfo.cpp">
-      <Filter>Classes\Model</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp">
       <Filter>Classes\LocalServer</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ClientServer\Connector\Connector.cpp">
-      <Filter>Classes\ClientServer\Connector</Filter>
+    <ClCompile Include="..\Classes\UI\Dialogs\Dialog.cpp">
+      <Filter>Classes\UI\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ClientServer\Connector\ConnectorManager.cpp">
-      <Filter>Classes\ClientServer\Connector</Filter>
+    <ClCompile Include="..\Classes\UI\Dialogs\DialogDelegate.cpp">
+      <Filter>Classes\UI\Dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ClientServer\Connector\LoginConnector.cpp">
-      <Filter>Classes\ClientServer\Connector</Filter>
+    <ClCompile Include="..\Classes\Scene\SceneManager.cpp">
+      <Filter>Classes\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ClientServer\Parser\IParser.cpp">
-      <Filter>Classes\ClientServer\Parser</Filter>
+    <ClCompile Include="..\Classes\Login\LoginDialog.cpp">
+      <Filter>Classes\Login</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Model\UserInfo.cpp">
-      <Filter>Classes\Model</Filter>
+    <ClCompile Include="..\Classes\Hall\HallActivityDialog.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallBottomDialog.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallMainDialog.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hall\HallUserInfoDialog.cpp">
+      <Filter>Classes\Hall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\Data\CurrentInfo.cpp">
+      <Filter>Classes\Model\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\Data\UserInfo.cpp">
+      <Filter>Classes\Model\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\Parser\IParser.cpp">
+      <Filter>Classes\Model\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\DataHelper\DataHelper.cpp">
+      <Filter>Classes\Model\DataHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\DataHelper\DataHelperManager.cpp">
+      <Filter>Classes\Model\DataHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\DataHelper\LoginHelper.cpp">
+      <Filter>Classes\Model\DataHelper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,16 +179,10 @@
     <ClInclude Include="..\Classes\Common\Sigleton.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\State\State.h">
-      <Filter>Classes\State</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UI\UIManager.h">
       <Filter>Classes\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\UI\UIView\UIView.h">
-      <Filter>Classes\UI\UIView</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UI\UIView\UIViewDelegate.h">
       <Filter>Classes\UI\UIView</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Scene\IScene.h">
@@ -203,14 +194,8 @@
     <ClInclude Include="..\Classes\Login\LoginScene.h">
       <Filter>Classes\Login</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Login\LoginState.h">
-      <Filter>Classes\Login</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UI\UIFactory.h">
       <Filter>Classes\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\State\StateConfig.h">
-      <Filter>Classes\State</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Login\LoginView.h">
       <Filter>Classes\Login</Filter>
@@ -221,23 +206,11 @@
     <ClInclude Include="..\Classes\Event\UIEvent.h">
       <Filter>Classes\Event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Procedure\GameProcedure.h">
-      <Filter>Classes\Procedure</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Hall\HallScene.h">
       <Filter>Classes\Hall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\UI\Componet\Tips.h">
       <Filter>Classes\UI\Componet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallBottomState.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallActivityState.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallMainSate.h">
-      <Filter>Classes\Hall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Hall\HallMainView.h">
       <Filter>Classes\Hall</Filter>
@@ -248,14 +221,8 @@
     <ClInclude Include="..\Classes\Hall\HallActivityView.h">
       <Filter>Classes\Hall</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallUserInfoState.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Hall\HallUserInfoView.h">
       <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Model\CurrentInfo.h">
-      <Filter>Classes\Model</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LocalServer\LocalServer.h">
       <Filter>Classes\LocalServer</Filter>
@@ -263,20 +230,50 @@
     <ClInclude Include="..\Classes\LocalServer\ServerDelegate.h">
       <Filter>Classes\LocalServer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ClientServer\Connector\Connector.h">
-      <Filter>Classes\ClientServer\Connector</Filter>
+    <ClInclude Include="..\Classes\UI\Dialogs\Dialog.h">
+      <Filter>Classes\UI\Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ClientServer\Connector\ConnectorManager.h">
-      <Filter>Classes\ClientServer\Connector</Filter>
+    <ClInclude Include="..\Classes\UI\Dialogs\DialogConfig.h">
+      <Filter>Classes\UI\Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ClientServer\Connector\LoginConnector.h">
-      <Filter>Classes\ClientServer\Connector</Filter>
+    <ClInclude Include="..\Classes\UI\Dialogs\DialogDelegate.h">
+      <Filter>Classes\UI\Dialogs</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ClientServer\Parser\IParser.h">
-      <Filter>Classes\ClientServer\Parser</Filter>
+    <ClInclude Include="..\Classes\Scene\SceneManager.h">
+      <Filter>Classes\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Model\UserInfo.h">
-      <Filter>Classes\Model</Filter>
+    <ClInclude Include="..\Classes\Login\LoginDialog.h">
+      <Filter>Classes\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallActivityDialog.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallBottomDialog.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallMainDialog.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Hall\HallUserInfoDialog.h">
+      <Filter>Classes\Hall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\Data\CurrentInfo.h">
+      <Filter>Classes\Model\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\Data\UserInfo.h">
+      <Filter>Classes\Model\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\Parser\IParser.h">
+      <Filter>Classes\Model\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\DataHelper\DataHelper.h">
+      <Filter>Classes\Model\DataHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\DataHelper\DataHelperManager.h">
+      <Filter>Classes\Model\DataHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\DataHelper\LoginHelper.h">
+      <Filter>Classes\Model\DataHelper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

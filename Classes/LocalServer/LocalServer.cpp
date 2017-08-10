@@ -2,7 +2,7 @@
 #include "cocos2d.h"
 #include "common.h"
 #include "Message.h"
-#include "Connector.h"
+#include "DataHelper.h"
 
 USING_NS_CC;
 std::string makeTimerName()
@@ -31,13 +31,13 @@ LocalServer::~LocalServer()
 	m_queue.clear();
 }
 
-void LocalServer::onReceiveClientServerRequest(Message* pMsg, Connector* pConnector)
+void LocalServer::onReceiveClientServerRequest(Message* pMsg, DataHelper* pConnector)
 {
 	auto pTemp = pMsg->clone();
 	m_queue.push_back(MassageInfo(pTemp,pConnector));
 }
 
-void LocalServer::sendServerResponse(Message* pMsg, Connector* pConnector)
+void LocalServer::sendServerResponse(Message* pMsg, DataHelper* pConnector)
 {
 	if ( pConnector && pMsg )
 	{
@@ -87,12 +87,12 @@ void LocalServer::sendServerResponse(Message* pMsg, Connector* pConnector)
 	m_queue.pop_front();
 }
 
-void LocalServer::onReceiveClientHttpRequest(Message* pMsg, Connector* pConnector)
+void LocalServer::onReceiveClientHttpRequest(Message* pMsg, DataHelper* pConnector)
 {
 	sendHttpResponse(pMsg, pConnector);
 }
 
-void LocalServer::sendHttpResponse(Message* pMsg, Connector* pConnector)
+void LocalServer::sendHttpResponse(Message* pMsg, DataHelper* pConnector)
 {
 	if (pConnector && pMsg)
 	{

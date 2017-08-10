@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "GameProcedure.h"
+#include "SceneManager.h"
 
 USING_NS_CC;
 
@@ -25,7 +25,7 @@ void AppDelegate::initGLContextAttrs()
 bool AppDelegate::applicationDidFinishLaunching() {
  
     // create a scene. it's an autorelease object
-	GameProcedure::getInstance()->GameStart();
+	SceneManager::getInstance()->GameStart();
 
     return true;
 }

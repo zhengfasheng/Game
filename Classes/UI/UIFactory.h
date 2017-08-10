@@ -19,16 +19,16 @@
  *
  *  Date:2017/7/29 11:22
  *
- *  Summary:State 工厂
+ *  Summary:Dialog 工厂 负责提供所有对话框的创建信息
  *  
  ******************************************************************************/
 #pragma once
 #include "Sigleton.h"
-#include "StateConfig.h"
+#include "DialogConfig.h"
 #include <string>
 #include <functional>
 
-class State;
+class Dialog;
 
 class UIFactory
 {
@@ -36,11 +36,11 @@ class UIFactory
 public:
 	~UIFactory();
 	
-	State* CreateState(StateID id);
+	Dialog* Create(DialogID id);
 
-	void getStateInfo(StateID id,std::string& szName, std::function<State*()>& createFun);
+	void getDialogInfo(DialogID id,std::string& szName, std::function<Dialog*()>& createFun);
 
-	const std::string getStateViewName(StateID id);
+	const std::string getDialogViewName(DialogID id);
 
 	IMPLEMENT_SINGLETON(UIFactory);
 };

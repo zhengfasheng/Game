@@ -34,7 +34,7 @@ class HallUserInfoView : public UIView
 	HallUserInfoView();
 public:
 	~HallUserInfoView();
-	virtual bool init(UIViewDelegate* pDelegate) override;
+	virtual bool init(DialogDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallUserInfoView);
 

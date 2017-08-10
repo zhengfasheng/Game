@@ -5,5 +5,5 @@ USING_NS_CC;
 
 void LoginScene::DidEnter()
 {
-	UIManager::getInstance()->ShowState(StateID::Login);
+	UIManager::getInstance()->ShowDialog(DialogID::Login);
 }

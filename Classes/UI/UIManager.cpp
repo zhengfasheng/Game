@@ -16,82 +16,82 @@ UIManager::~UIManager()
 	Destory();
 }
 
-void UIManager::ShowState(StateID id)
+void UIManager::ShowDialog(DialogID id)
 {
-	State* pState = nullptr;
-	auto it = m_states.find(id);
-	if ( it == m_states.end() )
+	Dialog* pDialog = nullptr;
+	auto it = m_dialogs.find(id);
+	if ( it == m_dialogs.end() )
 	{
-		pState = CreateState(id);
+		pDialog = Create(id);
 	}
 	else
 	{
-		pState = it->second;
+		pDialog = it->second;
 	}
-	if (!pState) return;
-	pState->ShowView();
+	if (!pDialog) return;
+	pDialog->ShowView();
 }
 
-void UIManager::HideState(StateID id)
+void UIManager::HideDialog(DialogID id)
 {
-	auto it = m_states.find(id);
-	if ( it == m_states.end() || !it->second)
+	auto it = m_dialogs.find(id);
+	if ( it == m_dialogs.end() || !it->second)
 	{
 		return;
 	}
-	auto pState = it->second;
-	pState->HideView();
+	auto pDialog = it->second;
+	pDialog->HideView();
 }
 
-void UIManager::ShowOrHideState(StateID id)
+void UIManager::ShowOrHideDialog(DialogID id)
 {
-	auto it = m_states.find(id);
-	if ( it == m_states.end() || !it->second )
+	auto it = m_dialogs.find(id);
+	if ( it == m_dialogs.end() || !it->second )
 	{
-		ShowState(id);
+		ShowDialog(id);
 	}
 	else
 	{
-		auto pState = it->second;
-		if ( pState->IsViewShow() )
+		auto pDialog = it->second;
+		if ( pDialog->IsViewShow() )
 		{
-			pState->HideView();
+			pDialog->HideView();
 		}
 		else
 		{
-			pState->ShowView();
+			pDialog->ShowView();
 		}
 	}
 }
 
-State* UIManager::GetState(StateID id , bool bIsCreate /* = true */ )
+Dialog* UIManager::GetDialog(DialogID id , bool bIsCreate /* = true */ )
 {
-	State* pState = nullptr;
-	auto it = m_states.find(id);
-	if ( it != m_states.end() )
+	Dialog* pDialog = nullptr;
+	auto it = m_dialogs.find(id);
+	if ( it != m_dialogs.end() )
 	{
-		pState = it->second;
+		pDialog = it->second;
 	}
 	else
 	{
 		//找不到
 		if ( bIsCreate )
 		{
-			pState = CreateState(id);
+			pDialog = Create(id);
 		}
 	}
 
-	if ( !pState )
+	if ( !pDialog )
 	{
 		CCLOGERROR("state id error , the id : %d", (int)id);
 	}
 
-	return pState;
+	return pDialog;
 }
 
-const std::string UIManager::getStateViewName(StateID id)
+const std::string UIManager::getDialogViewName(DialogID id)
 {
-	return UIFactory::getInstance()->getStateViewName(id);
+	return UIFactory::getInstance()->getDialogViewName(id);
 }
 
 void UIManager::ShowTips(const std::string& szContent)
@@ -105,24 +105,24 @@ void UIManager::ShowMessageBox()
 
 }
 
-State* UIManager::CreateState(StateID id)
+Dialog* UIManager::Create(DialogID id)
 {
-	auto pState = UIFactory::getInstance()->CreateState(id);
-	if ( !pState )
+	auto pDialog = UIFactory::getInstance()->Create(id);
+	if ( !pDialog )
 	{
 		CCLOGERROR("create state %d failure", (int)id);
 		return nullptr;
 	}
-	if ( pState && pState->Init(this,id) )
+	if ( pDialog && pDialog->Init(this,id) )
 	{
-		m_states[id] = pState;
+		m_dialogs[id] = pDialog;
 	}
-	return pState;
+	return pDialog;
 }
 
-void UIManager::WillShow(State* pState)
+void UIManager::WillShow(Dialog* pDialog)
 {
-	if ( pState && pState->getView() )
+	if ( pDialog && pDialog->getView() )
 	{
 		//这里做下处理，如果当前场景已经有了，就不做添加了
 		auto pRunningScene = dynamic_cast<IScene*>(Director::getInstance()->getRunningScene());
@@ -131,11 +131,11 @@ void UIManager::WillShow(State* pState)
 			CCLOGERROR("all sence must be inherit IScene");
 			return;
 		}
-		auto szStateName = getStateViewName(pState->getStateID());
+		auto szStateName = getDialogViewName(pDialog->getStateID());
 		if (pRunningScene && !pRunningScene->getChildByName(szStateName) )
 		{
-			CCLOGERROR("current scene %d, add state viwe name is %s , zoder : %d", (int)pRunningScene->getSceneType(), szStateName.data(),pState->getSceneZOrder());
-			pRunningScene->addChild(pState->getView(),pState->getSceneZOrder(),szStateName);
+			CCLOGERROR("current scene %d, add state viwe name is %s , zoder : %d", (int)pRunningScene->getSceneType(), szStateName.data(),pDialog->getSceneZOrder());
+			pRunningScene->addChild(pDialog->getView(),pDialog->getSceneZOrder(),szStateName);
 		}
 		else
 		{
@@ -148,28 +148,28 @@ void UIManager::WillShow(State* pState)
 	}
 }
 
-void UIManager::DidShow(State* pState)
+void UIManager::DidShow(Dialog* pDialog)
 {
 
 }
 
-void UIManager::WillHide(State* pState)
+void UIManager::WillHide(Dialog* pDialog)
 {
 
 }
 
-void UIManager::DidHide(State* pState)
+void UIManager::DidHide(Dialog* pDialog)
 {
-	if ( pState  )
+	if ( pDialog  )
 	{
-		if ( pState->IsDestroyOnHideView() )
+		if ( pDialog->IsDestroyOnHideView() )
 		{
-			auto it = m_states.find(pState->getStateID());
+			auto it = m_dialogs.find(pDialog->getStateID());
 			//从场景中移除
-			pState->RemoveFromParent();
+			pDialog->RemoveFromParent();
 
 			//删除整个State
-			if (it != m_states.end())
+			if (it != m_dialogs.end())
 			{
 				auto& pTemp = it->second;
 				if (pTemp)
@@ -177,44 +177,44 @@ void UIManager::DidHide(State* pState)
 					delete pTemp;
 					pTemp = nullptr;
 				}
-				m_states.erase(it);
+				m_dialogs.erase(it);
 			}
 		}
 		else
 		{
 			//从场景中移除
-			pState->RemoveFromParent();
+			pDialog->RemoveFromParent();
 		}
 	}
 }
 
-void UIManager::Destory(StateID id)
+void UIManager::Destory(DialogID id)
 {
-	auto it = m_states.find(id);
-	if ( it != m_states.end() )
+	auto it = m_dialogs.find(id);
+	if ( it != m_dialogs.end() )
 	{
-		auto& pState = it->second;
-		if ( pState )
+		auto& pDialog = it->second;
+		if ( pDialog )
 		{
-			delete pState;
+			delete pDialog;
 		}
-		pState = nullptr;
-		m_states.erase(it);
+		pDialog = nullptr;
+		m_dialogs.erase(it);
 	}
 }
 
 void UIManager::Destory()
 {
-	for (auto it = m_states.begin(); it != m_states.end(); ++it )
+	for (auto it = m_dialogs.begin(); it != m_dialogs.end(); ++it )
 	{
-		auto& pState = it->second;
-		if ( pState )
+		auto& pDialog = it->second;
+		if ( pDialog )
 		{
-			delete pState;
+			delete pDialog;
 		}
-		pState = nullptr;
+		pDialog = nullptr;
 	}
-	m_states.clear();
+	m_dialogs.clear();
 }
 
 void UIManager::Init(IScene* pScene)
@@ -235,12 +235,12 @@ void UIManager::OnEnterTransitionDidFinish(IScene* pScene)
 void UIManager::OnExit(IScene* pScene)
 {
 	//场景退出时，把场景上的界面给全部移除
-	for (auto it = m_states.begin(); it != m_states.end(); ++it )
+	for (auto it = m_dialogs.begin(); it != m_dialogs.end(); ++it )
 	{
-		auto pState = it->second;
-		if ( pState )
+		auto pDialog = it->second;
+		if ( pDialog )
 		{
-			pState->RemoveFromParent();
+			pDialog->RemoveFromParent();
 		}
 	}
 }

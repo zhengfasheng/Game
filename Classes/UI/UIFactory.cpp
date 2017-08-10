@@ -1,18 +1,18 @@
 #include "UIFactory.h"
-#include "LoginState.h"
-#include "Hall\HallMainSate.h"
-#include "Hall\HallBottomState.h"
-#include "Hall\HallActivityState.h"
-#include "Hall\HallUserInfoState.h"
+#include "LoginDialog.h"
+#include "HallMainDialog.h"
+#include "HallBottomDialog.h"
+#include "HallActivityDialog.h"
+#include "HallUserInfoDialog.h"
 
 
-#define GET_STATE_INFO_BEGIN \
-void UIFactory::getStateInfo( StateID id,std::string& szName, std::function<State*()>& createFun )\
+#define GET_DIALOG_INFO_BEGIN \
+void UIFactory::getDialogInfo( DialogID id,std::string& szName, std::function<Dialog*()>& createFun )\
 {\
 	switch (id)\
 	{\
 
-#define GET_STATE_INFO( id , StateClass )\
+#define GET_DIALOG_INFO( id , StateClass )\
 	case id :\
 	{\
 		szName = "state_" + std::string(#StateClass) + "_view";\
@@ -20,21 +20,21 @@ void UIFactory::getStateInfo( StateID id,std::string& szName, std::function<Stat
 	}\
 	break
 
-#define GET_STATE_INFO_END \
+#define GET_DIALOG_INFO_END \
 	default:\
 		break;\
 	}\
 }
 
-GET_STATE_INFO_BEGIN
+GET_DIALOG_INFO_BEGIN
 
-GET_STATE_INFO(StateID::Login, LoginState);
-GET_STATE_INFO(StateID::HallMain, HallMainSate);
-GET_STATE_INFO(StateID::HallBottom, HallBottomState);
-GET_STATE_INFO(StateID::HallActivity, HallActivityState);
-GET_STATE_INFO(StateID::HallUserInfo, HallUserInfoState);
-
-GET_STATE_INFO_END
+GET_DIALOG_INFO(DialogID::Login, LoginDialog);
+GET_DIALOG_INFO(DialogID::HallMain, HallMainDialog);
+GET_DIALOG_INFO(DialogID::HallBottom, HallBottomDialog);
+GET_DIALOG_INFO(DialogID::HallActivity, HallActivityDialog);
+GET_DIALOG_INFO(DialogID::HallUserInfo, HallUserInfoDialog);
+	
+GET_DIALOG_INFO_END
 
 
 
@@ -48,11 +48,11 @@ UIFactory::~UIFactory()
 
 }
 
-State* UIFactory::CreateState(StateID id)
+Dialog* UIFactory::Create(DialogID id)
 {
 	std::string szName = "";
-	std::function<State*()> createFunc = nullptr;
-	getStateInfo(id, szName, createFunc);
+	std::function<Dialog*()> createFunc = nullptr;
+	getDialogInfo(id, szName, createFunc);
 	if (createFunc)
 	{
 		return createFunc();
@@ -60,10 +60,10 @@ State* UIFactory::CreateState(StateID id)
 	return nullptr;
 }
 
-const std::string UIFactory::getStateViewName(StateID id)
+const std::string UIFactory::getDialogViewName(DialogID id)
 {
 	std::string szName = "";
-	std::function<State*()> createFunc = nullptr;
-	getStateInfo(id, szName, createFunc);
+	std::function<Dialog*()> createFunc = nullptr;
+	getDialogInfo(id, szName, createFunc);
 	return szName;
 }

@@ -34,22 +34,22 @@ public:
 
 	struct MassageInfo
 	{
-		MassageInfo(Message* pMsg, Connector* pConnector)
+		MassageInfo(Message* pMsg, DataHelper* pConnector)
 			:m_pMsg(pMsg), m_pConnector(pConnector)
 		{
 
 		}
 		Message* m_pMsg;
-		Connector* m_pConnector;
+		DataHelper* m_pConnector;
 	};
 	virtual ~LocalServer();
 	IMPLEMENT_SINGLETON(LocalServer);
 
-	virtual void onReceiveClientServerRequest(Message* pMsg, Connector* pConnector) override;
-	virtual void sendServerResponse(Message* pMsg, Connector* pConnector) override;
+	virtual void onReceiveClientServerRequest(Message* pMsg, DataHelper* pConnector) override;
+	virtual void sendServerResponse(Message* pMsg, DataHelper* pConnector) override;
 
-	virtual void onReceiveClientHttpRequest(Message* pMsg, Connector* pConnector) override;
-	virtual void sendHttpResponse(Message* pMsg, Connector* pConnector) override;
+	virtual void onReceiveClientHttpRequest(Message* pMsg, DataHelper* pConnector) override;
+	virtual void sendHttpResponse(Message* pMsg, DataHelper* pConnector) override;
 
 private:
 

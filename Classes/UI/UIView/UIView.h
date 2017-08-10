@@ -32,14 +32,14 @@ USING_NS_CC;
 const static int SHOW_ACTION_TAG = 100;
 const static int HIDE_ACTION_TAG = 200;
 
-class UIViewDelegate;
+class DialogDelegate;
 class UIView : public Layer
 {
 public:
 	UIView();
 	~UIView();
 
-	virtual bool init(UIViewDelegate* pDelegate);
+	virtual bool init(DialogDelegate* pProtocol);
 
 	/**
 	 * @brief	界面是否显示 
@@ -80,14 +80,13 @@ protected:
 	bool m_bIsShow;
 	bool m_bIsEnableShowAction;
 	bool m_bIsEnableHideAction;
-	UIViewDelegate* m_pDelegate;
+	DialogDelegate* m_pProtocol;
 };
 
-//这里不放置到cocos的自动释放池，再UIManager中自己管理内存
 
 #define IMPLEMENT_CREATE_VIEW( _TYPE_ ) \
 public:\
-static _TYPE_* create(UIViewDelegate* pDelegate)\
+static _TYPE_* create(DialogDelegate* pDelegate)\
 {\
 	auto pRet = new _TYPE_();\
 	if (pRet && pRet->init(pDelegate))\

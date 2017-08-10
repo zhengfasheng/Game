@@ -19,12 +19,12 @@
  *
  *  Date:2017/7/28 0:39
  *
- *  Summary:UI管理器
+ *  Summary:UI管理器 负责对话框的创建与销毁，显示隐藏及ui事件的分发
  *  
  ******************************************************************************/
 #pragma once
 #include "common.h"
-#include "State.h"
+#include "Dialog.h"
 #include "SceneDelegate.h"
 
 class UIManager : public SceneDelegate
@@ -34,9 +34,9 @@ class UIManager : public SceneDelegate
 	~UIManager();
 public:
 #pragma region 对外公开使用
-	void ShowState(StateID id);
-	void HideState(StateID id);
-	void ShowOrHideState(StateID id);
+	void ShowDialog(DialogID id);
+	void HideDialog(DialogID id);
+	void ShowOrHideDialog(DialogID id);
 
 	/**
 	 * @brief	Gets a state.
@@ -47,58 +47,58 @@ public:
 	 * @return	null if it fails, else the state.
 	 */
 
-	State* GetState(StateID id , bool bIsCreate = true );
-	const std::string getStateViewName( StateID id);
+	Dialog* GetDialog(DialogID id , bool bIsCreate = true );
+	const std::string getDialogViewName( DialogID id);
 	void ShowTips(const std::string& szContent);
 	void ShowMessageBox();
 	template< class T1, class T2, class T3, class T4>
-	void SendEvent(StateID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3, T4 p4)
+	void SendEvent(DialogID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3, T4 p4)
 	{
-		if (id > StateID::Min && id < StateID::Max)
+		if (id > DialogID::Min && id < DialogID::Max)
 		{
-			auto it = m_states.find(id);
-			if (it == m_states.end())
+			auto it = m_dialogs.find(id);
+			if (it == m_dialogs.end())
 			{
 				return;
 			}
-			auto pState = it->second;
-			if (!pState)
+			auto pDlg = it->second;
+			if (!pDlg)
 				return;
-			pState->OnEvent(szEventName, p1, p2, p3, p4,UIViewDelegate::EventType::Game);
+			pDlg->OnEvent(szEventName, p1, p2, p3, p4,DialogDelegate::EventType::Game);
 		}
 		//广播所有对象
-		else if (id == StateID::Max)
+		else if (id == DialogID::Max)
 		{
-			for (auto it = m_states.begin(); it != m_states.end(); ++it)
+			for (auto it = m_dialogs.begin(); it != m_dialogs.end(); ++it)
 			{
-				auto pState = it->second;
-				if (pState)
+				auto pDlg = it->second;
+				if (pDlg)
 				{
-					pState->OnEvent(szEventName, p1, p2, p3, p4,UIViewDelegate::EventType::Game);
+					pDlg->OnEvent(szEventName, p1, p2, p3, p4,DialogDelegate::EventType::Game);
 				}
 			}
 		}
 	}
 
 	template<class T1, class T2, class T3 >
-	void SendEvent(StateID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3)
+	void SendEvent(DialogID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3)
 	{
 		SendEvent(id, szEventName, p1, p2, p3, 0);
 	}
 
 	template<class T1, class T2>
-	void SendEvent(StateID id, const std::string& szEventName, T1 p1, T2 p2)
+	void SendEvent(DialogID id, const std::string& szEventName, T1 p1, T2 p2)
 	{
 		SendEvent(id, szEventName, p1, p2, 0);
 	}
 
 	template<class T1>
-	void SendEvent(StateID id, const std::string& szEventName, T1 p1)
+	void SendEvent(DialogID id, const std::string& szEventName, T1 p1)
 	{
 		SendEvent(id, szEventName, p1, 0);
 	}
 
-	void SendEvent(StateID id, const std::string& szEventName)
+	void SendEvent(DialogID id, const std::string& szEventName)
 	{
 		SendEvent(id, szEventName, 0);
 	}
@@ -118,18 +118,18 @@ public:
 	
 private:
 #pragma region 私有
-	State* CreateState(StateID id);
-	void WillShow(State* pState);
-	void DidShow(State* pState);
-	void WillHide(State* pState);
-	void DidHide(State* pState);
-	void Destory(StateID id);
+	Dialog* Create(DialogID id);
+	void WillShow(Dialog* pDialog);
+	void DidShow(Dialog* pDialog);
+	void WillHide(Dialog* pDialog);
+	void DidHide(Dialog* pDialog);
+	void Destory(DialogID id);
 	void Destory();
 
 #pragma endregion 私有
 
 private:
 
-	std::map<StateID, State*> m_states;
-	friend class State;
+	std::map<DialogID, Dialog*> m_dialogs;
+	friend class Dialog;
 };

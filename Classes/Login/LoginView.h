@@ -35,7 +35,7 @@ class LoginView : public UIView
 public:
 	virtual ~LoginView();
 
-	virtual bool init(UIViewDelegate* pDelegate) override;
+	virtual bool init(DialogDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(LoginView);
 
