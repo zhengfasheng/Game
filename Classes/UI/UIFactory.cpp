@@ -6,13 +6,13 @@
 #include "HallUserInfoDialog.h"
 
 
-#define GET_DIALOG_INFO_BEGIN \
-void UIFactory::getDialogInfo( DialogID id,std::string& szName, std::function<Dialog*()>& createFun )\
+#define GET_CONTROLLER_INFO_BEGIN \
+void UIFactory::getInfo( ControllerID id,std::string& szName, std::function<UIViewController*()>& createFun )\
 {\
 	switch (id)\
 	{\
 
-#define GET_DIALOG_INFO( id , StateClass )\
+#define GET_CONTROLLER_INFO( id , StateClass )\
 	case id :\
 	{\
 		szName = "state_" + std::string(#StateClass) + "_view";\
@@ -20,21 +20,21 @@ void UIFactory::getDialogInfo( DialogID id,std::string& szName, std::function<Di
 	}\
 	break
 
-#define GET_DIALOG_INFO_END \
+#define GET_CONTROLLER_INFO_END \
 	default:\
 		break;\
 	}\
 }
 
-GET_DIALOG_INFO_BEGIN
+GET_CONTROLLER_INFO_BEGIN
 
-GET_DIALOG_INFO(DialogID::Login, LoginDialog);
-GET_DIALOG_INFO(DialogID::HallMain, HallMainDialog);
-GET_DIALOG_INFO(DialogID::HallBottom, HallBottomDialog);
-GET_DIALOG_INFO(DialogID::HallActivity, HallActivityDialog);
-GET_DIALOG_INFO(DialogID::HallUserInfo, HallUserInfoDialog);
+GET_CONTROLLER_INFO(ControllerID::Login, LoginDialog);
+GET_CONTROLLER_INFO(ControllerID::HallMain, HallMainDialog);
+GET_CONTROLLER_INFO(ControllerID::HallBottom, HallBottomDialog);
+GET_CONTROLLER_INFO(ControllerID::HallActivity, HallActivityDialog);
+GET_CONTROLLER_INFO(ControllerID::HallUserInfo, HallUserInfoDialog);
 	
-GET_DIALOG_INFO_END
+GET_CONTROLLER_INFO_END
 
 
 
@@ -48,11 +48,11 @@ UIFactory::~UIFactory()
 
 }
 
-Dialog* UIFactory::Create(DialogID id)
+UIViewController* UIFactory::Create(ControllerID id)
 {
 	std::string szName = "";
-	std::function<Dialog*()> createFunc = nullptr;
-	getDialogInfo(id, szName, createFunc);
+	std::function<UIViewController*()> createFunc = nullptr;
+	getInfo(id, szName, createFunc);
 	if (createFunc)
 	{
 		return createFunc();
@@ -60,10 +60,10 @@ Dialog* UIFactory::Create(DialogID id)
 	return nullptr;
 }
 
-const std::string UIFactory::getDialogViewName(DialogID id)
+const std::string UIFactory::getViewName(ControllerID id)
 {
 	std::string szName = "";
-	std::function<Dialog*()> createFunc = nullptr;
-	getDialogInfo(id, szName, createFunc);
+	std::function<UIViewController*()> createFunc = nullptr;
+	getInfo(id, szName, createFunc);
 	return szName;
 }

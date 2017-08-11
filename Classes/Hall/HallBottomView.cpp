@@ -17,7 +17,7 @@ HallBottomView::~HallBottomView()
 
 }
 
-bool HallBottomView::init(DialogDelegate* pDelegate)
+bool HallBottomView::init(UIViewControllerDelegate* pDelegate)
 {
 	bool bRet = false;
 	do
@@ -50,7 +50,7 @@ void HallBottomView::onGoback(Ref* pSender)
 
 void HallBottomView::onInfo(Ref* pSender)
 {
-	UIManager::getInstance()->ShowDialog(DialogID::HallUserInfo);
+	UIManager::getInstance()->Show(ControllerID::HallUserInfo);
 }
 
 void HallBottomView::setAccount(const std::string& szAccount)

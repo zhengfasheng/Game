@@ -27,13 +27,13 @@
 #include "ui/CocosGUI.h"
 
 using namespace cocos2d::ui;
-
+USING_UI;
 class HallBottomView : public UIView
 {
 	HallBottomView();
 public:
 	~HallBottomView();
-	virtual bool init(DialogDelegate* pDelegate) override;
+	virtual bool init(UIViewControllerDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallBottomView);
 

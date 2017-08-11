@@ -29,13 +29,14 @@
 
 USING_NS_CC;
 using namespace ui;
+USING_UI;
 class LoginView : public UIView
 {
 	LoginView();
 public:
 	virtual ~LoginView();
 
-	virtual bool init(DialogDelegate* pDelegate) override;
+	virtual bool init(UIViewControllerDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(LoginView);
 

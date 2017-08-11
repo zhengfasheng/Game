@@ -19,7 +19,7 @@
  *
  *  Date:2017/7/28 0:33
  *
- *  Summary:Declares the view class
+ *  Summary:显示视图，对Controller提供更新视图的接口，派发用户事件给Controller
  *  
  ******************************************************************************/
 #pragma once
@@ -29,17 +29,18 @@
 
 USING_NS_CC;
 
+UI_BEGIN
 const static int SHOW_ACTION_TAG = 100;
 const static int HIDE_ACTION_TAG = 200;
 
-class DialogDelegate;
+class UIViewControllerDelegate;
 class UIView : public Layer
 {
 public:
 	UIView();
 	~UIView();
 
-	virtual bool init(DialogDelegate* pProtocol);
+	virtual bool init(UIViewControllerDelegate* pProtocol);
 
 	/**
 	 * @brief	界面是否显示 
@@ -80,22 +81,7 @@ protected:
 	bool m_bIsShow;
 	bool m_bIsEnableShowAction;
 	bool m_bIsEnableHideAction;
-	DialogDelegate* m_pProtocol;
+	UIViewControllerDelegate* m_pProtocol;
 };
 
-
-#define IMPLEMENT_CREATE_VIEW( _TYPE_ ) \
-public:\
-static _TYPE_* create(DialogDelegate* pDelegate)\
-{\
-	auto pRet = new _TYPE_();\
-	if (pRet && pRet->init(pDelegate))\
-	{\
-		pRet->autorelease();\
-	}\
-	else\
-	{\
-		CC_SAFE_DELETE(pRet);\
-	}\
-	return pRet;\
-}
+UI_END

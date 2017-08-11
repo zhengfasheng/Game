@@ -24,15 +24,16 @@
  ******************************************************************************/
 #pragma once
 
-#include "Dialog.h"
+#include "UIViewController.h"
 
-class HallUserInfoDialog : public Dialog
+USING_UI;
+class HallUserInfoDialog : public UIViewController
 {
 public:
 	HallUserInfoDialog();
 	virtual ~HallUserInfoDialog();
 
-	virtual UIView* createView(DialogDelegate* pDelegate) override;
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
 
 	DECLARE_HANDLER(onUserChipsChange);
 

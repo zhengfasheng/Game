@@ -11,7 +11,7 @@ HallBottomDialog::~HallBottomDialog()
 
 }
 
-UIView* HallBottomDialog::createView(DialogDelegate* pDelegate)
+UIView* HallBottomDialog::createView(UIViewControllerDelegate* pDelegate)
 {
 	return HallBottomView::create(pDelegate);
 }

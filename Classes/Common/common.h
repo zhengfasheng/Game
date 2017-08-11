@@ -11,5 +11,6 @@ using namespace std;
 #include "commontools.h"
 #include "Sigleton.h"
 #include "UIEvent.h"
-#include "DialogConfig.h"
-#include "DialogDelegate.h"
+#include "ControllerType.h"
+#include "UIViewControllerDelegate.h"
+#include "UIDefine.h"

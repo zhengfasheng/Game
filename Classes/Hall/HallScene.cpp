@@ -4,9 +4,9 @@
 
 void HallScene::DidEnter()
 {
-	UIManager::getInstance()->ShowDialog(DialogID::HallMain);
-	UIManager::getInstance()->ShowDialog(DialogID::HallBottom);
-	UIManager::getInstance()->ShowDialog(DialogID::HallActivity);
-	UIManager::getInstance()->SendEvent(DialogID::HallBottom, UIEvent::EVENT_USER_INFO_CHANGE, CurrentInfo::getInstance()->getUserInfo().getAccount(), CurrentInfo::getInstance()->getUserInfo().getName(), CurrentInfo::getInstance()->getUserInfo().getChips());
+	UIManager::getInstance()->Show(ControllerID::HallMain);
+	UIManager::getInstance()->Show(ControllerID::HallBottom);
+	UIManager::getInstance()->Show(ControllerID::HallActivity);
+	UIManager::getInstance()->SendEvent(ControllerID::HallBottom, UIEvent::EVENT_USER_INFO_CHANGE, CurrentInfo::getInstance()->getUserInfo().getAccount(), CurrentInfo::getInstance()->getUserInfo().getName(), CurrentInfo::getInstance()->getUserInfo().getChips());
 }
 

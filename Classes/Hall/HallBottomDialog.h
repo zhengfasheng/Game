@@ -23,16 +23,16 @@
  *  
  ******************************************************************************/
 #pragma once
-#include "Dialog.h"
+#include "UIViewController.h"
 #include "UIEvent.h"
-
-class HallBottomDialog : public Dialog
+USING_UI;
+class HallBottomDialog : public UIViewController
 {
 public:
 	HallBottomDialog();
 	virtual ~HallBottomDialog();
 
-	virtual UIView* createView(DialogDelegate* pDelegate) override;
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
 
 	DECLARE_HANDLER(onUserInfoChange);
 	DECLARE_HANDLER(onUserChipsChange);

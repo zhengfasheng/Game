@@ -24,8 +24,8 @@
  ******************************************************************************/
 #pragma once
 #include "UIView.h"
-
-class Tips : public UIView , public DialogDelegate
+USING_UI;
+class Tips : public UIView , public UIViewControllerDelegate
 {
 public:
 	static Tips* create(const std::string& szContent);

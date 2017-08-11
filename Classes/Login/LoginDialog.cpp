@@ -14,7 +14,7 @@ LoginDialog::~LoginDialog()
 
 }
 
-UIView* LoginDialog::createView(DialogDelegate* pDelegate)
+UIView* LoginDialog::createView(UIViewControllerDelegate* pDelegate)
 {
 	return LoginView::create(pDelegate);
 }

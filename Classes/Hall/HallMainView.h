@@ -25,12 +25,13 @@
 #pragma once
 #include "UIView.h"
 
+USING_UI;
 class HallMainView : public UIView
 {
 	HallMainView();
 public:
 	~HallMainView();
-	virtual bool init(DialogDelegate* pDelegate) override;
+	virtual bool init(UIViewControllerDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallMainView);
 

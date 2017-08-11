@@ -26,11 +26,6 @@
 #include "common.h"
 #include "UserInfo.h"
 
-#define SYNTHESIZE_PASS_BY_REF(varType, varName, funName)\
-protected: varType varName;\
-public: virtual varType& get##funName(void) { return varName; }\
-public: virtual void set##funName(const varType& var){ varName = var; }
-
 class CurrentInfo
 {
 	CurrentInfo();

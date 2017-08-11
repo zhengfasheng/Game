@@ -46,9 +46,6 @@
     <Filter Include="Classes\LocalServer">
       <UniqueIdentifier>{7a8f5771-e925-4713-839e-980a5ba73821}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\UI\Dialogs">
-      <UniqueIdentifier>{d71fd969-68c6-4cf8-b7d5-aebcbc273fbb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Model\Data">
       <UniqueIdentifier>{766380f4-d746-426f-b3d3-d7bcdf91ade1}</UniqueIdentifier>
     </Filter>
@@ -57,6 +54,9 @@
     </Filter>
     <Filter Include="Classes\Model\DataHelper">
       <UniqueIdentifier>{0530bcb6-1886-4b88-ba6a-3e392c14efbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI\UIViewController">
+      <UniqueIdentifier>{d71fd969-68c6-4cf8-b7d5-aebcbc273fbb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -114,12 +114,6 @@
     <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp">
       <Filter>Classes\LocalServer</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\UI\Dialogs\Dialog.cpp">
-      <Filter>Classes\UI\Dialogs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UI\Dialogs\DialogDelegate.cpp">
-      <Filter>Classes\UI\Dialogs</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Scene\SceneManager.cpp">
       <Filter>Classes\Scene</Filter>
     </ClCompile>
@@ -155,6 +149,12 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Model\DataHelper\LoginHelper.cpp">
       <Filter>Classes\Model\DataHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\UIViewController\UIViewControllerDelegate.cpp">
+      <Filter>Classes\UI\UIViewController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\UIViewController\UIViewController.cpp">
+      <Filter>Classes\UI\UIViewController</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,15 +230,6 @@
     <ClInclude Include="..\Classes\LocalServer\ServerDelegate.h">
       <Filter>Classes\LocalServer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UI\Dialogs\Dialog.h">
-      <Filter>Classes\UI\Dialogs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UI\Dialogs\DialogConfig.h">
-      <Filter>Classes\UI\Dialogs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UI\Dialogs\DialogDelegate.h">
-      <Filter>Classes\UI\Dialogs</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Scene\SceneManager.h">
       <Filter>Classes\Scene</Filter>
     </ClInclude>
@@ -274,6 +265,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Model\DataHelper\LoginHelper.h">
       <Filter>Classes\Model\DataHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIViewController\UIViewControllerDelegate.h">
+      <Filter>Classes\UI\UIViewController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIViewController\ControllerType.h">
+      <Filter>Classes\UI\UIViewController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIViewController\UIViewController.h">
+      <Filter>Classes\UI\UIViewController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\UIDefine.h">
+      <Filter>Classes\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -23,15 +23,16 @@
  *  
  ******************************************************************************/
 #pragma once
-#include "Dialog.h"
+#include "UIViewController.h"
 
-class LoginDialog : public Dialog
+USING_UI;
+class LoginDialog : public UIViewController
 {
 public:
 	LoginDialog();
 	virtual ~LoginDialog();
 
-	virtual UIView* createView(DialogDelegate* pDelegate) override;
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
 
 	DECLARE_HANDLER(onLoginResult);
 

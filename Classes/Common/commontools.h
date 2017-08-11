@@ -56,3 +56,13 @@ virtual std::string getName() override\
 }
 
 #define SAVE_DELETE(p) if(p){ delete p ; p = nullptr;}
+
+#define SYNTHESIZE_PASS_BY_REF(varType, varName, funName)\
+protected: varType varName;\
+public: virtual varType& get##funName(void) { return varName; }\
+public: virtual void set##funName(const varType& var){ varName = var; }
+
+#define SYNTHESIZE_PASS_BY_CONST_REF(varType, varName, funName)\
+protected: varType varName;\
+public: virtual const varType& get##funName(void) const { return varName; }\
+public: virtual void set##funName(const varType& var){ varName = var; }

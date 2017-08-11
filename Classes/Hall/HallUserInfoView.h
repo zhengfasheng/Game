@@ -28,13 +28,13 @@
 #include "ui/CocosGUI.h"
 
 using namespace cocos2d::ui;
-
+USING_UI;
 class HallUserInfoView : public UIView
 {
 	HallUserInfoView();
 public:
 	~HallUserInfoView();
-	virtual bool init(DialogDelegate* pDelegate) override;
+	virtual bool init(UIViewControllerDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallUserInfoView);
 

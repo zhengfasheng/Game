@@ -1,5 +1,6 @@
 #include "UIView.h"
 
+UI_BEGIN
 UIView::UIView()
 	:m_pProtocol(nullptr)
 	, m_bIsShow(false)
@@ -15,7 +16,7 @@ UIView::~UIView()
 	m_bIsShow = false;
 }
 
-bool UIView::init(DialogDelegate* pProtocol)
+bool UIView::init(UIViewControllerDelegate* pProtocol)
 {
 	bool bRet = false;
 	do 
@@ -139,4 +140,4 @@ void UIView::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Eve
 	}
 }
 
-
+UI_END

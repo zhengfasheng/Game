@@ -26,12 +26,13 @@
 
 #include "UIView.h"
 
+USING_UI;
 class HallActivityView : public UIView
 {
 	HallActivityView();
 public:
 	~HallActivityView();
-	virtual bool init(DialogDelegate* pDelegate) override;
+	virtual bool init(UIViewControllerDelegate* pDelegate) override;
 
 	IMPLEMENT_CREATE_VIEW(HallActivityView);
 };

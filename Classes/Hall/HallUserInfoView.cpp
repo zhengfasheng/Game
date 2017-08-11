@@ -12,7 +12,7 @@ HallUserInfoView::~HallUserInfoView()
 
 }
 
-bool HallUserInfoView::init(DialogDelegate* pDelegate)
+bool HallUserInfoView::init(UIViewControllerDelegate* pDelegate)
 {
 	bool bRet = false;
 	do

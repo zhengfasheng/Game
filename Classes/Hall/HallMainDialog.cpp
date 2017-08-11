@@ -11,13 +11,13 @@ HallMainDialog::~HallMainDialog()
 
 }
 
-UIView* HallMainDialog::createView(DialogDelegate* pDelegate)
+UIView* HallMainDialog::createView(UIViewControllerDelegate* pDelegate)
 {
 	return HallMainView::create(pDelegate);
 }
 
 void HallMainDialog::WillShow()
 {
-	Dialog::WillShow();
+	UIViewController::WillShow();
 }
 

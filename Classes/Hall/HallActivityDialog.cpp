@@ -11,7 +11,7 @@ HallActivityDialog::~HallActivityDialog()
 
 }
 
-UIView* HallActivityDialog::createView(DialogDelegate* pDelegate)
+UIView* HallActivityDialog::createView(UIViewControllerDelegate* pDelegate)
 {
 	return HallActivityView::create(pDelegate);
 }

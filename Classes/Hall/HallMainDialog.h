@@ -23,15 +23,15 @@
  *  
  ******************************************************************************/
 #pragma once
-#include "Dialog.h"
-
-class HallMainDialog : public Dialog
+#include "UIViewController.h"
+USING_UI;
+class HallMainDialog : public UIViewController
 {
 public:
 	HallMainDialog();
 	virtual ~HallMainDialog();
 
-	virtual UIView* createView(DialogDelegate* pDelegate) override;
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
 
 	//void onLoginResult(GValue p1, GValue p2, GValue p3, GValue p4);
 

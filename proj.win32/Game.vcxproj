@@ -24,6 +24,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -32,6 +33,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '12.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v120_xp</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0'">v140</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '14.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v140_xp</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -71,7 +73,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/Dialogs;../Classes/Scene;../Classes/Login;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Hall</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Login;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Hall</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -170,10 +172,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Scene\IScene.cpp" />
     <ClCompile Include="..\Classes\Scene\SceneDelegate.cpp" />
     <ClCompile Include="..\Classes\UI\Componet\Tips.cpp" />
-    <ClCompile Include="..\Classes\UI\Dialogs\Dialog.cpp" />
-    <ClCompile Include="..\Classes\UI\Dialogs\DialogDelegate.cpp" />
     <ClCompile Include="..\Classes\UI\UIFactory.cpp" />
     <ClCompile Include="..\Classes\UI\UIManager.cpp" />
+    <ClCompile Include="..\Classes\UI\UIViewController\UIViewController.cpp" />
+    <ClCompile Include="..\Classes\UI\UIViewController\UIViewControllerDelegate.cpp" />
     <ClCompile Include="..\Classes\UI\UIView\UIView.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -210,11 +212,12 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Scene\IScene.h" />
     <ClInclude Include="..\Classes\Scene\SceneDelegate.h" />
     <ClInclude Include="..\Classes\UI\Componet\Tips.h" />
-    <ClInclude Include="..\Classes\UI\Dialogs\Dialog.h" />
-    <ClInclude Include="..\Classes\UI\Dialogs\DialogConfig.h" />
-    <ClInclude Include="..\Classes\UI\Dialogs\DialogDelegate.h" />
+    <ClInclude Include="..\Classes\UI\UIDefine.h" />
     <ClInclude Include="..\Classes\UI\UIFactory.h" />
     <ClInclude Include="..\Classes\UI\UIManager.h" />
+    <ClInclude Include="..\Classes\UI\UIViewController\UIViewController.h" />
+    <ClInclude Include="..\Classes\UI\UIViewController\ControllerType.h" />
+    <ClInclude Include="..\Classes\UI\UIViewController\UIViewControllerDelegate.h" />
     <ClInclude Include="..\Classes\UI\UIView\UIView.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

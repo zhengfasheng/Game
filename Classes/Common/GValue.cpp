@@ -177,7 +177,11 @@ const long long GValue::asInt64() const
 		result = static_cast<long long>(m_data.nValue);
 		break;
 	case GValue::Type::STRING:
+#if( CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 )
+		result = m_data.pStringValue ? _atoi64(m_data.pStringValue->data()) : 0;
+#else
 		result = m_data.pStringValue ? atoll(m_data.pStringValue->data()) : 0;
+#endif
 		break;
 	case GValue::Type::FLOAT:
 		result = static_cast<long long>(m_data.fValue);

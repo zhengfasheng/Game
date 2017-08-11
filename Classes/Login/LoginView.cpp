@@ -17,7 +17,7 @@ LoginView::~LoginView()
 	m_pPassword = nullptr;
 }
 
-bool LoginView::init(DialogDelegate* pDelegate)
+bool LoginView::init(UIViewControllerDelegate* pDelegate)
 {
 	bool bRet = false;
 	do 

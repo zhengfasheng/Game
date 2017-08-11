@@ -24,9 +24,9 @@
  ******************************************************************************/
 #pragma once
 #include "common.h"
-#include "Dialog.h"
+#include "UIViewController.h"
 #include "SceneDelegate.h"
-
+USING_UI;
 class UIManager : public SceneDelegate
 {
 	UIManager();
@@ -34,9 +34,9 @@ class UIManager : public SceneDelegate
 	~UIManager();
 public:
 #pragma region 对外公开使用
-	void ShowDialog(DialogID id);
-	void HideDialog(DialogID id);
-	void ShowOrHideDialog(DialogID id);
+	void Show(ControllerID id);
+	void Hide(ControllerID id);
+	void ShowOrHide(ControllerID id);
 
 	/**
 	 * @brief	Gets a state.
@@ -47,58 +47,58 @@ public:
 	 * @return	null if it fails, else the state.
 	 */
 
-	Dialog* GetDialog(DialogID id , bool bIsCreate = true );
-	const std::string getDialogViewName( DialogID id);
+	UIViewController* GetController(ControllerID id , bool bIsCreate = true );
+	const std::string GetControllerViewName( ControllerID id);
 	void ShowTips(const std::string& szContent);
 	void ShowMessageBox();
 	template< class T1, class T2, class T3, class T4>
-	void SendEvent(DialogID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3, T4 p4)
+	void SendEvent(ControllerID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3, T4 p4)
 	{
-		if (id > DialogID::Min && id < DialogID::Max)
+		if (id > ControllerID::Min && id < ControllerID::Max)
 		{
-			auto it = m_dialogs.find(id);
-			if (it == m_dialogs.end())
+			auto it = m_controllers.find(id);
+			if (it == m_controllers.end())
 			{
 				return;
 			}
 			auto pDlg = it->second;
 			if (!pDlg)
 				return;
-			pDlg->OnEvent(szEventName, p1, p2, p3, p4,DialogDelegate::EventType::Game);
+			pDlg->OnEvent(szEventName, p1, p2, p3, p4,UIViewControllerDelegate::EventType::Game);
 		}
 		//广播所有对象
-		else if (id == DialogID::Max)
+		else if (id == ControllerID::Max)
 		{
-			for (auto it = m_dialogs.begin(); it != m_dialogs.end(); ++it)
+			for (auto it = m_controllers.begin(); it != m_controllers.end(); ++it)
 			{
 				auto pDlg = it->second;
 				if (pDlg)
 				{
-					pDlg->OnEvent(szEventName, p1, p2, p3, p4,DialogDelegate::EventType::Game);
+					pDlg->OnEvent(szEventName, p1, p2, p3, p4,UIViewControllerDelegate::EventType::Game);
 				}
 			}
 		}
 	}
 
 	template<class T1, class T2, class T3 >
-	void SendEvent(DialogID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3)
+	void SendEvent(ControllerID id, const std::string& szEventName, T1 p1, T2 p2, T3 p3)
 	{
 		SendEvent(id, szEventName, p1, p2, p3, 0);
 	}
 
 	template<class T1, class T2>
-	void SendEvent(DialogID id, const std::string& szEventName, T1 p1, T2 p2)
+	void SendEvent(ControllerID id, const std::string& szEventName, T1 p1, T2 p2)
 	{
 		SendEvent(id, szEventName, p1, p2, 0);
 	}
 
 	template<class T1>
-	void SendEvent(DialogID id, const std::string& szEventName, T1 p1)
+	void SendEvent(ControllerID id, const std::string& szEventName, T1 p1)
 	{
 		SendEvent(id, szEventName, p1, 0);
 	}
 
-	void SendEvent(DialogID id, const std::string& szEventName)
+	void SendEvent(ControllerID id, const std::string& szEventName)
 	{
 		SendEvent(id, szEventName, 0);
 	}
@@ -118,18 +118,18 @@ public:
 	
 private:
 #pragma region 私有
-	Dialog* Create(DialogID id);
-	void WillShow(Dialog* pDialog);
-	void DidShow(Dialog* pDialog);
-	void WillHide(Dialog* pDialog);
-	void DidHide(Dialog* pDialog);
-	void Destory(DialogID id);
+	UIViewController* Create(ControllerID id);
+	void WillShow(UIViewController* pDialog);
+	void DidShow(UIViewController* pDialog);
+	void WillHide(UIViewController* pDialog);
+	void DidHide(UIViewController* pDialog);
+	void Destory(ControllerID id);
 	void Destory();
 
 #pragma endregion 私有
 
 private:
 
-	std::map<DialogID, Dialog*> m_dialogs;
-	friend class Dialog;
+	std::map<ControllerID, UIViewController*> m_controllers;
+	friend class UIViewController;
 };

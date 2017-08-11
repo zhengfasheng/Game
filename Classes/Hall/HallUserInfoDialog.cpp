@@ -12,7 +12,7 @@ HallUserInfoDialog::~HallUserInfoDialog()
 
 }
 
-UIView* HallUserInfoDialog::createView(DialogDelegate* pDelegate)
+UIView* HallUserInfoDialog::createView(UIViewControllerDelegate* pDelegate)
 {
 	return HallUserInfoView::create(pDelegate);
 }
@@ -35,6 +35,6 @@ void HallUserInfoDialog::WillShow()
 		pView->setAccount(CurrentInfo::getInstance()->getUserInfo().getAccount());
 		pView->setUserName(CurrentInfo::getInstance()->getUserInfo().getName());
 	}
-	Dialog::WillShow();
+	UIViewController::WillShow();
 }
 

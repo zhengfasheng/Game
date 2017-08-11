@@ -24,11 +24,15 @@
  ******************************************************************************/
 #pragma once
 #include "Sigleton.h"
-#include "DialogConfig.h"
+#include "ControllerType.h"
 #include <string>
 #include <functional>
+#include "UIDefine.h"
 
-class Dialog;
+UI_BEGIN
+class UIViewController;
+UI_END
+USING_UI;
 
 class UIFactory
 {
@@ -36,11 +40,11 @@ class UIFactory
 public:
 	~UIFactory();
 	
-	Dialog* Create(DialogID id);
+	UIViewController* Create(ControllerID id);
 
-	void getDialogInfo(DialogID id,std::string& szName, std::function<Dialog*()>& createFun);
+	void getInfo(ControllerID id,std::string& szName, std::function<UIViewController*()>& createFun);
 
-	const std::string getDialogViewName(DialogID id);
+	const std::string getViewName(ControllerID id);
 
 	IMPLEMENT_SINGLETON(UIFactory);
 };
