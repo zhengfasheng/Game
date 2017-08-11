@@ -58,6 +58,9 @@
     <Filter Include="Classes\UI\UIViewController">
       <UniqueIdentifier>{d71fd969-68c6-4cf8-b7d5-aebcbc273fbb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Sound">
+      <UniqueIdentifier>{78e0f883-65ad-40a0-8f0c-095e7fe82a92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -155,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\UI\UIViewController\UIViewController.cpp">
       <Filter>Classes\UI\UIViewController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Sound\SoundHelper.cpp">
+      <Filter>Classes\Sound</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -277,6 +283,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\UI\UIDefine.h">
       <Filter>Classes\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Sound\SoundHelper.h">
+      <Filter>Classes\Sound</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
