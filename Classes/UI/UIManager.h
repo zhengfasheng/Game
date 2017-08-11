@@ -19,7 +19,7 @@
  *
  *  Date:2017/7/28 0:39
  *
- *  Summary:UI管理器 负责对话框的创建与销毁，显示隐藏及ui事件的分发
+ *  Summary:UI管理器 负责视图控制器创建与销毁，显示隐藏及ui事件的分发
  *  
  ******************************************************************************/
 #pragma once
@@ -39,10 +39,10 @@ public:
 	void ShowOrHide(ControllerID id);
 
 	/**
-	 * @brief	Gets a state.
+	 * @brief	Gets a Controller.
 	 *
 	 * @param	id		 	The identifier.
-	 * @param	bIsCreate	(Optional) true 当找不到时，会自动创建一个
+	 * @param	bIsCreate	(Optional) true 当找不到时，会自动创建一个.
 	 *
 	 * @return	null if it fails, else the state.
 	 */
