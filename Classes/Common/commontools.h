@@ -23,46 +23,25 @@
  *  
  ******************************************************************************/
 #pragma once
-#include <string>
-#include <sstream>
-using namespace std;
+
+#include "cocos2d.h"
+
 template<class T>
-string toString(const T& data)
+std::string toString(const T& data)
 {
-	stringstream os;
+	std::stringstream os;
 	os << data;
 	return os.str();
 }
 
-#pragma region 输入所有支持iterator的对象
+/**
+* @brief	Splits.
+*
+* @param	src				待切分字符串.
+* @param	token			做切割的token
+* @param [in,out]	vect	切分完成后的字符串
+*/
 
-template< class T >
-void printObject(T obj, string separator = "\t")
-{
-	typedef T type;
-	for (type::iterator it = obj.begin(); it != obj.end(); it++)
-	{
-		cout << *it << separator;
-	}
-	cout << endl;
-}
+void split(std::string src, const char* token, std::vector<std::string>& vect);
 
-#pragma endregion
-
-#define IMPLEMENT_GET_NAME( _NAME_ )\
-virtual std::string getName() override\
-{\
-	return #_NAME_;\
-}
-
-#define SAVE_DELETE(p) if(p){ delete p ; p = nullptr;}
-
-#define SYNTHESIZE_PASS_BY_REF(varType, varName, funName)\
-protected: varType varName;\
-public: virtual varType& get##funName(void) { return varName; }\
-public: virtual void set##funName(const varType& var){ varName = var; }
-
-#define SYNTHESIZE_PASS_BY_CONST_REF(varType, varName, funName)\
-protected: varType varName;\
-public: virtual const varType& get##funName(void) const { return varName; }\
-public: virtual void set##funName(const varType& var){ varName = var; }
+cocos2d::Texture2D* getTextureForKey(const std::string& key);

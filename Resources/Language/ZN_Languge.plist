@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>resource</key>
+	<dict>
+		<key>read_resource</key>
+		<string>正在读取资源文件数据</string>
+		<key>unload_resource_start_1</key>
+		<string>正在释放开始场景资源</string>
+		<key>unload_resource_complete_1</key>
+		<string>释放开始场景资源完成</string>
+		<key>load_resource_start_1</key>
+		<string>正在读取开始场景资源</string>
+		<key>load_resource_complete_1</key>
+		<string>加载开始场景资源完成</string>
+		<key>loading_resource_1</key>
+		<string>正在加载开始场景资源{%any}/{%any}</string>
+	</dict>
+	
+
+	<key>Activity</key>
+	<dict>
+		<key>pay_feedback</key>
+		<dict>
+			<key>describ</key>
+			<dict>
+				<key>one</key>
+				<string>支付100返回100</string>
+			</dict>
+			<key>format</key>
+			<string>这是一个%{%any}%测试{%any}的{%any}数据</string>
+			<key>pay_success</key>
+			<string>支付成功</string>
+			<key>price</key>
+			<array>
+				<string>100</string>
+				<string>200</string>
+				<string>300</string>
+			</array>
+			<key>title</key>
+			<string>支付回馈</string>
+		</dict>
+	</dict>
+	<key>common</key>
+	<dict>
+		<key>send_success</key>
+		<string>发送成功</string>
+		<key>text</key>
+		<string>{1002aa\naaa
+2001
+\n \n
+{1004hhhhh}yyyss}</string>
+	</dict>
+</dict>
+</plist>

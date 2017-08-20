@@ -3,28 +3,8 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Image Name="animationbuttonnormal.png" />
-        <Image Name="animationbuttonpressed.png" />
-        <Image Name="b1.png" />
-        <Image Name="b2.png" />
-        <Image Name="background.png" />
-        <Image Name="CloseSelected.png" />
-        <Image Name="common_dlg.png" />
-        <Project Name="Dialog.csd" Type="Layer" />
-        <Image Name="f1.png" />
-        <Image Name="f2.png" />
-        <Project Name="HallActivity.csd" Type="Layer" />
-        <Project Name="HallBottom.csd" Type="Layer" />
-        <Project Name="HallMain.csd" Type="Layer" />
-        <Project Name="HallMainView.csd" Type="Layer" />
         <Image Name="HelloWorld.png" />
-        <Image Name="layer1.jpg" />
-        <Image Name="layer2.png" />
-        <Image Name="layer31.png" />
-        <Image Name="layer32.png" />
-        <Image Name="layer33.png" />
         <Project Name="MainScene.csd" Type="Scene" />
-        <Project Name="RoleInfo.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

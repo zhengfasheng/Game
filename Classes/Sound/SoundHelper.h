@@ -35,13 +35,20 @@ public:
 
 	enum class BackgroundMusicType
 	{
-		Welcome,//»¶Ó­
-		Game,//ÓÎÏ·
+		Min = -1,
+		BackMusic,//±³¾°ÒôÀÖ
+		GameBackMusic,//ÓÎÏ·±³¾°ÒôÀÖ
+		Max
 	};
 
 	enum class AudioType
 	{
-
+		Min = -1,
+		Fire,//´ò×Óµ¯ÉùÒô
+		PlaneDestroy,//·É»ú±¬Õ¨
+		EnemyDestroy,//µĞ»ú±¬Õ¨
+		Button,//°´Å¥ÉùÒô
+		Max
 	};
 
 	virtual void init();

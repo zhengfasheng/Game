@@ -23,7 +23,7 @@
  *  
  ******************************************************************************/
 #pragma once
-#include "Sigleton.h"
+#include "Singleton.h"
 #include "ServerDelegate.h"
 #include <list>
 

@@ -47,13 +47,13 @@ bool Tips::init(const std::string& szContent)
 
 void Tips::ShowWithAction()
 {
-	m_pProtocol->WillShow();
+	m_pDelegate->WillShow();
 	m_bIsShow = true;
 	this->setOpacity(0);
 	Director::getInstance()->getRunningScene()->addChild(this, SceneZOder::Notice);
 	this->retain();
 	this->runAction(Sequence::create(MoveTo::create(0.2f,Vec2(Director::getInstance()->getWinSize().width/2,Director::getInstance()->getWinSize().height - this->getContentSize().height - 10)),DelayTime::create(1.0f),FadeOut::create(0.2f),CallFunc::create([this](){
-		m_pProtocol->DidShow();
+		m_pDelegate->DidShow();
 		ShowEnd();
 		this->removeFromParent();
 		this->release();

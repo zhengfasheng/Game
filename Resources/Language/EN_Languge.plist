@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"/>
+
+<plist version="1.0">
+    <dict>
+        <key>about_english</key>
+        <string>    I recode this game according to the logic of MoonWarriors-html5,almost all of the code  keep unanimous with the original.
+    This showcase utilizes many features from Cocos2d - x engine,including: Parallax background,tilemap, actions, ease, frame animation, schedule, Labels, keyboard Dispatcher, Scene Transition</string>
+       <key>about_chinese</key>
+	   <string>    这是一款根据MoonWarriors-html5改写的游戏</string>
+    </dict>
+</plist>

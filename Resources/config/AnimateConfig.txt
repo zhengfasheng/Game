@@ -1,0 +1,3 @@
+﻿INT64	INT	FLOAT	STRING	INT	INT	FLOAT
+#id	TextureResType ( 0 local 1 plist)	scale	animation format string 	animation start index	animation end index	Set play time duration in seconds
+1	0	0.3	grossini_dance_%02d.png	1	14	2

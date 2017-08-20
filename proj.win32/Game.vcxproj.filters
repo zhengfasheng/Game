@@ -28,17 +28,11 @@
     <Filter Include="Classes\UI\UIView">
       <UniqueIdentifier>{dea84566-f9df-4f2d-8faa-78c34345a11c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Login">
-      <UniqueIdentifier>{bf9e0dd7-d830-40bc-bfa4-587598ce0d57}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Message">
       <UniqueIdentifier>{c6e9cb96-065c-43a2-aac1-d82cedb35b92}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Event">
       <UniqueIdentifier>{c543d8ee-b210-4e82-9673-4b38c119ce28}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Hall">
-      <UniqueIdentifier>{3c540188-f109-4463-aa5d-0c0c31466f9d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\UI\Componet">
       <UniqueIdentifier>{4e1328b9-ed95-4de4-90a8-623366141cfc}</UniqueIdentifier>
@@ -60,6 +54,21 @@
     </Filter>
     <Filter Include="Classes\Sound">
       <UniqueIdentifier>{78e0f883-65ad-40a0-8f0c-095e7fe82a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Command">
+      <UniqueIdentifier>{2a1eed88-81ec-446d-a829-d696d36e8ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Resource">
+      <UniqueIdentifier>{79a48cd0-5a02-4d5c-90be-b349cd8cb3f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\DataBase">
+      <UniqueIdentifier>{4e51ad8c-309e-479a-8f33-adaffba0c2b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Language">
+      <UniqueIdentifier>{e64b414b-9c17-4259-849d-ac2ee345e387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Start">
+      <UniqueIdentifier>{73a9ab6c-878e-483b-888e-1e40472605f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -84,56 +93,20 @@
     <ClCompile Include="..\Classes\Scene\SceneDelegate.cpp">
       <Filter>Classes\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Login\LoginScene.cpp">
-      <Filter>Classes\Login</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UI\UIFactory.cpp">
       <Filter>Classes\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Login\LoginView.cpp">
-      <Filter>Classes\Login</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Message\Message.cpp">
       <Filter>Classes\Message</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallScene.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\UI\Componet\Tips.cpp">
       <Filter>Classes\UI\Componet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallMainView.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallBottomView.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallActivityView.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallUserInfoView.cpp">
-      <Filter>Classes\Hall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp">
       <Filter>Classes\LocalServer</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Scene\SceneManager.cpp">
       <Filter>Classes\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Login\LoginDialog.cpp">
-      <Filter>Classes\Login</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallActivityDialog.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallBottomDialog.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallMainDialog.cpp">
-      <Filter>Classes\Hall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Hall\HallUserInfoDialog.cpp">
-      <Filter>Classes\Hall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Model\Data\CurrentInfo.cpp">
       <Filter>Classes\Model\Data</Filter>
@@ -162,6 +135,45 @@
     <ClCompile Include="..\Classes\Sound\SoundHelper.cpp">
       <Filter>Classes\Sound</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Scene\SceneFactory.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Resource\ResourceScene.cpp">
+      <Filter>Classes\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Resource\ResourceCommand.cpp">
+      <Filter>Classes\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Resource\ResourceCommandFactory.cpp">
+      <Filter>Classes\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DataBase\Table.cpp">
+      <Filter>Classes\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DataBase\DatabaseManager.cpp">
+      <Filter>Classes\DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Language\Language.cpp">
+      <Filter>Classes\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Common\commontools.cpp">
+      <Filter>Classes\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Start\StartSceneResourceCommand.cpp">
+      <Filter>Classes\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Start\StartScene.cpp">
+      <Filter>Classes\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Start\StartController.cpp">
+      <Filter>Classes\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Start\StartView.cpp">
+      <Filter>Classes\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Common\GameConfig.cpp">
+      <Filter>Classes\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -182,9 +194,6 @@
     <ClInclude Include="..\Classes\Common\GValue.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Common\Sigleton.h">
-      <Filter>Classes\Common</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UI\UIManager.h">
       <Filter>Classes\UI</Filter>
     </ClInclude>
@@ -197,14 +206,8 @@
     <ClInclude Include="..\Classes\Scene\SceneDelegate.h">
       <Filter>Classes\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Login\LoginScene.h">
-      <Filter>Classes\Login</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UI\UIFactory.h">
       <Filter>Classes\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Login\LoginView.h">
-      <Filter>Classes\Login</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Message\Message.h">
       <Filter>Classes\Message</Filter>
@@ -212,23 +215,8 @@
     <ClInclude Include="..\Classes\Event\UIEvent.h">
       <Filter>Classes\Event</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallScene.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\UI\Componet\Tips.h">
       <Filter>Classes\UI\Componet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallMainView.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallBottomView.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallActivityView.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallUserInfoView.h">
-      <Filter>Classes\Hall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LocalServer\LocalServer.h">
       <Filter>Classes\LocalServer</Filter>
@@ -238,21 +226,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Scene\SceneManager.h">
       <Filter>Classes\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Login\LoginDialog.h">
-      <Filter>Classes\Login</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallActivityDialog.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallBottomDialog.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallMainDialog.h">
-      <Filter>Classes\Hall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Hall\HallUserInfoDialog.h">
-      <Filter>Classes\Hall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Model\Data\CurrentInfo.h">
       <Filter>Classes\Model\Data</Filter>
@@ -286,6 +259,72 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Sound\SoundHelper.h">
       <Filter>Classes\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\SceneFactory.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\SceneType.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Command\Command.h">
+      <Filter>Classes\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Resource\ResourceCommand.h">
+      <Filter>Classes\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Resource\ResourceDelegate.h">
+      <Filter>Classes\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Resource\ResourceScene.h">
+      <Filter>Classes\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Resource\ResourceCommanDelegate.h">
+      <Filter>Classes\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Resource\Resource.h">
+      <Filter>Classes\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Resource\ResourceCommandFactory.h">
+      <Filter>Classes\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataBase\DataBaseDefine.h">
+      <Filter>Classes\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataBase\TableDefine.h">
+      <Filter>Classes\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataBase\Table.h">
+      <Filter>Classes\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataBase\TableStructure.h">
+      <Filter>Classes\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\Macros.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataBase\DatabaseManager.h">
+      <Filter>Classes\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\Singleton.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Language\Language.h">
+      <Filter>Classes\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Start\StartSceneResourceCommand.h">
+      <Filter>Classes\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Start\StartScene.h">
+      <Filter>Classes\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Start\StartController.h">
+      <Filter>Classes\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Start\StartView.h">
+      <Filter>Classes\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\GameConfig.h">
+      <Filter>Classes\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -26,14 +26,13 @@
 
 #include "common.h"
 #include "cocos2d.h"
-
+#include "UIViewControllerDelegate.h"
 USING_NS_CC;
 
 UI_BEGIN
 const static int SHOW_ACTION_TAG = 100;
 const static int HIDE_ACTION_TAG = 200;
 
-class UIViewControllerDelegate;
 class UIView : public Layer
 {
 public:
@@ -76,12 +75,13 @@ public:
 
 	virtual void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 
+	virtual UIViewControllerDelegate* getDelegate() { return m_pDelegate; }
 protected:
 
 	bool m_bIsShow;
 	bool m_bIsEnableShowAction;
 	bool m_bIsEnableHideAction;
-	UIViewControllerDelegate* m_pProtocol;
+	UIViewControllerDelegate* m_pDelegate;
 };
 
 UI_END

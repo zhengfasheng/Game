@@ -27,8 +27,12 @@
 
 namespace UIEvent
 {
-	const std::string EVENT_LOGIN_RESULT = "EVENT_LOGIN_RESULT";
-	const std::string EVENT_USER_INFO_CHANGE = "EVENT_USER_INFO_CHANGE";
-	const std::string EVENT_USER_CHIPS_CHANGE = "EVENT_USER_CHIPS_CHANGE";
-	const std::string EVENT_APPLY_LOGIN = "EVENT_APPLY_LOGIN";
+	//开始场景事件
+	/** @brief	新游戏 */
+	const std::string EVENT_START_NEW_GAME = "EVENT_START_NEW_GAME";
+	/** @brief	打开关于 */
+	const std::string EVENT_OPEN_ABOUT = "EVENT_OPEN_ABOUT";
+	/** @brief	打开设置 */
+	const std::string EVENT_OPENT_SETTING = "EVENT_OPENT_SETTING";
+	
 }

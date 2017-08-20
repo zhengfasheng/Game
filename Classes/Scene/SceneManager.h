@@ -23,14 +23,19 @@
  *  
  ******************************************************************************/
 #pragma once
-#include "Sigleton.h"
+#include "Singleton.h"
 #include "SceneDelegate.h"
 #include "IScene.h"
-class SceneManager : public SceneDelegate
+#include "ResourceDelegate.h"
+
+class SceneManager : public SceneDelegate 
 {
 	SceneManager();
 public:
-	~SceneManager();
+	virtual ~SceneManager();
+
+	IMPLEMENT_SINGLETON(SceneManager);
+#pragma region 场景代理实现
 
 	virtual void Init(IScene* pScene) override;
 
@@ -42,16 +47,29 @@ public:
 
 	virtual void OnExitTransitionDidStart(IScene* pScene) override;
 
+#pragma endregion 场景代理实现
+	
+#pragma region 资源代理实现
+
+	/** @brief	加载场景资源完成 */
+	virtual void loadResourceComplete(SceneType type);
+
+#pragma endregion 资源代理实现
+
+
+	/** @brief	游戏开始 */
 	void GameStart();
+
+	/**
+	 * @brief	跳转到指定场景
+	 *
+	 * @param	type	The type.
+	 */
 
 	void GoToScene(SceneType type);
 
 private:
 
-	void GoToHall();
+	SceneType m_nCurrentSceneType;
 
-	void GoToLogin();
-
-
-	IMPLEMENT_SINGLETON(SceneManager);
 };

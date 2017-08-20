@@ -9,8 +9,12 @@
 #include <functional>
 using namespace std;
 #include "commontools.h"
-#include "Sigleton.h"
+#include "Singleton.h"
 #include "UIEvent.h"
 #include "ControllerType.h"
 #include "UIViewControllerDelegate.h"
 #include "UIDefine.h"
+#include "Macros.h"
+#include "Language.h"
+#include "Resource.h"
+#include "GameConfig.h"

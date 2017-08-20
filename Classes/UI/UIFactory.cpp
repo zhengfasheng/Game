@@ -1,9 +1,5 @@
 #include "UIFactory.h"
-#include "LoginDialog.h"
-#include "HallMainDialog.h"
-#include "HallBottomDialog.h"
-#include "HallActivityDialog.h"
-#include "HallUserInfoDialog.h"
+#include "StartController.h"
 
 
 #define GET_CONTROLLER_INFO_BEGIN \
@@ -28,11 +24,7 @@ void UIFactory::getInfo( ControllerID id,std::string& szName, std::function<UIVi
 
 GET_CONTROLLER_INFO_BEGIN
 
-GET_CONTROLLER_INFO(ControllerID::Login, LoginDialog);
-GET_CONTROLLER_INFO(ControllerID::HallMain, HallMainDialog);
-GET_CONTROLLER_INFO(ControllerID::HallBottom, HallBottomDialog);
-GET_CONTROLLER_INFO(ControllerID::HallActivity, HallActivityDialog);
-GET_CONTROLLER_INFO(ControllerID::HallUserInfo, HallUserInfoDialog);
+GET_CONTROLLER_INFO(ControllerID::Start, StartController);
 	
 GET_CONTROLLER_INFO_END
 

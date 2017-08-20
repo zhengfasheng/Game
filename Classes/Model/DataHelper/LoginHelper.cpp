@@ -33,7 +33,7 @@ void LoginHelper::onReceiveServerResponse(Message* pMsg)
 			CurrentInfo::getInstance()->getUserInfo().setChips(pResponse->m_nChips);
 			CurrentInfo::getInstance()->getUserInfo().setName(pResponse->m_szName);
 		}
-		UIManager::getInstance()->SendEvent(ControllerID::Login,UIEvent::EVENT_LOGIN_RESULT,pMsg->m_bIsSuccess);
+		//UIManager::getInstance()->SendEvent(ControllerID::Login,UIEvent::EVENT_LOGIN_RESULT,pMsg->m_bIsSuccess);
 	}
 	break;
 	case MessageType::ChipsChange:
@@ -44,7 +44,7 @@ void LoginHelper::onReceiveServerResponse(Message* pMsg)
 		{
 			CurrentInfo::getInstance()->getUserInfo().setChips(pResponse->m_nChips);
 		}
-		UIManager::getInstance()->SendEvent(ControllerID::Max, UIEvent::EVENT_USER_CHIPS_CHANGE, pMsg->m_bIsSuccess,pResponse->m_nChips);
+		//UIManager::getInstance()->SendEvent(ControllerID::Max, UIEvent::EVENT_USER_CHIPS_CHANGE, pMsg->m_bIsSuccess,pResponse->m_nChips);
 	}
 	break;
 	default:
@@ -61,7 +61,7 @@ void LoginHelper::sendApplyLogin(const std::string& szAccount, const std::string
 	
 	sendHttpRequest<UserInfo>(pMsg, [](const UserInfo& info){
 		CurrentInfo::getInstance()->setUserInfo(info);
-		UIManager::getInstance()->SendEvent(ControllerID::Login, UIEvent::EVENT_LOGIN_RESULT, true);
+		//UIManager::getInstance()->SendEvent(ControllerID::Login, UIEvent::EVENT_LOGIN_RESULT, true);
 	});
 
 }

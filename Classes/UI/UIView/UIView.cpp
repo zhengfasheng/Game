@@ -2,7 +2,7 @@
 
 UI_BEGIN
 UIView::UIView()
-	:m_pProtocol(nullptr)
+	:m_pDelegate(nullptr)
 	, m_bIsShow(false)
 	, m_bIsEnableHideAction(true)
 	, m_bIsEnableShowAction(true)
@@ -12,7 +12,7 @@ UIView::UIView()
 
 UIView::~UIView()
 {
-	m_pProtocol = nullptr;
+	m_pDelegate = nullptr;
 	m_bIsShow = false;
 }
 
@@ -22,7 +22,7 @@ bool UIView::init(UIViewControllerDelegate* pProtocol)
 	do 
 	{
 		CC_BREAK_IF(!Layer::init() || !pProtocol );
-		m_pProtocol = pProtocol;
+		m_pDelegate = pProtocol;
 		bRet = true;
 	} while (0);
 	return bRet;
@@ -42,9 +42,9 @@ void UIView::Show()
 	else
 	{
 		m_bIsShow = true;
-		m_pProtocol->WillShow();
+		m_pDelegate->WillShow();
 		ShowEnd();
-		m_pProtocol->DidShow();
+		m_pDelegate->DidShow();
 	}
 }
 
@@ -56,9 +56,9 @@ void UIView::Hide()
 	}
 	else
 	{
-		m_pProtocol->WillHide();
+		m_pDelegate->WillHide();
 		HideEnd();
-		m_pProtocol->DidHide();
+		m_pDelegate->DidHide();
 	}
 }
 
@@ -99,12 +99,12 @@ void UIView::ShowWithAction()
 		CCLOGERROR("UIView Showing");
 		return;
 	}
-	m_pProtocol->WillShow();
+	m_pDelegate->WillShow();
 	m_bIsShow = true;
-	this->setScale(0.2f);
+	this->setOpacity(0);
 
-	auto pAction = Sequence::createWithTwoActions(ScaleTo::create(0.5f, 1.0f), CallFunc::create([this](){
-		m_pProtocol->DidShow();
+	auto pAction = Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create([this](){
+		m_pDelegate->DidShow();
 		ShowEnd();
 		this->release();
 	}));
@@ -120,13 +120,13 @@ void UIView::HideWithAction()
 		CCLOGERROR("UIView hiding");
 		return;
 	}
-	m_pProtocol->WillHide();
+	m_pDelegate->WillHide();
 	this->retain();
 	auto pAction = Sequence::createWithTwoActions(FadeOut::create(0.5f), CallFunc::create([this](){
 		m_bIsShow = false;
 		HideEnd();
 		this->release();
-		m_pProtocol->DidHide();
+		m_pDelegate->DidHide();
 	}));
 	pAction->setTag(HIDE_ACTION_TAG);
 	this->runAction(pAction);

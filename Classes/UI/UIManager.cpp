@@ -117,6 +117,10 @@ UIViewController* UIManager::Create(ControllerID id)
 	{
 		m_controllers[id] = pController;
 	}
+	else
+	{
+		CC_SAFE_DELETE(pController);
+	}
 	return pController;
 }
 

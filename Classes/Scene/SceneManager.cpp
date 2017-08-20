@@ -1,12 +1,14 @@
 #include "SceneManager.h"
-#include "LoginScene.h"
 #include "UIManager.h"
-#include "HallScene.h"
 #include "DataHelperManager.h"
+#include "SceneFactory.h"
+#include "ResourceScene.h"
+#include "GameConfig.h"
 
 USING_NS_CC;
 
 SceneManager::SceneManager()
+	:m_nCurrentSceneType(SceneType::Invalid)
 {
 
 }
@@ -21,26 +23,29 @@ void SceneManager::GameStart()
 	// initialize director
 	auto director = Director::getInstance();
 	auto glview = director->getOpenGLView();
+	auto fWidth = GameConfig::getInstance()->getScreenWidth();
+	auto fHeight = GameConfig::getInstance()->getScreenHeight();
 	if (!glview) {
-		glview = GLViewImpl::createWithRect("HelloCpp", Rect(0, 0, 960, 640));
+		glview = GLViewImpl::createWithRect("HelloCpp", Rect(0, 0, fWidth, fHeight));
 		director->setOpenGLView(glview);
 	}
 
-	director->getOpenGLView()->setDesignResolutionSize(960, 640, ResolutionPolicy::SHOW_ALL);
+	director->getOpenGLView()->setDesignResolutionSize(fWidth, fHeight, ResolutionPolicy::SHOW_ALL);
 
 	// turn on display FPS
-	director->setDisplayStats(false);
+	director->setDisplayStats(true);
 
 	// set FPS. the default value is 1.0/60 if you don't call this
 	director->setAnimationInterval(1.0f / 60.f);
 
 	DataHelperManager::getInstance()->init();
+	Language::getInstance()->init();
 
 	FileUtils::getInstance()->addSearchPath("res");
-	auto scene = LoginScene::create(this);
-	
-	// run
-	director->runWithScene(scene);
+	FileUtils::getInstance()->addSearchPath("config");
+	FileUtils::getInstance()->addSearchPath("Language");
+	FileUtils::getInstance()->addSearchPath("Music");
+	this->GoToScene(SceneType::Start);
 }
 
 void SceneManager::Init(IScene* pScene)
@@ -68,37 +73,30 @@ void SceneManager::OnExitTransitionDidStart(IScene* pScene)
 	UIManager::getInstance()->OnExitTransitionDidStart(pScene);
 }
 
-void SceneManager::GoToHall()
-{
-	auto pScene = HallScene::create(this);
-	Director::getInstance()->replaceScene(pScene);
-}
-
-void SceneManager::GoToLogin()
-{
-	auto pScene = LoginScene::create(this);
-	Director::getInstance()->replaceScene(pScene);
-}
-
 void SceneManager::GoToScene(SceneType type)
 {
-	switch (type)
+	//先跳转加载资源场景，加载资源完成，才真正的跳转到指定的场景
+	do 
 	{
-	case SceneType::Invalid:
-		break;
-	case SceneType::Login:
-		GoToLogin();
-		break;
-	case SceneType::Hall:
-		GoToHall();
-		break;
-	case SceneType::Room:
-		break;
-	case SceneType::RoomList:
-		break;
-	default:
-		break;
-	}
+		auto pResourceScene = ResourceScene::create(this, m_nCurrentSceneType, type);
+		CC_BREAK_IF(!pResourceScene);
+		Director::getInstance()->replaceScene(pResourceScene);
+		m_nCurrentSceneType = type;
+	} while (0);
+
+}
+
+void SceneManager::loadResourceComplete(SceneType type)
+{
+	do 
+	{
+		if ( type == m_nCurrentSceneType )
+		{
+			auto pScene = SceneFactory::getInstance()->create(this, type);
+			CC_BREAK_IF(!pScene);
+			Director::getInstance()->replaceScene(pScene);
+		}
+	} while (0);
 }
 
 

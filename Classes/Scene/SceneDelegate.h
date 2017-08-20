@@ -23,10 +23,11 @@
  *  
  ******************************************************************************/
 #pragma once
+#include "ResourceDelegate.h"
 
 class IScene;
 
-class SceneDelegate
+class SceneDelegate : public ResourceDelegate
 {
 public:
 	SceneDelegate();

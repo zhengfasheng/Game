@@ -1,0 +1,3 @@
+INT	INT	FLOAT	STRING	STRING	INT	INT
+#id	TextureResType ( 0 local 1 plist) this place must be of plist(1)	scale	armature name	animation name	duration to	loop
+1	1	0.3	Recharge_Promotion_animation	Animation1	-1	1

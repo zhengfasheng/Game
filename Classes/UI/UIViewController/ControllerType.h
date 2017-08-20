@@ -28,12 +28,7 @@ enum class ControllerID
 {
 	Min,
 	Invalid = Min,
-	
-	Login,//登录界面
-	HallMain,
-	HallBottom,
-	HallActivity,
-	HallUserInfo,
+	Start,//开始
 	Max
 };
 

@@ -1,6 +1,7 @@
 #include "SoundHelper.h"
 #include "SimpleAudioEngine.h"
 #include "cocos2d.h"
+#include "Resource.h"
 
 
 /** @brief	存储玩家音效开关的key. */
@@ -17,7 +18,7 @@ SoundHelper::SoundHelper()
 	, m_bIsBackgroundOn(true)
 	, m_fAudioVolume(1.0f)
 	, m_fBackgroundVolume(1.0f)
-	, m_backgroundType(BackgroundMusicType::Welcome)
+	, m_backgroundType(BackgroundMusicType::BackMusic)
 {
 
 }
@@ -34,7 +35,14 @@ void SoundHelper::init()
 
 void SoundHelper::preloadBackgroundMusic()
 {
-
+	for (auto i = 0; i < (int)BackgroundMusicType::Max; i++ )
+	{
+		auto szPath = getBackgroundPath((BackgroundMusicType)i);
+		if ( !szPath )
+		{
+			SimpleAudioEngine::getInstance()->preloadBackgroundMusic(szPath);
+		}
+	}
 }
 
 void SoundHelper::playBackgroundMusic(BackgroundMusicType type, bool bIsLoop /*= true*/)
@@ -107,7 +115,14 @@ void SoundHelper::setBackgroundMusicVolume(float fVolume)
 
 void SoundHelper::preloadAudio()
 {
-
+	for (int i = 0; i < (int)AudioType::Max; i++ )
+	{
+		auto szPath = getAudioPath((AudioType)i);
+		if ( !szPath )
+		{
+			SimpleAudioEngine::getInstance()->preloadEffect(szPath);
+		}
+	}
 }
 
 unsigned int SoundHelper::playAudio(AudioType type, bool bIsLoop /*= false*/)
@@ -224,12 +239,48 @@ void SoundHelper::read()
 
 const char* SoundHelper::getBackgroundPath(BackgroundMusicType type)
 {
-	return"";
+	switch (type)
+	{
+	case SoundHelper::BackgroundMusicType::Min:
+		break;
+	case SoundHelper::BackgroundMusicType::BackMusic:
+		return s_mainMainMusic;
+		break;
+	case SoundHelper::BackgroundMusicType::GameBackMusic:
+		return s_bgMusic;
+		break;
+	case SoundHelper::BackgroundMusicType::Max:
+		break;
+	default:
+		break;
+	}
+	return nullptr;
 }
 
 const char* SoundHelper::getAudioPath(AudioType type)
 {
-	return "";
+	switch (type)
+	{
+	case SoundHelper::AudioType::Min:
+		break;
+	case SoundHelper::AudioType::Fire:
+		return s_fireEffect;
+		break;
+	case SoundHelper::AudioType::PlaneDestroy:
+		return s_shipDestroyEffect;
+		break;
+	case SoundHelper::AudioType::EnemyDestroy:
+		return s_explodeEffect;
+		break;
+	case SoundHelper::AudioType::Button:
+		return s_buttonEffect;
+		break;
+	case SoundHelper::AudioType::Max:
+		break;
+	default:
+		break;
+	}
+	return nullptr;
 }
 
 

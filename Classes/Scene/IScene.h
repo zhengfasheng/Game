@@ -25,17 +25,9 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "SceneType.h"
 
 USING_NS_CC;
-
-enum class SceneType
-{
-	Invalid,
-	Login,
-	Hall,
-	Room,
-	RoomList,
-};
 
 class SceneDelegate;
 class IScene : public Scene
