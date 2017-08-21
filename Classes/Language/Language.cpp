@@ -1,5 +1,6 @@
 #include "Language.h"
 #include "commontools.h"
+#include "Resource.h"
 
 Language::Language()
 	:m_pLanguage(nullptr)
@@ -329,6 +330,11 @@ void Language::splitWithParam(string src, vector<string>& vect, vector<GValue> v
 std::string Language::getLocalFont()
 {
 	return "";
+}
+
+std::string Language::getBitmapFont()
+{
+	return s_font;
 }
 
 

@@ -73,7 +73,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Sound;../Classes/Resource;../Classes/Command;../Classes/DataBase;../Classes/Language;../Classes/Start</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Sound;../Classes/Resource;../Classes/Command;../Classes/DataBase;../Classes/Language;../Classes/Start;../Classes/About</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -146,6 +146,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\About\AboutController.cpp" />
+    <ClCompile Include="..\Classes\About\AboutResourceCommand.cpp" />
+    <ClCompile Include="..\Classes\About\AboutScene.cpp" />
+    <ClCompile Include="..\Classes\About\AboutView.cpp" />
     <ClCompile Include="..\Classes\Application\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Common\commontools.cpp" />
     <ClCompile Include="..\Classes\Common\GameConfig.cpp" />
@@ -182,6 +186,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\About\AboutController.h" />
+    <ClInclude Include="..\Classes\About\AboutResourceCommand.h" />
+    <ClInclude Include="..\Classes\About\AboutScene.h" />
+    <ClInclude Include="..\Classes\About\AboutView.h" />
     <ClInclude Include="..\Classes\Application\AppDelegate.h" />
     <ClInclude Include="..\Classes\Command\Command.h" />
     <ClInclude Include="..\Classes\Common\Any.h" />

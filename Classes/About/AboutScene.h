@@ -17,40 +17,21 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/8/19 2:02
+ *  Date:2017/8/21 1:01
  *
- *  Summary:资源加载命令
+ *  Summary:关于场景
  *  
  ******************************************************************************/
 #pragma once
-#include "Command.h"
-#include "ResourceCommanDelegate.h"
-#include "SceneType.h"
-#include "cocos2d.h"
 
-USING_NS_CC;
+#include "IScene.h"
 
-class ResourceDelegate;
-class ResourceCommand : public ResourceCommanDelegate
+class AboutScene : public IScene
 {
 public:
-	ResourceCommand( ResourceDelegate* pDelegate , SceneType type );
-	virtual ~ResourceCommand();
+	AboutScene();
+	virtual ~AboutScene();
+	IMPLEMENT_CREATE_SCENE(AboutScene, SceneType::About);
 
-	virtual void onLoading(Texture2D* pTexture, const char* szResourceName) = 0;
-
-	virtual void unloadResourceStart() override;
-	virtual void unloadResourceComplete() override;
-	virtual void loadResourceStart() override;
-	virtual void loadResourceComplete() override;
-	virtual void loadResourceProgress(unsigned int nLoaded, unsigned int nTotal) override;
-	virtual const SceneType& getSceneType() const final;
-	virtual void setDelegate(ResourceDelegate* pDelegate){ m_pDelegate = pDelegate; }
-protected:
-
-	ResourceDelegate* m_pDelegate;
-
-private:
-
-	SceneType m_sceneType;
+	virtual void DidEnter() override;
 };

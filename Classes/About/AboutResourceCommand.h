@@ -17,40 +17,29 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/8/19 2:02
+ *  Date:2017/8/22 0:28
  *
- *  Summary:资源加载命令
+ *  Summary:关于场景资源加载 
  *  
  ******************************************************************************/
 #pragma once
-#include "Command.h"
-#include "ResourceCommanDelegate.h"
-#include "SceneType.h"
-#include "cocos2d.h"
+#include "ResourceCommand.h"
 
-USING_NS_CC;
-
-class ResourceDelegate;
-class ResourceCommand : public ResourceCommanDelegate
+class AboutResourceCommand : public ResourceCommand
 {
 public:
-	ResourceCommand( ResourceDelegate* pDelegate , SceneType type );
-	virtual ~ResourceCommand();
+	AboutResourceCommand(ResourceDelegate* pDelegate);
+	virtual ~AboutResourceCommand();
 
-	virtual void onLoading(Texture2D* pTexture, const char* szResourceName) = 0;
+	virtual void onLoading(Texture2D* pTexture, const char* szResourceName) override;
 
 	virtual void unloadResourceStart() override;
-	virtual void unloadResourceComplete() override;
 	virtual void loadResourceStart() override;
-	virtual void loadResourceComplete() override;
-	virtual void loadResourceProgress(unsigned int nLoaded, unsigned int nTotal) override;
-	virtual const SceneType& getSceneType() const final;
-	virtual void setDelegate(ResourceDelegate* pDelegate){ m_pDelegate = pDelegate; }
-protected:
-
-	ResourceDelegate* m_pDelegate;
 
 private:
 
-	SceneType m_sceneType;
+	//当前进度数
+	int m_nCurrentFinish;
+
+	std::vector<std::string> m_resources;
 };

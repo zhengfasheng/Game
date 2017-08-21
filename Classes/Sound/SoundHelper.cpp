@@ -63,6 +63,11 @@ void SoundHelper::stopBackgroundMusic()
 	}
 }
 
+bool SoundHelper::isPlayingBackgroundMusic()
+{
+	return SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying();
+}
+
 void SoundHelper::pauseBackgroundMusic()
 {
 	if ( m_bIsBackgroundOn )

@@ -29,6 +29,7 @@ enum class ControllerID
 	Min,
 	Invalid = Min,
 	Start,//开始
+	About,//关于
 	Max
 };
 

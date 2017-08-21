@@ -56,6 +56,7 @@ public:
 	virtual void preloadBackgroundMusic();
 	virtual void playBackgroundMusic(BackgroundMusicType type, bool bIsLoop = true);
 	virtual void stopBackgroundMusic();
+	virtual bool isPlayingBackgroundMusic();
 	virtual void pauseBackgroundMusic();
 	virtual void resumeBackgroundMusic();
 	virtual bool isBackgroundMusicOn();

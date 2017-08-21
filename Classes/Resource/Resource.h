@@ -24,7 +24,7 @@ static const char* s_loadingbar = "slider_bar_active_9patch.png";//加载界面用，
 static const int g_nTotalResource = 18;//那个进度条没有算进去一进去就直接用了
 
 // font
-static const char* s_font = "bitmapFontTest.fnt";
+static const char* s_font = "fonts/bitmapFontTest.fnt";
 static const char* s_arial14_fnt = "arial-14.fnt";//字体
 
 // music
@@ -44,9 +44,6 @@ static const char* s_level01 = "level01.tmx";
 static const char* s_Enemy_plist = "Enemy.plist";
 static const char* s_explosion_plist = "explosion.plist";
 static const char* s_bullet_plist = "bullet.plist";
-
-//描述配置文件
-static const char* s_describ = "describe.plist";
 
 //key
 //子弹

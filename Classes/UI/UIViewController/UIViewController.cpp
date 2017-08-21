@@ -30,6 +30,7 @@ void UIViewController::RemoveFromParent()
 	if ( getView() )
 	{
 		getView()->removeFromParent();
+		CC_SAFE_RELEASE_NULL(m_pView);//把界面也删除掉
 	}
 }
 

@@ -74,6 +74,8 @@ public:
 
 	virtual void DidEnter() override;
 
+	virtual void DidExit() override;
+
 private:
 
 	void setLoadingString(const std::string& szContent);

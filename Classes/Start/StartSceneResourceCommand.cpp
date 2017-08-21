@@ -15,7 +15,7 @@ StartSceneResourceCommand::StartSceneResourceCommand(ResourceDelegate* pDelegate
 
 StartSceneResourceCommand::~StartSceneResourceCommand()
 {
-
+	Director::getInstance()->getScheduler()->unschedule("Load_Start_Resource_Timer", Director::getInstance());
 }
 
 void StartSceneResourceCommand::unloadResourceStart()
@@ -23,6 +23,8 @@ void StartSceneResourceCommand::unloadResourceStart()
 	//释放资源 
 	Director::getInstance()->getTextureCache()->removeTextureForKey(s_menu);
 	Director::getInstance()->getTextureCache()->removeTextureForKey(s_logo);
+	Director::getInstance()->getTextureCache()->removeTextureForKey(s_menuTitle);
+	unloadResourceComplete();
 }
 
 void StartSceneResourceCommand::loadResourceStart()
@@ -89,12 +91,8 @@ void StartSceneResourceCommand::loadResourceStart()
 
 void StartSceneResourceCommand::onLoading(Texture2D* pTexture, const char* szResourceName)
 {
-	do
-	{
-		m_nCurrentFinish++;
-		//加载完成
-		loadResourceProgress(m_nCurrentFinish, m_resources.size());
-
-	} while (0);
+	m_nCurrentFinish++;
+	//加载完成
+	loadResourceProgress(m_nCurrentFinish, m_resources.size());
 }
 

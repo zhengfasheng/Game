@@ -117,6 +117,8 @@ public:
 
 	string getLocalFont();
 
+	string getBitmapFont();
+
 private:
 
 	Language();

@@ -16,8 +16,29 @@
 		<string>加载开始场景资源完成</string>
 		<key>loading_resource_1</key>
 		<string>正在加载开始场景资源{%any}/{%any}</string>
+		
+		<key>unload_resource_start_3</key>
+		<string>正在释放关于场景资源</string>
+		<key>unload_resource_complete_3</key>
+		<string>释放关于场景资源完成</string>
+		<key>load_resource_start_3</key>
+		<string>正在读取关于场景资源</string>
+		<key>load_resource_complete_3</key>
+		<string>加载关于场景资源完成</string>
+		<key>loading_resource_3</key>
+		<string>正在加载关于场景资源{%any}/{%any}</string>
+		
 	</dict>
-	
+	<key>about</key>
+	<dict>
+		<key>about_english</key>
+        <string>    I recode this game according to the logic of MoonWarriors-html5,almost all of the code  keep unanimous with the original.
+    This showcase utilizes many features from Cocos2d - x engine,including: Parallax background,tilemap, actions, ease, frame animation, schedule, Labels, keyboard Dispatcher, Scene Transition</string>
+       <key>about_chinese</key>
+	   <string>    这是一款根据MoonWarriors-html5改写的游戏,基于自己对mvc的理解，写一个小示例来展示框架的可行性，里面加入了场景管理器，UI管理器，过渡资源场景处理，以解决项目过大，资源过多，一次性加载占用内存过多的问题，如有设计不好，或者使用不方便，希望提出你的宝贵意见。</string>
+	   <key>go_back</key>
+	   <string>Go Back</string>
+	</dict>
 
 	<key>Activity</key>
 	<dict>

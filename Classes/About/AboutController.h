@@ -17,40 +17,26 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/8/19 2:02
+ *  Date:2017/8/21 23:07
  *
- *  Summary:资源加载命令
+ *  Summary:关于控制器
  *  
  ******************************************************************************/
 #pragma once
-#include "Command.h"
-#include "ResourceCommanDelegate.h"
-#include "SceneType.h"
-#include "cocos2d.h"
+#include "UIViewController.h"
 
-USING_NS_CC;
-
-class ResourceDelegate;
-class ResourceCommand : public ResourceCommanDelegate
+USING_UI;
+class AboutController : public UIViewController
 {
 public:
-	ResourceCommand( ResourceDelegate* pDelegate , SceneType type );
-	virtual ~ResourceCommand();
+	AboutController();
+	virtual ~AboutController();
 
-	virtual void onLoading(Texture2D* pTexture, const char* szResourceName) = 0;
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
 
-	virtual void unloadResourceStart() override;
-	virtual void unloadResourceComplete() override;
-	virtual void loadResourceStart() override;
-	virtual void loadResourceComplete() override;
-	virtual void loadResourceProgress(unsigned int nLoaded, unsigned int nTotal) override;
-	virtual const SceneType& getSceneType() const final;
-	virtual void setDelegate(ResourceDelegate* pDelegate){ m_pDelegate = pDelegate; }
-protected:
+	DECLARE_HANDLER(onGoBack);
 
-	ResourceDelegate* m_pDelegate;
-
-private:
-
-	SceneType m_sceneType;
+	EVENT_HANDLER_BEGIN
+		EVENT_HANDLER(UIEvent::EVENT_ABOUT_GO_BACK, onGoBack);
+	EVENT_HANDLER_END
 };

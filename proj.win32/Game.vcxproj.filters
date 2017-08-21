@@ -70,6 +70,9 @@
     <Filter Include="Classes\Start">
       <UniqueIdentifier>{73a9ab6c-878e-483b-888e-1e40472605f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\About">
+      <UniqueIdentifier>{16fd4003-51d0-4055-8488-26618a34c5cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -173,6 +176,18 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Common\GameConfig.cpp">
       <Filter>Classes\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\About\AboutScene.cpp">
+      <Filter>Classes\About</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\About\AboutController.cpp">
+      <Filter>Classes\About</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\About\AboutView.cpp">
+      <Filter>Classes\About</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\About\AboutResourceCommand.cpp">
+      <Filter>Classes\About</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +340,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Common\GameConfig.h">
       <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\About\AboutScene.h">
+      <Filter>Classes\About</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\About\AboutController.h">
+      <Filter>Classes\About</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\About\AboutView.h">
+      <Filter>Classes\About</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\About\AboutResourceCommand.h">
+      <Filter>Classes\About</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

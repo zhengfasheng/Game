@@ -90,8 +90,6 @@ bool StartView::init(UIViewControllerDelegate* pDelegate)
 
 		}
 
-		SoundHelper::getInstance()->playBackgroundMusic(SoundHelper::BackgroundMusicType::BackMusic);
-
 		bRet = true;
 	} while (0);
 	return bRet;

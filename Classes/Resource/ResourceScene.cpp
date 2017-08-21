@@ -130,6 +130,22 @@ void ResourceScene::unloadResourceComplete(SceneType type)
 	}
 	setLoadingString(Language::getInstance()->getString("resource.unload_resource_complete_" + toString((int)type)));
 	setLoadingBarVisible(false);
+	//前一场景资源释放完成，加载 后一场景的资源
+	if (m_pToSceneCommand)
+	{
+		m_pToSceneCommand->loadResourceStart();
+		setLoadingString(Language::getInstance()->getString("resource.load_resource_start_" + toString((int)type)));
+		setLoadingBarVisible(true);
+		setLoadingBarProgress(0.0f);
+	}
+	else
+	{
+		CCLOG("Are you sure don't need load resource , the scene type is %d", (int)m_toSceneType);
+		if (m_pDelegate)
+		{
+			m_pDelegate->loadResourceComplete(m_toSceneType);
+		}
+	}
 }
 
 void ResourceScene::loadResourceStart(SceneType type)
@@ -185,6 +201,22 @@ void ResourceScene::setLoadingBarProgress(float fProgress)
 	if ( m_pLoadingBar )
 	{
 		m_pLoadingBar->setPercent(fProgress);
+	}
+}
+
+void ResourceScene::DidExit()
+{
+	if ( m_pFromSceneCommand )
+	{
+		m_pFromSceneCommand->setDelegate(nullptr);
+		delete m_pFromSceneCommand;
+		m_pFromSceneCommand = nullptr;
+	}
+	if ( m_pToSceneCommand )
+	{
+		m_pToSceneCommand->setDelegate(nullptr);
+		delete m_pToSceneCommand;
+		m_pToSceneCommand = nullptr;
 	}
 }
 

@@ -29,6 +29,8 @@
 class StartScene : public IScene
 {
 public:
+	StartScene();
+	virtual ~StartScene();
 	IMPLEMENT_CREATE_SCENE(StartScene, SceneType::Start);
 
 	virtual void DidEnter() override;

@@ -35,4 +35,7 @@ namespace UIEvent
 	/** @brief	打开设置 */
 	const std::string EVENT_OPENT_SETTING = "EVENT_OPENT_SETTING";
 	
+	//关于场景事件
+	/** @brief	返回 */
+	const std::string EVENT_ABOUT_GO_BACK = "EVENT_ABOUT_GO_BACK";
 }

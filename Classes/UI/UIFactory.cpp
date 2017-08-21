@@ -1,6 +1,6 @@
 #include "UIFactory.h"
 #include "StartController.h"
-
+#include "AboutController.h"
 
 #define GET_CONTROLLER_INFO_BEGIN \
 void UIFactory::getInfo( ControllerID id,std::string& szName, std::function<UIViewController*()>& createFun )\
@@ -25,6 +25,7 @@ void UIFactory::getInfo( ControllerID id,std::string& szName, std::function<UIVi
 GET_CONTROLLER_INFO_BEGIN
 
 GET_CONTROLLER_INFO(ControllerID::Start, StartController);
+GET_CONTROLLER_INFO(ControllerID::About, AboutController);
 	
 GET_CONTROLLER_INFO_END
 
