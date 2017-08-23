@@ -17,26 +17,30 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/7/28 22:09
+ *  Date:2017/8/23 21:28
  *
- *  Summary: 控制器id
+ *  Summary:设置控制器
  *  
  ******************************************************************************/
 #pragma once
+#include "UIViewController.h"
 
-enum class ControllerID
+USING_UI;
+class SettingController : public UIViewController
 {
-	Min,
-	Invalid = Min,
-	Start,//开始
-	About,//关于
-	Setting,//设置
-	Max
-};
+public:
+	SettingController();
+	virtual ~SettingController();
 
-//State 中view 在场景中显示的层级
-enum SceneZOder
-{
-	Normal = 10000,//其它所有非通知形
-	Notice = 20000 //如tips , MessageBox loading animation
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
+
+	DECLARE_HANDLER(onGoBack);
+	DECLARE_HANDLER(onBackgroundMusicChange);
+	DECLARE_HANDLER(onAudioChange);
+
+	EVENT_HANDLER_BEGIN
+		EVENT_HANDLER(UIEvent::EVENT_SETTING_GO_GACK, onGoBack);
+		EVENT_HANDLER(UIEvent::EVENT_SETTING_CHANGE_BACKGROUND_MUSIC_STATUS, onBackgroundMusicChange);
+		EVENT_HANDLER(UIEvent::EVENT_SETTING_CHANGE_AUDIO_STATUS, onAudioChange);
+	EVENT_HANDLER_END
 };

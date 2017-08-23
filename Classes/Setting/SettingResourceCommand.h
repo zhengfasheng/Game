@@ -17,26 +17,30 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/7/28 22:09
+ *  Date:2017/8/23 21:58
  *
- *  Summary: 控制器id
+ *  Summary:资源加载 
  *  
  ******************************************************************************/
 #pragma once
 
-enum class ControllerID
-{
-	Min,
-	Invalid = Min,
-	Start,//开始
-	About,//关于
-	Setting,//设置
-	Max
-};
+#include "ResourceCommand.h"
 
-//State 中view 在场景中显示的层级
-enum SceneZOder
+class SettingResourceCommand : public ResourceCommand
 {
-	Normal = 10000,//其它所有非通知形
-	Notice = 20000 //如tips , MessageBox loading animation
+public:
+	SettingResourceCommand(ResourceDelegate* pDelegate,SceneType type = SceneType::Setting);
+	virtual ~SettingResourceCommand();
+
+	virtual void onLoading(Texture2D* pTexture, const char* szResourceName) override;
+
+	virtual void unloadResourceStart() override;
+	virtual void loadResourceStart() override;
+
+private:
+
+	//当前进度数
+	int m_nCurrentFinish;
+
+	std::vector<std::string> m_resources;
 };

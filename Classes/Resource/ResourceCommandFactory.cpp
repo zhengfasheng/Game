@@ -1,6 +1,8 @@
 #include "ResourceCommandFactory.h"
 #include "StartSceneResourceCommand.h"
 #include "AboutResourceCommand.h"
+#include "SettingResourceCommand.h"
+#include "GameResourceCommand.h"
 
 ResourceCommandFactory::ResourceCommandFactory()
 {
@@ -24,10 +26,16 @@ ResourceCommand* ResourceCommandFactory::create(ResourceDelegate* pDelegate , Sc
 		return nullptr;
 		break;
 	case SceneType::Start:
-		pCommand = new StartSceneResourceCommand(pDelegate);
+		pCommand = new StartSceneResourceCommand(pDelegate, type);
 		break;
 	case SceneType::About:
-		pCommand = new AboutResourceCommand(pDelegate);
+		pCommand = new AboutResourceCommand(pDelegate, type);
+		break;
+	case SceneType::Setting:
+		pCommand = new SettingResourceCommand(pDelegate, type);
+		break;
+	case SceneType::Game:
+		pCommand = new GameResourceCommand(pDelegate, type);
 	default:
 		break;
 	}

@@ -118,7 +118,9 @@ void ResourceScene::unloadResourceStart(SceneType type)
 	{
 		m_pDelegate->unloadResourceStart(type);
 	}
-	setLoadingString(Language::getInstance()->getString("resource.unload_resource_start_" + toString((int)type)));
+	auto szFormatString = Language::getInstance()->getString("resource.unload_resource_start");
+	auto szSceneName = Language::getInstance()->getString("resource.scene_name_" + toString((int)type));
+	setLoadingString(Language::getInstance()->formatString(szFormatString,szSceneName));
 	setLoadingBarVisible(false);
 }
 
@@ -128,13 +130,16 @@ void ResourceScene::unloadResourceComplete(SceneType type)
 	{
 		m_pDelegate->unloadResourceComplete(type);
 	}
-	setLoadingString(Language::getInstance()->getString("resource.unload_resource_complete_" + toString((int)type)));
+	auto szFormatString = Language::getInstance()->getString("resource.unload_resource_complete");
+	auto szSceneName = Language::getInstance()->getString("resource.scene_name_" + toString((int)type));
+	setLoadingString(Language::getInstance()->formatString(szFormatString,szSceneName));
 	setLoadingBarVisible(false);
 	//前一场景资源释放完成，加载 后一场景的资源
 	if (m_pToSceneCommand)
 	{
 		m_pToSceneCommand->loadResourceStart();
-		setLoadingString(Language::getInstance()->getString("resource.load_resource_start_" + toString((int)type)));
+		szFormatString = Language::getInstance()->getString("resource.load_resource_start");
+		setLoadingString(Language::getInstance()->formatString(szFormatString,szSceneName));
 		setLoadingBarVisible(true);
 		setLoadingBarProgress(0.0f);
 	}
@@ -154,7 +159,9 @@ void ResourceScene::loadResourceStart(SceneType type)
 	{
 		m_pDelegate->loadResourceStart(type);
 	}
-	setLoadingString(Language::getInstance()->getString("resource.load_resource_start_" + toString((int)type)));
+	auto szFormatString = Language::getInstance()->getString("resource.load_resource_start");
+	auto szSceneName = Language::getInstance()->getString("resource.scene_name_" + toString((int)type));
+	setLoadingString(Language::getInstance()->formatString(szFormatString,szSceneName));
 	setLoadingBarVisible(true);
 	setLoadingBarProgress(0.0f);
 }
@@ -165,7 +172,9 @@ void ResourceScene::loadResourceComplete(SceneType type)
 	{
 		m_pDelegate->loadResourceComplete(type);
 	}
-	setLoadingString(Language::getInstance()->getString("resource.load_resource_complete_" + toString((int)type)));
+	auto szFormatString = Language::getInstance()->getString("resource.load_resource_complete");
+	auto szSceneName = Language::getInstance()->getString("resource.scene_name_" + toString((int)type));
+	setLoadingString(Language::getInstance()->formatString(szFormatString,szSceneName));
 }
 
 void ResourceScene::loadResourceProgress(SceneType type, unsigned int nLoadedCount, unsigned int nTotal)
@@ -174,7 +183,9 @@ void ResourceScene::loadResourceProgress(SceneType type, unsigned int nLoadedCou
 	{
 		m_pDelegate->loadResourceProgress(type, nLoadedCount, nTotal);
 	}
-	setLoadingString(Language::getInstance()->getStringWithParam("resource.loading_resource_" + toString((int)type) , (int)nLoadedCount,(int)nTotal));
+	auto szFormatString = Language::getInstance()->getString("resource.loading_resource");
+	auto szSceneName = Language::getInstance()->getString("resource.scene_name_" + toString((int)type));
+	setLoadingString(Language::getInstance()->formatString(szFormatString,szSceneName,(int)nLoadedCount,(int)nTotal));
 	float fProgress = (float)nLoadedCount / (float)nTotal;
 	setLoadingBarProgress(fProgress * 100);
 }

@@ -91,18 +91,19 @@ bool SoundHelper::isBackgroundMusicOn()
 
 void SoundHelper::setBackgroundMusic(bool bIsOn)
 {
-	if ( m_bIsBackgroundOn = bIsOn)
+	if ( m_bIsBackgroundOn == bIsOn)
 	{
 		return;
 	}
-	m_bIsBackgroundOn = bIsOn;
 	if ( bIsOn )
 	{
+		m_bIsBackgroundOn = bIsOn;
 		playBackgroundMusic(m_backgroundType);
 	}
 	else
 	{
 		stopBackgroundMusic();
+		m_bIsBackgroundOn = bIsOn;
 	}
 	save();
 }
@@ -199,14 +200,16 @@ void SoundHelper::setAudio(bool bIsOn)
 	{
 		return;
 	}
-	m_bIsAudioOn = bIsOn;
+	
 	if ( bIsOn )
 	{
+		m_bIsAudioOn = bIsOn;
 		resumeAllAudio();
 	}
 	else
 	{
 		stopAllAudio();
+		m_bIsAudioOn = bIsOn;
 	}
 	save();
 }

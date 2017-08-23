@@ -38,4 +38,14 @@ namespace UIEvent
 	//关于场景事件
 	/** @brief	返回 */
 	const std::string EVENT_ABOUT_GO_BACK = "EVENT_ABOUT_GO_BACK";
+
+	//设置
+	/** @brief	返回 */
+	const std::string EVENT_SETTING_GO_GACK = "EVENT_SETTING_GO_GACK";
+
+	/** @brief	背景音乐状态改变 */
+	const std::string EVENT_SETTING_CHANGE_BACKGROUND_MUSIC_STATUS = "EVENT_SETTING_CHANGE_BACKGROUND_MUSIC_STATUS";
+
+	/** @brief	音效状态改变 */
+	const std::string EVENT_SETTING_CHANGE_AUDIO_STATUS = "";
 }

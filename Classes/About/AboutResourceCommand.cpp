@@ -1,8 +1,8 @@
 #include "AboutResourceCommand.h"
 #include "Resource.h"
 
-AboutResourceCommand::AboutResourceCommand(ResourceDelegate* pDelegate)
-	:ResourceCommand(pDelegate,SceneType::About)
+AboutResourceCommand::AboutResourceCommand(ResourceDelegate* pDelegate,SceneType type)
+	:ResourceCommand(pDelegate,type)
 {
 
 }

@@ -73,6 +73,12 @@
     <Filter Include="Classes\About">
       <UniqueIdentifier>{16fd4003-51d0-4055-8488-26618a34c5cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Setting">
+      <UniqueIdentifier>{47dcebdc-bc8d-4825-9c24-5ac38be8b0b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game">
+      <UniqueIdentifier>{078fd413-c8be-4107-8592-1cbcfee7d9f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -188,6 +194,24 @@
     </ClCompile>
     <ClCompile Include="..\Classes\About\AboutResourceCommand.cpp">
       <Filter>Classes\About</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Setting\SettingScene.cpp">
+      <Filter>Classes\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Setting\SettingController.cpp">
+      <Filter>Classes\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Setting\SettingView.cpp">
+      <Filter>Classes\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Setting\SettingResourceCommand.cpp">
+      <Filter>Classes\Setting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameScene.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameResourceCommand.cpp">
+      <Filter>Classes\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -352,6 +376,24 @@
     </ClInclude>
     <ClInclude Include="..\Classes\About\AboutResourceCommand.h">
       <Filter>Classes\About</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Setting\SettingController.h">
+      <Filter>Classes\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Setting\SettingView.h">
+      <Filter>Classes\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Setting\SettingResourceCommand.h">
+      <Filter>Classes\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Setting\SettingScene.h">
+      <Filter>Classes\Setting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameScene.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameResourceCommand.h">
+      <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

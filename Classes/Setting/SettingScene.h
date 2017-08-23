@@ -17,26 +17,20 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/7/28 22:09
+ *  Date:2017/8/23 21:26
  *
- *  Summary: 控制器id
+ *  Summary:设置场景
  *  
  ******************************************************************************/
 #pragma once
+#include "IScene.h"
 
-enum class ControllerID
+class SettingScene : public IScene
 {
-	Min,
-	Invalid = Min,
-	Start,//开始
-	About,//关于
-	Setting,//设置
-	Max
-};
+public:
+	SettingScene();
+	virtual ~SettingScene();
+	IMPLEMENT_CREATE_SCENE(SettingScene, SceneType::Setting);
 
-//State 中view 在场景中显示的层级
-enum SceneZOder
-{
-	Normal = 10000,//其它所有非通知形
-	Notice = 20000 //如tips , MessageBox loading animation
+	virtual void DidEnter() override;
 };

@@ -28,7 +28,7 @@
 class StartSceneResourceCommand : public ResourceCommand
 {
 public:
-	StartSceneResourceCommand(ResourceDelegate* pDelegate);
+	StartSceneResourceCommand(ResourceDelegate* pDelegate , SceneType type = SceneType::Start);
 	virtual ~StartSceneResourceCommand();
 
 	virtual void onLoading(Texture2D* pTexture, const char* szResourceName) override;

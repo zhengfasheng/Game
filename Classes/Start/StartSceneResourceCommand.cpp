@@ -4,10 +4,8 @@
 #include "Resource.h"
 #include "SoundHelper.h"
 
-const static float TOTAL_RESOURCE = 6.0f;
-
-StartSceneResourceCommand::StartSceneResourceCommand(ResourceDelegate* pDelegate)
-	:ResourceCommand(pDelegate,SceneType::Start)
+StartSceneResourceCommand::StartSceneResourceCommand(ResourceDelegate* pDelegate , SceneType type /* = SceneType::Start */)
+	:ResourceCommand(pDelegate,type)
 	, m_nCurrentFinish(0)
 {
 

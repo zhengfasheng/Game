@@ -4,6 +4,7 @@
 #include "SceneFactory.h"
 #include "ResourceScene.h"
 #include "GameConfig.h"
+#include "SoundHelper.h"
 
 USING_NS_CC;
 
@@ -40,6 +41,7 @@ void SceneManager::GameStart()
 
 	DataHelperManager::getInstance()->init();
 	Language::getInstance()->init();
+	SoundHelper::getInstance()->init();
 
 	FileUtils::getInstance()->addSearchPath("res");
 	FileUtils::getInstance()->addSearchPath("config");
@@ -95,6 +97,10 @@ void SceneManager::loadResourceComplete(SceneType type)
 			auto pScene = SceneFactory::getInstance()->create(this, type);
 			CC_BREAK_IF(!pScene);
 			Director::getInstance()->replaceScene(pScene);
+		}
+		else
+		{
+			CCLOGERROR("load resource command scene type is error, scene type must be %d", (int)m_nCurrentSceneType);
 		}
 	} while (0);
 }

@@ -4,29 +4,27 @@
 <dict>
 	<key>resource</key>
 	<dict>
+		<key>scene_name_1</key>
+		<string>开始</string>
+		<key>scene_name_2</key>
+		<string>游戏</string>
+		<key>scene_name_3</key>
+		<string>关于</string>
+		<key>scene_name_4</key>
+		<string>设置</string>
+
 		<key>read_resource</key>
 		<string>正在读取资源文件数据</string>
-		<key>unload_resource_start_1</key>
-		<string>正在释放开始场景资源</string>
-		<key>unload_resource_complete_1</key>
-		<string>释放开始场景资源完成</string>
-		<key>load_resource_start_1</key>
-		<string>正在读取开始场景资源</string>
-		<key>load_resource_complete_1</key>
-		<string>加载开始场景资源完成</string>
-		<key>loading_resource_1</key>
-		<string>正在加载开始场景资源{%any}/{%any}</string>
-		
-		<key>unload_resource_start_3</key>
-		<string>正在释放关于场景资源</string>
-		<key>unload_resource_complete_3</key>
-		<string>释放关于场景资源完成</string>
-		<key>load_resource_start_3</key>
-		<string>正在读取关于场景资源</string>
-		<key>load_resource_complete_3</key>
-		<string>加载关于场景资源完成</string>
-		<key>loading_resource_3</key>
-		<string>正在加载关于场景资源{%any}/{%any}</string>
+		<key>unload_resource_start</key>
+		<string>正在释放{%any}场景资源</string>
+		<key>unload_resource_complete</key>
+		<string>释放{%any}场景资源完成</string>
+		<key>load_resource_start</key>
+		<string>正在读取{%any}场景资源</string>
+		<key>load_resource_complete</key>
+		<string>加载{%any}场景资源完成</string>
+		<key>loading_resource</key>
+		<string>正在加载{%any}场景资源{%any}/{%any}</string>
 		
 	</dict>
 	<key>about</key>
@@ -38,6 +36,18 @@
 	   <string>    这是一款根据MoonWarriors-html5改写的游戏,基于自己对mvc的理解，写一个小示例来展示框架的可行性，里面加入了场景管理器，UI管理器，过渡资源场景处理，以解决项目过大，资源过多，一次性加载占用内存过多的问题，如有设计不好，或者使用不方便，希望提出你的宝贵意见。</string>
 	   <key>go_back</key>
 	   <string>Go Back</string>
+	</dict>
+
+	<key>setting</key>
+	<dict>
+		<key>background_music</key>
+	  	<string>BackMusic</string>
+	  	<key>sounds_on</key>
+	  	<string>On</string>
+	  	<key>sounds_off</key>
+	  	<string>Off</string>
+	  	<key>audio</key>
+	  	<string>Audio</string>
 	</dict>
 
 	<key>Activity</key>

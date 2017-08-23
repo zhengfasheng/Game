@@ -17,26 +17,21 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/7/28 22:09
+ *  Date:2017/8/23 22:48
  *
- *  Summary: 控制器id
+ *  Summary:主游戏场景
  *  
  ******************************************************************************/
 #pragma once
 
-enum class ControllerID
-{
-	Min,
-	Invalid = Min,
-	Start,//开始
-	About,//关于
-	Setting,//设置
-	Max
-};
+#include "IScene.h"
 
-//State 中view 在场景中显示的层级
-enum SceneZOder
+class GameScene : public IScene
 {
-	Normal = 10000,//其它所有非通知形
-	Notice = 20000 //如tips , MessageBox loading animation
+public:
+	GameScene();
+	virtual ~GameScene();
+	IMPLEMENT_CREATE_SCENE(GameScene, SceneType::Game);
+
+	virtual void DidEnter() override;
 };

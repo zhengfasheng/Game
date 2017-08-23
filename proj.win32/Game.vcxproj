@@ -73,7 +73,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Sound;../Classes/Resource;../Classes/Command;../Classes/DataBase;../Classes/Language;../Classes/Start;../Classes/About</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Sound;../Classes/Resource;../Classes/Command;../Classes/DataBase;../Classes/Language;../Classes/Start;../Classes/About;../Classes/Setting;../Classes/Game</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -156,6 +156,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Common\GValue.cpp" />
     <ClCompile Include="..\Classes\DataBase\DatabaseManager.cpp" />
     <ClCompile Include="..\Classes\DataBase\Table.cpp" />
+    <ClCompile Include="..\Classes\Game\GameResourceCommand.cpp" />
+    <ClCompile Include="..\Classes\Game\GameScene.cpp" />
     <ClCompile Include="..\Classes\Language\Language.cpp" />
     <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp" />
     <ClCompile Include="..\Classes\Message\Message.cpp" />
@@ -172,6 +174,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Scene\SceneManager.cpp" />
     <ClCompile Include="..\Classes\Scene\IScene.cpp" />
     <ClCompile Include="..\Classes\Scene\SceneDelegate.cpp" />
+    <ClCompile Include="..\Classes\Setting\SettingController.cpp" />
+    <ClCompile Include="..\Classes\Setting\SettingResourceCommand.cpp" />
+    <ClCompile Include="..\Classes\Setting\SettingScene.cpp" />
+    <ClCompile Include="..\Classes\Setting\SettingView.cpp" />
     <ClCompile Include="..\Classes\Sound\SoundHelper.cpp" />
     <ClCompile Include="..\Classes\Start\StartController.cpp" />
     <ClCompile Include="..\Classes\Start\StartScene.cpp" />
@@ -205,6 +211,8 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\DataBase\TableDefine.h" />
     <ClInclude Include="..\Classes\DataBase\TableStructure.h" />
     <ClInclude Include="..\Classes\Event\UIEvent.h" />
+    <ClInclude Include="..\Classes\Game\GameResourceCommand.h" />
+    <ClInclude Include="..\Classes\Game\GameScene.h" />
     <ClInclude Include="..\Classes\Language\Language.h" />
     <ClInclude Include="..\Classes\LocalServer\LocalServer.h" />
     <ClInclude Include="..\Classes\LocalServer\ServerDelegate.h" />
@@ -226,6 +234,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Scene\IScene.h" />
     <ClInclude Include="..\Classes\Scene\SceneDelegate.h" />
     <ClInclude Include="..\Classes\Scene\SceneType.h" />
+    <ClInclude Include="..\Classes\Setting\SettingController.h" />
+    <ClInclude Include="..\Classes\Setting\SettingResourceCommand.h" />
+    <ClInclude Include="..\Classes\Setting\SettingScene.h" />
+    <ClInclude Include="..\Classes\Setting\SettingView.h" />
     <ClInclude Include="..\Classes\Sound\SoundHelper.h" />
     <ClInclude Include="..\Classes\Start\StartController.h" />
     <ClInclude Include="..\Classes\Start\StartScene.h" />
