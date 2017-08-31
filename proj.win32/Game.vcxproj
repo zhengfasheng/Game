@@ -73,7 +73,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Sound;../Classes/Resource;../Classes/Command;../Classes/DataBase;../Classes/Language;../Classes/Start;../Classes/About;../Classes/Setting;../Classes/Game</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END);../Classes/Application;../Classes/Common;../Classes/Model;../Classes/Model/Data;../Classes/Model/DataHelper;../Classes/Model/Parser;../Classes/UI;../Classes/UI/UIView;../Classes/UI/UIViewController;../Classes/Scene;../Classes/Message;../Classes/Event;../Classes/UI/Componet;../Classes/LocalServer;../Classes/Sound;../Classes/Resource;../Classes/Command;../Classes/DataBase;../Classes/Language;../Classes/Start;../Classes/About;../Classes/Setting;../Classes/Game;../Classes/GameOver</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -156,15 +156,33 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\Common\GValue.cpp" />
     <ClCompile Include="..\Classes\DataBase\DatabaseManager.cpp" />
     <ClCompile Include="..\Classes\DataBase\Table.cpp" />
+    <ClCompile Include="..\Classes\GameOver\GameOverController.cpp" />
+    <ClCompile Include="..\Classes\GameOver\GameOverResourceCommand.cpp" />
+    <ClCompile Include="..\Classes\GameOver\GameOverScene.cpp" />
+    <ClCompile Include="..\Classes\GameOver\GameOverView.cpp" />
+    <ClCompile Include="..\Classes\Game\Airplane.cpp" />
+    <ClCompile Include="..\Classes\Game\AirplaneLevelManager.cpp" />
+    <ClCompile Include="..\Classes\Game\Bullet.cpp" />
+    <ClCompile Include="..\Classes\Game\Effect.cpp" />
+    <ClCompile Include="..\Classes\Game\Enemy.cpp" />
+    <ClCompile Include="..\Classes\Game\EnemyManager.cpp" />
+    <ClCompile Include="..\Classes\Game\GameController.cpp" />
+    <ClCompile Include="..\Classes\Game\GameInfoView.cpp" />
+    <ClCompile Include="..\Classes\Game\GameLevelManager.cpp" />
+    <ClCompile Include="..\Classes\Game\GameMainView.cpp" />
+    <ClCompile Include="..\Classes\Game\GameMapView.cpp" />
+    <ClCompile Include="..\Classes\Game\GameOpView.cpp" />
     <ClCompile Include="..\Classes\Game\GameResourceCommand.cpp" />
     <ClCompile Include="..\Classes\Game\GameScene.cpp" />
+    <ClCompile Include="..\Classes\Game\GameView.cpp" />
+    <ClCompile Include="..\Classes\Game\GamePauseView.cpp" />
     <ClCompile Include="..\Classes\Language\Language.cpp" />
     <ClCompile Include="..\Classes\LocalServer\LocalServer.cpp" />
     <ClCompile Include="..\Classes\Message\Message.cpp" />
     <ClCompile Include="..\Classes\Model\DataHelper\DataHelper.cpp" />
     <ClCompile Include="..\Classes\Model\DataHelper\DataHelperManager.cpp" />
     <ClCompile Include="..\Classes\Model\DataHelper\LoginHelper.cpp" />
-    <ClCompile Include="..\Classes\Model\Data\CurrentInfo.cpp" />
+    <ClCompile Include="..\Classes\Model\Data\CurrentPlayerInfo.cpp" />
     <ClCompile Include="..\Classes\Model\Data\UserInfo.cpp" />
     <ClCompile Include="..\Classes\Model\Parser\IParser.cpp" />
     <ClCompile Include="..\Classes\Resource\ResourceCommand.cpp" />
@@ -210,9 +228,30 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\DataBase\Table.h" />
     <ClInclude Include="..\Classes\DataBase\TableDefine.h" />
     <ClInclude Include="..\Classes\DataBase\TableStructure.h" />
+    <ClInclude Include="..\Classes\Event\EventDelegate.h" />
     <ClInclude Include="..\Classes\Event\UIEvent.h" />
+    <ClInclude Include="..\Classes\GameOver\GameOverController.h" />
+    <ClInclude Include="..\Classes\GameOver\GameOverResourceCommand.h" />
+    <ClInclude Include="..\Classes\GameOver\GameOverScene.h" />
+    <ClInclude Include="..\Classes\GameOver\GameOverView.h" />
+    <ClInclude Include="..\Classes\Game\Airplane.h" />
+    <ClInclude Include="..\Classes\Game\AirplaneLevelManager.h" />
+    <ClInclude Include="..\Classes\Game\Bullet.h" />
+    <ClInclude Include="..\Classes\Game\Effect.h" />
+    <ClInclude Include="..\Classes\Game\Enemy.h" />
+    <ClInclude Include="..\Classes\Game\EnemyManager.h" />
+    <ClInclude Include="..\Classes\Game\EntityObject.h" />
+    <ClInclude Include="..\Classes\Game\GameController.h" />
+    <ClInclude Include="..\Classes\Game\GameEvent.h" />
+    <ClInclude Include="..\Classes\Game\GameInfoView.h" />
+    <ClInclude Include="..\Classes\Game\GameLevelManager.h" />
+    <ClInclude Include="..\Classes\Game\GameMainView.h" />
+    <ClInclude Include="..\Classes\Game\GameMapView.h" />
+    <ClInclude Include="..\Classes\Game\GameOpView.h" />
     <ClInclude Include="..\Classes\Game\GameResourceCommand.h" />
     <ClInclude Include="..\Classes\Game\GameScene.h" />
+    <ClInclude Include="..\Classes\Game\GameView.h" />
+    <ClInclude Include="..\Classes\Game\GamePauseView.h" />
     <ClInclude Include="..\Classes\Language\Language.h" />
     <ClInclude Include="..\Classes\LocalServer\LocalServer.h" />
     <ClInclude Include="..\Classes\LocalServer\ServerDelegate.h" />
@@ -220,7 +259,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\Model\DataHelper\DataHelper.h" />
     <ClInclude Include="..\Classes\Model\DataHelper\DataHelperManager.h" />
     <ClInclude Include="..\Classes\Model\DataHelper\LoginHelper.h" />
-    <ClInclude Include="..\Classes\Model\Data\CurrentInfo.h" />
+    <ClInclude Include="..\Classes\Model\Data\CurrentPlayerInfo.h" />
     <ClInclude Include="..\Classes\Model\Data\UserInfo.h" />
     <ClInclude Include="..\Classes\Model\Parser\IParser.h" />
     <ClInclude Include="..\Classes\Resource\Resource.h" />

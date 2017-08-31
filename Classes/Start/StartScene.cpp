@@ -1,6 +1,7 @@
 #include "StartScene.h"
 #include "UIManager.h"
 #include "SoundHelper.h"
+#include "CurrentPlayerInfo.h"
 
 void StartScene::DidEnter()
 {
@@ -8,7 +9,7 @@ void StartScene::DidEnter()
 	{
 		SoundHelper::getInstance()->playBackgroundMusic(SoundHelper::BackgroundMusicType::BackMusic);
 	}
-	
+	CurrentPlayerInfo::getInstance()->readPlayerInformation();
 	UIManager::getInstance()->Show(ControllerID::Start);
 }
 

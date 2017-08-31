@@ -34,7 +34,7 @@ namespace UIEvent
 	const std::string EVENT_OPEN_ABOUT = "EVENT_OPEN_ABOUT";
 	/** @brief	打开设置 */
 	const std::string EVENT_OPENT_SETTING = "EVENT_OPENT_SETTING";
-	
+
 	//关于场景事件
 	/** @brief	返回 */
 	const std::string EVENT_ABOUT_GO_BACK = "EVENT_ABOUT_GO_BACK";
@@ -47,5 +47,14 @@ namespace UIEvent
 	const std::string EVENT_SETTING_CHANGE_BACKGROUND_MUSIC_STATUS = "EVENT_SETTING_CHANGE_BACKGROUND_MUSIC_STATUS";
 
 	/** @brief	音效状态改变 */
-	const std::string EVENT_SETTING_CHANGE_AUDIO_STATUS = "";
+	const std::string EVENT_SETTING_CHANGE_AUDIO_STATUS = "EVENT_SETTING_CHANGE_AUDIO_STATUS";
+
+	//游戏结束
+
+	/** @brief	返回到开始 */
+	const std::string EVENT_GAME_OVER_GO_BACK = "EVENT_GAME_OVER_GO_BACK";
+	/** @brief	重新游戏 */
+	const std::string EVNET_GAME_OVER_TRY_AGAIN = "EVNET_GAME_OVER_TRY_AGAIN";
+
+	
 }

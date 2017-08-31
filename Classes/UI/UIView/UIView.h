@@ -39,7 +39,7 @@ public:
 	UIView();
 	~UIView();
 
-	virtual bool init(UIViewControllerDelegate* pProtocol);
+	virtual bool init(UIViewControllerDelegate* pDelegate);
 
 	/**
 	 * @brief	界面是否显示 
@@ -73,15 +73,41 @@ public:
 	/** @brief	只有当允许出场动画，此函数才会调用 */
 	virtual void HideWithAction();
 
+	virtual UIViewControllerDelegate* getDelegate() { return m_pDelegate; }
+
+	/**
+	 * @brief	设置是否允许代理传播UIView相关事件到UIManager中，在一个控制器中有多个显示视图时，
+	 * 			只有允许有一个主的显示视图，这时子视图不需要向UIManager传播事件
+	 * 			默认开启
+	 *
+	 * @param	bIsEnabled	true if this object is enabled.
+	 */
+
+	virtual void setEnableDelegate( bool bIsEnabled );
+	virtual bool isEnableDelegate();
+
+protected:
+
+	virtual bool onTouchBegan(Touch *touch, Event *unused_event) override;
+	virtual void onTouchMoved(Touch *touch, Event *unused_event) override;
+	virtual void onTouchEnded(Touch *touch, Event *unused_event) override;
+	virtual void onTouchCancelled(Touch *touch, Event *unused_event) override;
+
 	virtual void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 
-	virtual UIViewControllerDelegate* getDelegate() { return m_pDelegate; }
+	virtual void addEventListener();
+	virtual void removeEventListener();
+
 protected:
 
 	bool m_bIsShow;
 	bool m_bIsEnableShowAction;
 	bool m_bIsEnableHideAction;
 	UIViewControllerDelegate* m_pDelegate;
+	bool m_bIsEnableDelegate;
+
+	//事件监听
+	EventListenerTouchOneByOne* m_pEventListener;
 };
 
 UI_END

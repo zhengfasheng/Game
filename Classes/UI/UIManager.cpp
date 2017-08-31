@@ -254,3 +254,20 @@ void UIManager::OnExitTransitionDidStart(IScene* pScene)
 
 }
 
+GValue UIManager::GetValue(ControllerID id, const std::string& szValueName)
+{
+	if (id > ControllerID::Min && id < ControllerID::Max)
+	{
+		auto it = m_controllers.find(id);
+		if (it == m_controllers.end())
+		{
+			return GValue::Null;
+		}
+		auto pDlg = it->second;
+		if (!pDlg)
+			return GValue::Null;
+		return pDlg->GetValue(szValueName);
+	}
+	return GValue::Null;
+}
+

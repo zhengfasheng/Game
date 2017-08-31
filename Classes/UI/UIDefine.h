@@ -53,7 +53,7 @@ public:\
 //控制器接收事件实现宏
 #define EVENT_HANDLER_BEGIN \
 public: \
-	virtual bool OnEvent(const std::string& szEventName, const GValue& param1, const GValue& param2, const GValue& param3, const GValue& param4 , UIViewControllerDelegate::EventType type ) override\
+	virtual bool OnEvent(const std::string& szEventName, const GValue& param1, const GValue& param2, const GValue& param3, const GValue& param4) override\
 {
 
 #define EVENT_HANDLER( _EVENT_NAME_ , _FUNCTION_ )\
@@ -67,6 +67,23 @@ public: \
 	return true;\
 }
 
+//控制器接收事件实现宏
+#define GET_VALUE_HANDLER_BEGIN \
+public: \
+virtual GValue GetValue(const std::string& szEventName) override\
+{
+
+#define GET_VALUE_HANDLER( _EVENT_NAME_ , _FUNCTION_ )\
+	if ( _EVENT_NAME_ == szEventName )\
+	{\
+		return _FUNCTION_();\
+	}
+
+#define GET_VALUE_HANDLER_END\
+	return GValue::Null;\
+}
+
+
 
 //处理接收事件函数定义宏
 #define DECLARE_HANDLER( _FUNCTION_NAME_ ) \
@@ -74,3 +91,9 @@ public: \
 //处理接收事件函数实现宏
 #define IMPLEMENT_HANDLER( _TYPE_ , _FUNCTION_NAME_ )\
 	void _TYPE_::_FUNCTION_NAME_(const GValue& p1, const GValue& p2, const GValue& p3, const GValue& p4)
+
+#define IMPLEMENT_GET_REAL_VIEW( _VIEW_TPYE_ ) \
+_VIEW_TPYE_* getRealView() \
+{ \
+	return dynamic_cast<_VIEW_TPYE_*>(getView()); \
+}

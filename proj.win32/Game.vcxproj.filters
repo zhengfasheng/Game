@@ -79,6 +79,9 @@
     <Filter Include="Classes\Game">
       <UniqueIdentifier>{078fd413-c8be-4107-8592-1cbcfee7d9f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\GameOver">
+      <UniqueIdentifier>{50292e73-a929-4c6b-aa3b-3dec9671b356}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -116,9 +119,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Scene\SceneManager.cpp">
       <Filter>Classes\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Model\Data\CurrentInfo.cpp">
-      <Filter>Classes\Model\Data</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Model\Data\UserInfo.cpp">
       <Filter>Classes\Model\Data</Filter>
@@ -213,6 +213,63 @@
     <ClCompile Include="..\Classes\Game\GameResourceCommand.cpp">
       <Filter>Classes\Game</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameController.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameView.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\Data\CurrentPlayerInfo.cpp">
+      <Filter>Classes\Model\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\EnemyManager.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Effect.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Enemy.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Bullet.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Airplane.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\AirplaneLevelManager.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameLevelManager.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOver\GameOverScene.cpp">
+      <Filter>Classes\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOver\GameOverController.cpp">
+      <Filter>Classes\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOver\GameOverView.cpp">
+      <Filter>Classes\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameOver\GameOverResourceCommand.cpp">
+      <Filter>Classes\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameMapView.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameMainView.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameInfoView.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GamePauseView.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameOpView.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -265,9 +322,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Scene\SceneManager.h">
       <Filter>Classes\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Model\Data\CurrentInfo.h">
-      <Filter>Classes\Model\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Model\Data\UserInfo.h">
       <Filter>Classes\Model\Data</Filter>
@@ -393,6 +447,72 @@
       <Filter>Classes\Game</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameResourceCommand.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameController.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameView.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\Data\CurrentPlayerInfo.h">
+      <Filter>Classes\Model\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\EnemyManager.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Event\EventDelegate.h">
+      <Filter>Classes\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Effect.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Enemy.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\EntityObject.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Bullet.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Airplane.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\AirplaneLevelManager.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameLevelManager.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameEvent.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOver\GameOverScene.h">
+      <Filter>Classes\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOver\GameOverController.h">
+      <Filter>Classes\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOver\GameOverView.h">
+      <Filter>Classes\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameOver\GameOverResourceCommand.h">
+      <Filter>Classes\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameMapView.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameMainView.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameInfoView.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GamePauseView.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameOpView.h">
       <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>

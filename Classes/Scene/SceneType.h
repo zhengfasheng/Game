@@ -32,4 +32,5 @@ enum class SceneType
 	Game,//游戏场景
 	About,//关于场景
 	Setting,//设置场景
+	GameOver,//游戏结束 
 };

@@ -1,31 +1,32 @@
 #pragma once
+#include <string>
 // image 
-static const char* s_bg01 = "bg01.jpg";
-static const char* s_loading = "loading.png";//加载界面用
-static const char* s_ship01 = "ship01.png";
-static const char* s_menu = "menu.png";
-static const char* s_logo = "logo.png";
-static const char* s_cocos2dx = "cocos2d-html5.png";
-static const char* s_gameOver = "gameOver.png";
-static const char* s_menuTitle = "menuTitle.png";
-static const char* s_enemy = "Enemy.png";
-static const char* s_flare = "flare.jpg";
-static const char* s_bullet = "bullet.png";
-static const char* s_explosion = "explosion.png";
-static const char* s_explode1 = "explode1.jpg";
-static const char* s_explode2 = "explode2.jpg";
-static const char* s_explode3 = "explode3.jpg";
-static const char* s_hit = "hit.jpg";
-static const char* s_arial14 = "arial-14.png";
-static const char* s_pause = "pause.png";
-static const char* s_play = "play.png";
-static const char* s_loadingbar = "slider_bar_active_9patch.png";//加载界面用，
+static const std::string s_bg01 = "bg01.jpg";
+static const std::string s_loading = "loading.png";//加载界面用
+static const std::string s_ship01 = "ship01.png";
+static const std::string s_menu = "menu.png";
+static const std::string s_logo = "logo.png";
+static const std::string s_cocos2dx = "cocos2d-html5.png";
+static const std::string s_gameOver = "gameOver.png";
+static const std::string s_menuTitle = "menuTitle.png";
+static const std::string s_enemy = "Enemy.png";
+static const std::string s_flare = "flare.jpg";
+static const std::string s_bullet = "bullet.png";
+static const std::string s_explosion = "explosion.png";
+static const std::string s_explode1 = "explode1.jpg";
+static const std::string s_explode2 = "explode2.jpg";
+static const std::string s_explode3 = "explode3.jpg";
+static const std::string s_hit = "hit.jpg";
+static const std::string s_arial14 = "arial-14.png";
+static const std::string s_pause = "pause.png";
+static const std::string s_play = "play.png";
+static const std::string s_loadingbar = "slider_bar_active_9patch.png";//加载界面用，
 
 static const int g_nTotalResource = 18;//那个进度条没有算进去一进去就直接用了
 
 // font
 static const char* s_font = "fonts/bitmapFontTest.fnt";
-static const char* s_arial14_fnt = "arial-14.fnt";//字体
+static const char* s_arial14_fnt = "fonts/arial-14.fnt";//字体
 
 // music
 static const char* s_bgMusic = "bgMusic.mp3";

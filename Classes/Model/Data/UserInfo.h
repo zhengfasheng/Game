@@ -39,14 +39,21 @@ public:
 	UserInfo();
 	virtual ~UserInfo();
 
-	virtual bool decode(const std::string& strMsg) override;
+	
+	CC_SYNTHESIZE(int, m_nScore, Score);
+	CC_SYNTHESIZE(int, m_nBestScore, BestScore);
+	CC_SYNTHESIZE(int, m_nCurrentRebornTimes, CurrentRebornTimes);
+	CC_SYNTHESIZE(int, m_nCurrentDestroyEnemy, CurrentDestroyEnemy);
 
-	virtual bool encode(const std::string& strMsg) override;
+	void reset();
 
-
+	//下面是之前测试代码
 	CC_SYNTHESIZE(Sex, m_sex, Sex);
 	CC_SYNTHESIZE(std::string, m_szName, Name);
 	CC_SYNTHESIZE(int, m_nChips, Chips);
 	CC_SYNTHESIZE(std::string, m_szAccount, Account);
+	virtual bool decode(const std::string& strMsg) override;
+
+	virtual bool encode(const std::string& strMsg) override;
 
 };

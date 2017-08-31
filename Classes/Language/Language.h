@@ -119,6 +119,8 @@ public:
 
 	string getBitmapFont();
 
+	string getArial14Font();
+
 private:
 
 	Language();

@@ -26,7 +26,6 @@ const static char* g_szEventAddScore = "Add Score";
 
 //删除子弹事件名称
 const static char* g_szEventDeleteMyBullet = "Delete My Bullet";
-const static char* g_szEventDeleteEnemyBullet = "Delete Enemy Bullet";
 
 //删除敌机
 const static char* g_szEventDeleteEnemy = "Delete Enemy";
@@ -133,14 +132,21 @@ static int g_nAirplaneLvUpAddPower = 2;
 static int g_nAirplaneMaxLevel = 15;
 
 //击杀多少敌机后飞机升一级
-static int g_nKillEnemyLvUp = 10;
+static int g_nKillEnemyLvUp = 2;
 
 //每隔多少增加一次难度
 static float g_fGameLvUpTime = 20.0f;
 
 
 //游戏相关类型
-
+enum class OpViewZOrder
+{
+	MyPlane,//自己的飞机
+	Bullet,//子弹
+	Enemy,//敌机
+	Explode,//爆炸特效
+	Effect,//特效
+};
 
 //攻击类型
 enum class AttackModel
@@ -148,21 +154,6 @@ enum class AttackModel
 	Normal,//普通（自己默认为普通，敌机根据自己战机所对的方向发射）
 	LockTarget,//锁定目标位置
 	Boss,//boss攻击技能，在屏幕的2/3以上的地方随机移动
-};
-
-//游戏布局层次
-enum class GameLayoutType
-{
-	BackSky = 1,//天空
-	GameMap,//游戏地图
-	MyPlane,//自己的飞机
-	Bullet,//子弹
-	Enemy,//敌机
-	Explode,//爆炸特效
-	Effect,//特效
-	Pause,//暂停按钮
-	UI,//UI显示层
-	PauseLayer,//暂停界面
 };
 
 //敌机类型
@@ -188,18 +179,6 @@ enum class EnemyMoveType
 	MoveBoss,//目前游戏只一个类型的boss，谁有兴趣可以自己加
 };
 
-//游戏事件数据
-struct GameData
-{
-	std::string name;
-	void* data;
-	GameData(const std::string& name, void* data)
-	{
-		this->name = name;
-		this->data = data;
-	}
-};
-
 class GameConfig
 {
 	GameConfig();
@@ -223,3 +202,5 @@ private:
 	bool m_bIsShowFPS;
 };
 
+//子弹默认攻击半径
+float attackScope();

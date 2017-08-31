@@ -12,6 +12,8 @@
 		<string>关于</string>
 		<key>scene_name_4</key>
 		<string>设置</string>
+		<key>scene_name_5</key>
+		<string>游戏结束</string>
 
 		<key>read_resource</key>
 		<string>正在读取资源文件数据</string>
@@ -48,6 +50,16 @@
 	  	<string>Off</string>
 	  	<key>audio</key>
 	  	<string>Audio</string>
+	</dict>
+
+	<key>game_over</key>
+	<dict>
+		<key>score</key>
+	  	<string>Score : {%any}</string>
+	  	<key>best_score</key>
+	  	<string>Best Score : {%any}</string>
+	  	<key>try_again</key>
+	  	<string>Try Again</string>
 	</dict>
 
 	<key>Activity</key>

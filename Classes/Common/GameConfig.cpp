@@ -50,3 +50,7 @@ void GameConfig::readConfig()
 	}
 }
 
+float attackScope()
+{
+	return Director::getInstance()->getWinSize().height;
+}

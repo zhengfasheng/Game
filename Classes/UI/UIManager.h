@@ -26,6 +26,7 @@
 #include "common.h"
 #include "UIViewController.h"
 #include "SceneDelegate.h"
+#include "Any.h"
 USING_UI;
 class UIManager : public SceneDelegate
 {
@@ -64,7 +65,7 @@ public:
 			auto pDlg = it->second;
 			if (!pDlg)
 				return;
-			pDlg->OnEvent(szEventName, p1, p2, p3, p4,UIViewControllerDelegate::EventType::Game);
+			pDlg->OnEvent(szEventName, p1, p2, p3, p4);
 		}
 		//广播所有对象
 		else if (id == ControllerID::Max)
@@ -74,7 +75,7 @@ public:
 				auto pDlg = it->second;
 				if (pDlg)
 				{
-					pDlg->OnEvent(szEventName, p1, p2, p3, p4,UIViewControllerDelegate::EventType::Game);
+					pDlg->OnEvent(szEventName, p1, p2, p3, p4);
 				}
 			}
 		}
@@ -102,6 +103,43 @@ public:
 	{
 		SendEvent(id, szEventName, 0);
 	}
+
+	/**
+	 * @brief	获取controller中的值
+	 * 			使用陷阱，如果取的值不是基本数量类型，
+	 * 			一定要返回一个const 引用，不要返回局部变量的地址
+	 * 			保证地址的有效性
+	 * 			
+	 * 			
+	 *			如下错误的使用
+	 * 			class Test;
+	 * 			//假使已经有一个全局变量Test g_value，或者是一个controller中的变量
+	 * 			GetValue()
+	 * 			{
+	 * 				auto value = g_value;
+	 * 				return (void*)&value;
+	 * 			}
+	 * 			
+	 *          正确的使用应该是
+	 *          GetValue()
+	 * 			{
+	 * 				return (void*)&g_value;
+	 * 			}
+	 * 			或者
+	 *			GetValue()
+	 * 			{
+	 * 				auto& value = g_value;
+	 * 				return (void*)&value;
+	 * 			}
+	 *
+	 * @param	id		   	controller id
+	 * @param	szValueName	需要取哪一个变量
+	 *
+	 * @return	The value.
+	 */
+
+	GValue GetValue(ControllerID id, const std::string& szValueName);
+
 #pragma endregion 对外公开使用
 
 #pragma region 场景代理实现

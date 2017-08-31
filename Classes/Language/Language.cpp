@@ -337,5 +337,10 @@ std::string Language::getBitmapFont()
 	return s_font;
 }
 
+std::string Language::getArial14Font()
+{
+	return s_arial14_fnt;
+}
+
 
 

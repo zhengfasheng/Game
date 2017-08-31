@@ -46,7 +46,7 @@ public:
 	 * @param	stateID				Identifier for the state.
 	 */
 
-	virtual bool Init(UIManager* pManager, ControllerID id) final;
+	virtual bool Init(UIManager* pManager, ControllerID id) ;
 
 	/** @brief	从父节点上移除 */
 	virtual void RemoveFromParent() final;

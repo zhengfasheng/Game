@@ -3,6 +3,7 @@
 #include "AboutResourceCommand.h"
 #include "SettingResourceCommand.h"
 #include "GameResourceCommand.h"
+#include "GameOverResourceCommand.h"
 
 ResourceCommandFactory::ResourceCommandFactory()
 {
@@ -36,6 +37,9 @@ ResourceCommand* ResourceCommandFactory::create(ResourceDelegate* pDelegate , Sc
 		break;
 	case SceneType::Game:
 		pCommand = new GameResourceCommand(pDelegate, type);
+		break;
+	case SceneType::GameOver:
+		pCommand = new GameOverResourceCommand(pDelegate, type);
 	default:
 		break;
 	}

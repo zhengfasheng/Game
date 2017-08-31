@@ -1,6 +1,10 @@
 #include "UserInfo.h"
 
 UserInfo::UserInfo()
+	:m_nScore(0)
+	, m_nBestScore(0)
+	, m_nCurrentDestroyEnemy(0)
+	, m_nCurrentRebornTimes(0)
 {
 
 }
@@ -23,4 +27,11 @@ bool UserInfo::decode(const std::string& strMsg)
 bool UserInfo::encode(const std::string& strMsg)
 {
 	return true;
+}
+
+void UserInfo::reset()
+{
+	m_nScore = 0;
+	m_nCurrentRebornTimes = 3;
+	m_nCurrentDestroyEnemy = 0;
 }

@@ -31,6 +31,8 @@ enum class ControllerID
 	Start,//开始
 	About,//关于
 	Setting,//设置
+	Game,//主游戏界面
+	GameOver,//游戏结束
 	Max
 };
 

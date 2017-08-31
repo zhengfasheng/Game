@@ -6,6 +6,8 @@ UIView::UIView()
 	, m_bIsShow(false)
 	, m_bIsEnableHideAction(true)
 	, m_bIsEnableShowAction(true)
+	, m_bIsEnableDelegate(true)
+	, m_pEventListener(nullptr)
 {
 
 }
@@ -14,15 +16,17 @@ UIView::~UIView()
 {
 	m_pDelegate = nullptr;
 	m_bIsShow = false;
+	removeEventListener();
 }
 
-bool UIView::init(UIViewControllerDelegate* pProtocol)
+bool UIView::init(UIViewControllerDelegate* pDelegate)
 {
 	bool bRet = false;
 	do 
 	{
-		CC_BREAK_IF(!Layer::init() || !pProtocol );
-		m_pDelegate = pProtocol;
+		CC_BREAK_IF(!Layer::init() || !pDelegate);
+		setVisible(false);
+		m_pDelegate = pDelegate;
 		bRet = true;
 	} while (0);
 	return bRet;
@@ -42,9 +46,10 @@ void UIView::Show()
 	else
 	{
 		m_bIsShow = true;
-		m_pDelegate->WillShow();
+		setVisible(true);
+		if ( isEnableDelegate() ) m_pDelegate->WillShow();
 		ShowEnd();
-		m_pDelegate->DidShow();
+		if ( isEnableDelegate() ) m_pDelegate->DidShow();
 	}
 }
 
@@ -56,9 +61,9 @@ void UIView::Hide()
 	}
 	else
 	{
-		m_pDelegate->WillHide();
+		if (isEnableDelegate()) m_pDelegate->WillHide();
 		HideEnd();
-		m_pDelegate->DidHide();
+		if (isEnableDelegate()) m_pDelegate->DidHide();
 	}
 }
 
@@ -70,6 +75,7 @@ void UIView::ShowEnd()
 void UIView::HideEnd()
 {
 	m_bIsShow = false;
+	setVisible(false);
 }
 
 void UIView::setEnableShowAction(bool bIsEnable)
@@ -99,12 +105,13 @@ void UIView::ShowWithAction()
 		CCLOGERROR("UIView Showing");
 		return;
 	}
-	m_pDelegate->WillShow();
+	if (isEnableDelegate()) m_pDelegate->WillShow();
 	m_bIsShow = true;
+	setVisible(true);
 	this->setOpacity(0);
 
 	auto pAction = Sequence::createWithTwoActions(FadeIn::create(0.5f), CallFunc::create([this](){
-		m_pDelegate->DidShow();
+		if (isEnableDelegate()) m_pDelegate->DidShow();
 		ShowEnd();
 		this->release();
 	}));
@@ -120,24 +127,79 @@ void UIView::HideWithAction()
 		CCLOGERROR("UIView hiding");
 		return;
 	}
-	m_pDelegate->WillHide();
+	if (isEnableDelegate()) m_pDelegate->WillHide();
 	this->retain();
 	auto pAction = Sequence::createWithTwoActions(FadeOut::create(0.5f), CallFunc::create([this](){
 		m_bIsShow = false;
 		HideEnd();
 		this->release();
-		m_pDelegate->DidHide();
+		if (isEnableDelegate()) m_pDelegate->DidHide();
 	}));
 	pAction->setTag(HIDE_ACTION_TAG);
 	this->runAction(pAction);
+}
+
+void UIView::setEnableDelegate(bool bIsEnabled)
+{
+	m_bIsEnableDelegate = bIsEnabled;
+}
+
+bool UIView::isEnableDelegate()
+{
+	return m_bIsEnableDelegate;
+}
+
+bool UIView::onTouchBegan(Touch *touch, Event *unused_event)
+{
+	return true;
+}
+
+void UIView::onTouchMoved(Touch *touch, Event *unused_event)
+{
+
+}
+
+void UIView::onTouchEnded(Touch *touch, Event *unused_event)
+{
+
+}
+
+void UIView::onTouchCancelled(Touch *touch, Event *unused_event)
+{
+
 }
 
 void UIView::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
 {
 	if (keyCode == EventKeyboard::KeyCode::KEY_BACK)
 	{
-		
+
 	}
+}
+
+void UIView::addEventListener()
+{
+	m_pEventListener = EventListenerTouchOneByOne::create();
+	if (m_pEventListener)
+	{
+		m_pEventListener->setEnabled(true);
+		m_pEventListener->setSwallowTouches(true);
+		//ÉèÖÃ»Øµ÷
+		m_pEventListener->onTouchBegan = CC_CALLBACK_2(UIView::onTouchBegan, this);
+		m_pEventListener->onTouchMoved = CC_CALLBACK_2(UIView::onTouchMoved, this);
+		m_pEventListener->onTouchEnded = CC_CALLBACK_2(UIView::onTouchEnded, this);
+		m_pEventListener->onTouchCancelled = CC_CALLBACK_2(UIView::onTouchCancelled, this);
+		_eventDispatcher->addEventListenerWithSceneGraphPriority(m_pEventListener, this);
+	}
+}
+
+void UIView::removeEventListener()
+{
+	if ( m_pEventListener )
+	{
+		_eventDispatcher->removeEventListener(m_pEventListener);
+	}
+	m_pEventListener = nullptr;
 }
 
 UI_END

@@ -17,21 +17,32 @@
  *  
  *  Email:zheng_fasheng@qq.com
  *
- *  Date:2017/7/29 20:43
+ *  Date:2017/8/27 15:27
  *
- *  Summary:Declares the current information class
+ *  Summary:Declares the game over controller class
  *  
  ******************************************************************************/
 #pragma once
-#include "common.h"
-#include "UserInfo.h"
 
-class CurrentInfo
+#include "UIViewController.h"
+
+USING_UI;
+class GameOverController : public UIViewController
 {
-	CurrentInfo();
 public:
-	IMPLEMENT_SINGLETON(CurrentInfo);
-	~CurrentInfo();
-	
-	SYNTHESIZE_PASS_BY_REF(UserInfo, m_userInfo, UserInfo);
+	GameOverController();
+	virtual ~GameOverController();
+
+	virtual UIView* createView(UIViewControllerDelegate* pDelegate) override;
+
+	DECLARE_HANDLER(onGoBack);
+	DECLARE_HANDLER(onTryAgin);
+
+	EVENT_HANDLER_BEGIN
+	EVENT_HANDLER(UIEvent::EVENT_GAME_OVER_GO_BACK, onGoBack);
+	EVENT_HANDLER(UIEvent::EVNET_GAME_OVER_TRY_AGAIN, onTryAgin);
+	EVENT_HANDLER_END
+
+private:
+
 };

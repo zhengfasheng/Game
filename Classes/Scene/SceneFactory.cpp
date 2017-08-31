@@ -3,6 +3,7 @@
 #include "AboutScene.h"
 #include "SettingScene.h"
 #include "GameScene.h"
+#include "GameOverScene.h"
 
 SceneFactory::SceneFactory()
 {
@@ -31,6 +32,8 @@ IScene* SceneFactory::create(SceneDelegate* pDelegate, SceneType type)
 	case SceneType::Setting:
 		return SettingScene::create(pDelegate);
 		break;
+	case SceneType::GameOver:
+		return GameOverScene::create(pDelegate);
 	default:
 		break;
 	}
