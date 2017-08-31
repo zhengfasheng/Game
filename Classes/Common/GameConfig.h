@@ -132,7 +132,7 @@ static int g_nAirplaneLvUpAddPower = 2;
 static int g_nAirplaneMaxLevel = 15;
 
 //击杀多少敌机后飞机升一级
-static int g_nKillEnemyLvUp = 2;
+static int g_nKillEnemyLvUp = 10;
 
 //每隔多少增加一次难度
 static float g_fGameLvUpTime = 20.0f;

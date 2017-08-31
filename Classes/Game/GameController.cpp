@@ -54,9 +54,6 @@ bool GameController::Init(UIManager* pManager, ControllerID id)
 		CC_BREAK_IF(!m_pAirplaneLevelManager);
 		m_pAirplaneLevelManager->init();
 
-		//重置玩家相关信息
-		CurrentPlayerInfo::getInstance()->reset();
-
 		bRet = true;
 	} while (0);
 	return bRet;
@@ -235,6 +232,8 @@ IMPLEMENT_HANDLER(GameController, onAirplaneLevelUp)
 
 void GameController::DidShow()
 {
+	//重置玩家相关信息
+	CurrentPlayerInfo::getInstance()->reset();
 	UIViewController::DidShow();
 }
 
