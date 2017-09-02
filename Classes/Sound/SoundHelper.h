@@ -65,7 +65,7 @@ public:
 	virtual void setBackgroundMusicVolume( float fVolume);
 
 	virtual void preloadAudio();
-	virtual unsigned int playAudio(AudioType type, bool bIsLoop = false);
+	virtual void playAudio(AudioType type, bool bIsLoop = false);
 	virtual void stopAudio(unsigned int nAudioID);
 	virtual void stopAllAudio();
 	virtual void pauseAudio(unsigned int nAudioID);
@@ -93,4 +93,5 @@ protected:
 	float m_fAudioVolume;
 	BackgroundMusicType m_backgroundType;
 
+	unsigned int m_nCurrentAudioId;
 };

@@ -11,6 +11,8 @@ static const char* g_szAudioVolumeKey = "g_szAudioVolumeKey";
 static const char* g_szBackgroundMusicStatusKey = "g_szBackgroundMusicStatusKey";
 static const char* g_szBackgroundMusicVolumeKey = "g_szBackgroundMusicVolumeKey";
 
+const static long long INVALID_AUDIO_ID = -1;
+
 USING_NS_CC;
 using namespace CocosDenshion;
 SoundHelper::SoundHelper()
@@ -19,6 +21,7 @@ SoundHelper::SoundHelper()
 	, m_fAudioVolume(1.0f)
 	, m_fBackgroundVolume(1.0f)
 	, m_backgroundType(BackgroundMusicType::BackMusic)
+	, m_nCurrentAudioId(INVALID_AUDIO_ID)
 {
 
 }
@@ -131,14 +134,16 @@ void SoundHelper::preloadAudio()
 	}
 }
 
-unsigned int SoundHelper::playAudio(AudioType type, bool bIsLoop /*= false*/)
+void SoundHelper::playAudio(AudioType type, bool bIsLoop /*= false*/)
 {
 	auto szAudioPath = getAudioPath(type);
 	if ( m_bIsAudioOn && szAudioPath)
 	{
-		return SimpleAudioEngine::getInstance()->playEffect(szAudioPath, bIsLoop);
+		//播放声音比较卡，没有找到合适方案，这里不播放声音了
+		return;
+		stopAudio(m_nCurrentAudioId);
+		m_nCurrentAudioId = SimpleAudioEngine::getInstance()->playEffect(szAudioPath, bIsLoop);
 	}
-	return 0;
 }
 
 void SoundHelper::stopAudio(unsigned int nAudioID)
